@@ -85,6 +85,54 @@ cron.schedule('0 10 * * 6', async () => {
 }, { timezone: 'Asia/Taipei' });
 
 // ==========================================
+// 防休眠：每 14 分鐘 ping 自己
+// ==========================================
+cron.schedule('*/14 * * * *', () => {
+  const baseUrl = process.env.BASE_URL || `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`;
+  if (baseUrl && baseUrl !== 'undefined') {
+    const http = require('https');
+    http.get(baseUrl, (res) => {
+      console.log(`[keep-alive] ping status: ${res.statusCode}`);
+    }).on('error', (err) => {
+      console.error('[keep-alive] ping failed:', err.message);
+    });
+  }
+});
+
+// ==========================================
+// 手動觸發推播（補發用）
+// ==========================================
+app.get('/trigger-quiz/:week', async (req, res) => {
+  const week = parseInt(req.params.week);
+  const entry = schedule.find(s => s.type === 'quiz' && s.week === week);
+  if (!entry) return res.status(404).send('Quiz not found');
+
+  try {
+    await client.broadcast({
+      messages: [{
+        type: 'text',
+        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 5 題，測試你這週學的片語！\n每題回覆對應的編號（如 ${entry.week === 1 ? '1A' : entry.week === 2 ? '6A' : entry.week === 3 ? '11A' : '16A'}），馬上告訴你對不對 ☺️`,
+      }],
+    });
+
+    for (const quizImg of entry.quizImages) {
+      await client.broadcast({
+        messages: [{
+          type: 'image',
+          originalContentUrl: getImageUrl(quizImg),
+          previewImageUrl: getImageUrl(quizImg),
+        }],
+      });
+      await sleep(500);
+    }
+    res.send(`Week ${week} quiz sent!`);
+  } catch (err) {
+    console.error('Manual trigger error:', err.message);
+    res.status(500).send(err.message);
+  }
+});
+
+// ==========================================
 // Webhook：處理學生回覆
 // ==========================================
 
