@@ -3,8 +3,25 @@ const path = require('path');
 const cron = require('node-cron');
 const { messagingApi, middleware } = require('@line/bot-sdk');
 const { MessagingApiClient } = messagingApi;
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
+
+// 20 天的片語清單（供 AI 批改參考）
+const idiomList = [
+  'speak volumes', 'on the fence', 'a blessing in disguise',
+  'cut to the chase', 'go the extra mile', 'get something off one\'s chest',
+  'hit it off', 'keep someone in the loop', 'rub someone the wrong way',
+  'see eye to eye', 'back to square one', 'pull one\'s weight',
+  'think outside the box', 'up in the air', 'call the shots',
+  'step out of one\'s comfort zone', 'the bigger picture',
+  'take something with a grain of salt', 'turn over a new leaf',
+  'broaden one\'s horizons',
+];
+
+// Gemini AI 設定
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
 // LINE Messaging API 設定
 const config = {
@@ -36,14 +53,21 @@ cron.schedule('30 7 * * 1-5', async () => {
     return;
   }
 
+  const todayIdiom = idiomList[entry.dayNum - 1] || '';
   console.log(`[${today}] 推播 Day ${entry.dayNum}: ${entry.image}`);
   try {
     await client.broadcast({
-      messages: [{
-        type: 'image',
-        originalContentUrl: getImageUrl(entry.image),
-        previewImageUrl: getImageUrl(entry.image),
-      }],
+      messages: [
+        {
+          type: 'image',
+          originalContentUrl: getImageUrl(entry.image),
+          previewImageUrl: getImageUrl(entry.image),
+        },
+        {
+          type: 'text',
+          text: `✏️ 今日練習：試著用「${todayIdiom}」造一個英文句子吧！\n\n直接打在聊天室裡，AI 老師會幫你批改 ☺️`,
+        },
+      ],
     });
     console.log(`[${today}] 推播成功！`);
   } catch (err) {
@@ -207,7 +231,72 @@ async function handleEvent(event) {
     });
   }
 
+  // 句子長度 >= 10 才送 AI 批改（避免短訊息誤觸發）
+  if (userText.length >= 10) {
+    return handleAIGrading(event.replyToken, userText);
+  }
+
   return null;
+}
+
+// ==========================================
+// AI 造句批改（Gemini）
+// ==========================================
+async function handleAIGrading(replyToken, sentence) {
+  const systemPrompt = `你是 Steph's English Lab 的 AI 英文助教。學生正在練習用英文片語造句。
+
+以下是本課程教的 20 個片語：
+${idiomList.map((idiom, i) => `${i + 1}. ${idiom}`).join('\n')}
+
+請根據學生的句子進行批改，回覆格式如下（用繁體中文 + 英文混合回覆）：
+
+📝 你的句子：[複述學生原句]
+
+[判斷結果，用以下其中一個]
+✅ 片語用法正確！
+⚠️ 片語用法有誤
+
+📖 片語解析：[簡短說明該片語的正確意思和用法]
+
+📝 文法批改：[如果有文法錯誤，指出並修正；如果沒有，說「文法正確！」]
+
+✨ 建議句子：[提供一個更自然或更好的寫法]
+
+💡 小提醒：[一句鼓勵的話或額外的學習建議]
+
+注意事項：
+- 如果學生的句子沒有用到以上任何片語，友善地提醒他使用課程中教的片語來造句
+- 如果學生寫的不是英文句子（例如中文閒聊），友善地引導他回到造句練習
+- 語氣要親切、鼓勵，像一個溫暖的英文老師
+- 回覆保持簡潔，不要太長`;
+
+  try {
+    const result = await model.generateContent({
+      contents: [
+        { role: 'user', parts: [{ text: systemPrompt + '\n\n學生的句子：' + sentence }] }
+      ],
+    });
+    const reply = result.response.text();
+
+    return client.replyMessage({
+      replyToken,
+      messages: [{ type: 'text', text: reply }],
+    });
+  } catch (err) {
+    console.error('[AI grading error]', err.message);
+
+    if (err.status === 429) {
+      return client.replyMessage({
+        replyToken,
+        messages: [{ type: 'text', text: '目前批改的人比較多，請稍後再試一次 ☺️' }],
+      });
+    }
+
+    return client.replyMessage({
+      replyToken,
+      messages: [{ type: 'text', text: '批改功能暫時無法使用，請稍後再試 🙏' }],
+    });
+  }
 }
 
 function getToday() {
