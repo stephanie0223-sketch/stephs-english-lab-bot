@@ -265,7 +265,7 @@ async function handleAIGrading(replyToken, sentence) {
         { role: 'user', parts: [{ text: systemPrompt + '\n\n學生的句子：' + sentence }] }
       ],
     });
-    const reply = result.response.text();
+    const reply = result.response.text().replace(/\*{1,2}/g, '');
 
     return client.replyMessage({
       replyToken,
