@@ -247,7 +247,7 @@ async function handleAIGrading(replyToken, sentence) {
 
 以下是本課程教的 20 個片語（包含正確搭配的介係詞）：
 1. speak volumes（不需介係詞，直接用）
-2. on the fence about（後接 about + N/Ving）
+2. on the fence about（後面必須有 about，about 後可接名詞、Ving、或 whether/wh- 子句皆可）
 3. a blessing in disguise（整組使用）
 4. cut to the chase（不需介係詞）
 5. go the extra mile（不需介係詞）
@@ -271,6 +271,8 @@ async function handleAIGrading(replyToken, sentence) {
 1. 片語必須完整使用，缺少介係詞（如 on the fence 少了 about）= 用法有誤
 2. 代名詞 one's 必須正確對應主詞（如主詞是 I，要用 my）= 否則用法有誤
 3. 判斷結果（✅ 或 ⚠️）必須和後面的分析完全一致，絕不能說「正確」但又指出錯誤
+4. 不要過度糾正：如果學生的句子文法正確且片語用法正確，不要硬改成另一種說法。多種正確寫法都應該被接受（例如 about + Ving 和 about + whether 子句都正確）
+5. 「建議句子」只在學生有錯誤時提供修正版，如果原句完全正確，就直接肯定原句
 
 回覆格式（用繁體中文 + 英文混合）：
 
