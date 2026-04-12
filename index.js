@@ -17,6 +17,9 @@ const idiomList = [
   'step out of one\'s comfort zone', 'the bigger picture',
   'take something with a grain of salt', 'turn over a new leaf',
   'broaden one\'s horizons',
+  // Week 5: Phone Addiction
+  'doomscrolling', 'screen time', 'FOMO',
+  'digital detox', 'nomophobia',
 ];
 
 // Gemini AI 設定
@@ -83,25 +86,41 @@ cron.schedule('0 10 * * 6', async () => {
     return;
   }
 
-  console.log(`[${today}] 推播 Week ${entry.week} 測驗（${entry.quizImages.length} 題）`);
+  const quizCount = entry.quizImages ? entry.quizImages.length : entry.quizTexts ? entry.quizTexts.length : 0;
+  const firstQ = (entry.week - 1) * 5 + 1;
+  console.log(`[${today}] 推播 Week ${entry.week} 測驗（${quizCount} 題）`);
   try {
     await client.broadcast({
       messages: [{
         type: 'text',
-        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 5 題，測試你這週學的片語！\n每題回覆對應的編號（如 ${entry.week === 1 ? '1A' : entry.week === 2 ? '6A' : entry.week === 3 ? '11A' : '16A'}），馬上告訴你對不對 ☺️`,
+        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 ${quizCount} 題，測試你這週學的內容！\n每題回覆對應的編號（如 ${firstQ}A），馬上告訴你對不對 ☺️`,
       }],
     });
 
-    for (const quizImg of entry.quizImages) {
-      await client.broadcast({
-        messages: [{
-          type: 'image',
-          originalContentUrl: getImageUrl(quizImg),
-          previewImageUrl: getImageUrl(quizImg),
-        }],
-      });
-      await sleep(500);
+    // 圖片版測驗
+    if (entry.quizImages) {
+      for (const quizImg of entry.quizImages) {
+        await client.broadcast({
+          messages: [{
+            type: 'image',
+            originalContentUrl: getImageUrl(quizImg),
+            previewImageUrl: getImageUrl(quizImg),
+          }],
+        });
+        await sleep(500);
+      }
     }
+
+    // 文字版測驗
+    if (entry.quizTexts) {
+      for (const qt of entry.quizTexts) {
+        await client.broadcast({
+          messages: [{ type: 'text', text: qt.q }],
+        });
+        await sleep(500);
+      }
+    }
+
     console.log(`[${today}] 測驗推播成功！`);
   } catch (err) {
     console.error(`[${today}] 測驗推播失敗:`, err.message);
@@ -131,24 +150,38 @@ app.get('/trigger-quiz/:week', async (req, res) => {
   const entry = schedule.find(s => s.type === 'quiz' && s.week === week);
   if (!entry) return res.status(404).send('Quiz not found');
 
+  const firstQ = (entry.week - 1) * 5 + 1;
+  const quizCount = entry.quizImages ? entry.quizImages.length : entry.quizTexts ? entry.quizTexts.length : 0;
   try {
     await client.broadcast({
       messages: [{
         type: 'text',
-        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 5 題，測試你這週學的片語！\n每題回覆對應的編號（如 ${entry.week === 1 ? '1A' : entry.week === 2 ? '6A' : entry.week === 3 ? '11A' : '16A'}），馬上告訴你對不對 ☺️`,
+        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 ${quizCount} 題，測試你這週學的內容！\n每題回覆對應的編號（如 ${firstQ}A），馬上告訴你對不對 ☺️`,
       }],
     });
 
-    for (const quizImg of entry.quizImages) {
-      await client.broadcast({
-        messages: [{
-          type: 'image',
-          originalContentUrl: getImageUrl(quizImg),
-          previewImageUrl: getImageUrl(quizImg),
-        }],
-      });
-      await sleep(500);
+    if (entry.quizImages) {
+      for (const quizImg of entry.quizImages) {
+        await client.broadcast({
+          messages: [{
+            type: 'image',
+            originalContentUrl: getImageUrl(quizImg),
+            previewImageUrl: getImageUrl(quizImg),
+          }],
+        });
+        await sleep(500);
+      }
     }
+
+    if (entry.quizTexts) {
+      for (const qt of entry.quizTexts) {
+        await client.broadcast({
+          messages: [{ type: 'text', text: qt.q }],
+        });
+        await sleep(500);
+      }
+    }
+
     res.send(`Week ${week} quiz sent!`);
   } catch (err) {
     console.error('Manual trigger error:', err.message);

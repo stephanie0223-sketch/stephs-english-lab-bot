@@ -129,6 +129,38 @@ const quizReplies = {
   '20B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 broaden one\'s horizons（拓展視野）\n\n出國留學讓你「看得更遠、更廣」！\n\n例句：Reading books from different countries can broaden your horizons.\n\n💡 turn over a new leaf 是「重新開始」的意思喔！\n\n🎉 四週測驗全部結束！繼續加油！' },
   '20C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 broaden one\'s horizons（拓展視野）\n\n出國留學讓你「看得更遠、更廣」！\n\n例句：Reading books from different countries can broaden your horizons.\n\n💡 call the shots 是「做主、發號施令」的意思喔！\n\n🎉 四週測驗全部結束！繼續加油！' },
   '20D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 broaden one\'s horizons（拓展視野）\n\n出國留學讓你「看得更遠、更廣」！\n\n例句：Reading books from different countries can broaden your horizons.\n\n💡 take something with a grain of salt 是「半信半疑」的意思喔！\n\n🎉 四週測驗全部結束！繼續加油！' },
+
+  // ===== Week 5: Phone Addiction =====
+
+  // Q21 - 正確答案: C (doomscrolling)
+  '21A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\nFOMO 是「錯失恐懼症」，怕錯過什麼。doomscrolling 是停不下來一直看負面新聞。\n\n例句：I was doomscrolling until 2 AM last night.' },
+  '21B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\nnomophobia 是「沒手機就焦慮」，而 doomscrolling 是「停不下來一直看壞消息」。\n\n例句：I was doomscrolling until 2 AM last night.' },
+  '21C': { correct: true,  reply: '✅ 答對了！\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\ndoom（末日）+ scrolling（滑動），明知越看越焦慮卻停不下來！\n\n例句：I was doomscrolling until 2 AM last night.\n\n👏 繼續下一題！' },
+  '21D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\ndigital detox 是「數位排毒」，主動不用手機。doomscrolling 相反，是停不下來！\n\n例句：I was doomscrolling until 2 AM last night.' },
+
+  // Q22 - 正確答案: B (screen time)
+  '22A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\nphone detox 是「手機排毒」，指主動不用手機。screen time 才是指「使用時間」。\n\n例句：My average screen time is 6 hours a day.' },
+  '22B': { correct: true,  reply: '✅ 答對了！\n👉 screen time = 螢幕使用時間\n\n手機內建的 Screen Time 功能就是這個詞！常見搭配：reduce / limit / cut down on screen time。\n\n例句：My average screen time is 6 hours a day.\n\n👏 繼續下一題！' },
+  '22C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\ndoomscrolling 是「一直滑負面新聞停不下來」，screen time 是「螢幕使用總時間」。\n\n例句：My average screen time is 6 hours a day.' },
+  '22D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\nnomophobia 是「沒手機就恐慌」，screen time 才是指「使用時間」。\n\n例句：My average screen time is 6 hours a day.' },
+
+  // Q23 - 正確答案: B (FOMO)
+  '23A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 FOMO = Fear of Missing Out（錯失恐懼症）\n\nnomophobia 是「沒手機就恐慌」，FOMO 是「怕錯過別人在做的事」。\n\n例句：I have serious FOMO whenever I see my friends\' vacation photos.' },
+  '23B': { correct: true,  reply: '✅ 答對了！\n👉 FOMO = Fear of Missing Out（錯失恐懼症）\n\n怕錯過別人正在經歷的有趣事物！相反詞是 JOMO（Joy of Missing Out）— 享受不參與的快樂。\n\n例句：I have serious FOMO whenever I see my friends\' vacation photos.\n\n👏 繼續下一題！' },
+  '23C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 FOMO = Fear of Missing Out（錯失恐懼症）\n\nscreen time 是「螢幕使用時間」，FOMO 才是「怕錯過」的焦慮。\n\n例句：I have serious FOMO whenever I see my friends\' vacation photos.' },
+  '23D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 FOMO = Fear of Missing Out（錯失恐懼症）\n\ndigital detox 是「數位排毒」，FOMO 是「怕錯過」的焦慮感。\n\n例句：I have serious FOMO whenever I see my friends\' vacation photos.' },
+
+  // Q24 - 正確答案: D (digital detox)
+  '24A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 digital detox = 數位排毒\n\ndoomscrolling 是「一直滑負面新聞」，digital detox 是「主動放下手機休息」。\n\n例句：I\'m going on a digital detox this weekend.' },
+  '24B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 digital detox = 數位排毒\n\nFOMO 是「怕錯過」的焦慮，digital detox 是「主動不碰電子產品」來放鬆。\n\n例句：I\'m going on a digital detox this weekend.' },
+  '24C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 digital detox = 數位排毒\n\nnomophobia 是「沒手機就恐慌」，digital detox 是「主動放下手機」。\n\n例句：I\'m going on a digital detox this weekend.' },
+  '24D': { correct: true,  reply: '✅ 答對了！\n👉 digital detox = 數位排毒\n\n主動放下手機和電腦，讓自己休息！也可以說 phone detox 或 social media detox。\n\n例句：I\'m going on a digital detox this weekend.\n\n👏 最後一題！' },
+
+  // Q25 - 正確答案: D (nomophobia)
+  '25A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 nomophobia = 無手機恐懼症\n\ndoomscrolling 是「停不下來滑負面新聞」，nomophobia 是「沒手機就恐慌」。\n\n例句：I think I have nomophobia — I can\'t go anywhere without my phone.' },
+  '25B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 nomophobia = 無手機恐懼症\n\ndigital detox 是「主動不用手機」，nomophobia 是「沒手機就焦慮」。\n\n例句：I think I have nomophobia — I can\'t go anywhere without my phone.' },
+  '25C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 nomophobia = 無手機恐懼症\n\nFOMO 是「怕錯過」，nomophobia 是「沒有手機本身就感到恐懼」。\n\n例句：I think I have nomophobia — I can\'t go anywhere without my phone.' },
+  '25D': { correct: true,  reply: '✅ 答對了！\n👉 nomophobia = 無手機恐懼症\n\nno + mo(bile) + phobia = nomophobia！出門忘帶手機就焦慮不安的你，可能就有 nomophobia！\n\n例句：I think I have nomophobia — I can\'t go anywhere without my phone.\n\n🎉 Week 5 測驗完成！你已經是 phone addiction 詞彙達人了！' },
 };
 
 // 其他關鍵字回覆
