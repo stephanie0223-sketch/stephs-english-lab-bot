@@ -18,8 +18,8 @@ const idiomList = [
   'take something with a grain of salt', 'turn over a new leaf',
   'broaden one\'s horizons',
   // Week 5: Phone Addiction
-  'doomscrolling', 'screen time', 'FOMO',
-  'digital detox', 'nomophobia',
+  'doomscrolling', 'scroll hole', 'phubbing', 'be left on read',
+  'FOMO', 'digital detox', 'nomophobia',
 ];
 
 // Gemini AI 設定

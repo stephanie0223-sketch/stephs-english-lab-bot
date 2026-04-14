@@ -138,11 +138,11 @@ const quizReplies = {
   '21C': { correct: true,  reply: '✅ 答對了！\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\ndoom（末日）+ scrolling（滑動），明知越看越焦慮卻停不下來！\n\n例句：I was doomscrolling until 2 AM last night.\n\n👏 繼續下一題！' },
   '21D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 doomscrolling = 無止盡地滑手機看負面消息\n\ndigital detox 是「數位排毒」，主動不用手機。doomscrolling 相反，是停不下來！\n\n例句：I was doomscrolling until 2 AM last night.' },
 
-  // Q22 - 正確答案: B (screen time)
-  '22A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\nphone detox 是「手機排毒」，指主動不用手機。screen time 才是指「使用時間」。\n\n例句：My average screen time is 6 hours a day.' },
-  '22B': { correct: true,  reply: '✅ 答對了！\n👉 screen time = 螢幕使用時間\n\n手機內建的 Screen Time 功能就是這個詞！常見搭配：reduce / limit / cut down on screen time。\n\n例句：My average screen time is 6 hours a day.\n\n👏 繼續下一題！' },
-  '22C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\ndoomscrolling 是「一直滑負面新聞停不下來」，screen time 是「螢幕使用總時間」。\n\n例句：My average screen time is 6 hours a day.' },
-  '22D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 screen time = 螢幕使用時間\n\nnomophobia 是「沒手機就恐慌」，screen time 才是指「使用時間」。\n\n例句：My average screen time is 6 hours a day.' },
+  // Q22 - 正確答案: B (phubbing)
+  '22A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 phubbing = 滑手機冷落對方（phone + snubbing）\n\ndoomscrolling 是「一直滑負面新聞停不下來」，phubbing 是「跟人在一起卻一直滑手機」。\n\n例句：Stop phubbing me! I\'m trying to talk to you.' },
+  '22B': { correct: true,  reply: '✅ 答對了！\n👉 phubbing = 滑手機冷落對方（phone + snubbing）\n\n跟朋友吃飯卻一直滑手機，就是 phubbing！這個字是 phone 和 snubbing（冷落）的合體。\n\n例句：Stop phubbing me! I\'m trying to talk to you.\n\n👏 繼續下一題！' },
+  '22C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 phubbing = 滑手機冷落對方（phone + snubbing）\n\nleave on read 是「已讀不回」，phubbing 是「當面滑手機冷落人」。\n\n例句：Stop phubbing me! I\'m trying to talk to you.' },
+  '22D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 phubbing = 滑手機冷落對方（phone + snubbing）\n\nnomophobia 是「沒手機就恐慌」，phubbing 是「跟人在一起卻一直看手機」。\n\n例句：Stop phubbing me! I\'m trying to talk to you.' },
 
   // Q23 - 正確答案: B (FOMO)
   '23A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 FOMO = Fear of Missing Out（錯失恐懼症）\n\nnomophobia 是「沒手機就恐慌」，FOMO 是「怕錯過別人在做的事」。\n\n例句：I have serious FOMO whenever I see my friends\' vacation photos.' },
