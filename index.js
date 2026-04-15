@@ -7,19 +7,44 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
 
-// 20 天的片語清單（供 AI 批改參考）
+// 45 天的片語清單（供 AI 批改參考）
 const idiomList = [
+  // Week 1: Everyday Idioms (Day 1-5)
   'speak volumes', 'on the fence', 'a blessing in disguise',
-  'cut to the chase', 'go the extra mile', 'get something off one\'s chest',
-  'hit it off', 'keep someone in the loop', 'rub someone the wrong way',
-  'see eye to eye', 'back to square one', 'pull one\'s weight',
+  'cut to the chase', 'go the extra mile',
+  // Week 2: Relationships & Communication (Day 6-10)
+  'get something off one\'s chest', 'hit it off',
+  'keep someone in the loop', 'rub someone the wrong way', 'see eye to eye',
+  // Week 3: Phone Addiction (Day 11-15)
+  'doomscrolling', 'scroll hole', 'phubbing', 'be left on read',
+  'FOMO', 'digital detox', 'nomophobia',
+  // Week 4: Meeting People (Day 16-20)
+  'introvert', 'extrovert', 'ambivert', 'break the ice',
+  'warm up to someone', 'come out of one\'s shell',
+  'step out of one\'s comfort zone', 'culture shock',
+  'find common ground', 'social butterfly', 'wallflower',
+  // Week 5: Gym & Fitness (Day 21-25)
+  'work out', 'hit the gym', 'warm up', 'cool down',
+  'reps', 'sets', 'no pain no gain', 'push one\'s limits',
+  'go hard or go home', 'gym rat', 'skip leg day',
+  'get in shape', 'let oneself go', 'fit', 'toned', 'lean', 'bulky',
+  // Week 6: Love Part 1 (Day 26-30)
+  'have a crush on', 'butterflies in one\'s stomach',
+  'shoot one\'s shot', 'make the first move',
+  'play hard to get', 'friend zone',
+  'fall for someone', 'love at first sight',
+  'head over heels', 'sweep someone off their feet',
+  // Week 7: Love Part 2 (Day 31-35)
+  'go steady', 'PDA', 'on the rocks', 'give someone the cold shoulder',
+  'red flag', 'toxic relationship', 'cheat on someone',
+  'two-time someone', 'break up', 'move on', 'tie the knot',
+  // Week 8: Work & Problem Solving (Day 36-40)
+  'back to square one', 'pull one\'s weight',
   'think outside the box', 'up in the air', 'call the shots',
+  // Week 9: Growth & Mindset (Day 41-45)
   'step out of one\'s comfort zone', 'the bigger picture',
   'take something with a grain of salt', 'turn over a new leaf',
   'broaden one\'s horizons',
-  // Week 5: Phone Addiction
-  'doomscrolling', 'scroll hole', 'phubbing', 'be left on read',
-  'FOMO', 'digital detox', 'nomophobia',
 ];
 
 // Gemini AI 設定
@@ -86,42 +111,22 @@ cron.schedule('0 10 * * 6', async () => {
     return;
   }
 
-  const quizCount = entry.quizImages ? entry.quizImages.length : entry.quizTexts ? entry.quizTexts.length : 0;
+  const quizCount = entry.quizTexts ? entry.quizTexts.length : 0;
   const firstQ = (entry.week - 1) * 5 + 1;
   console.log(`[${today}] 推播 Week ${entry.week} 測驗（${quizCount} 題）`);
   try {
-    await client.broadcast({
-      messages: [{
+    // 只推播公告 + 第一題，後續題目在學生回答後自動出現
+    const messages = [
+      {
         type: 'text',
-        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 ${quizCount} 題，測試你這週學的內容！\n每題回覆對應的編號（如 ${firstQ}A），馬上告訴你對不對 ☺️`,
-      }],
-    });
-
-    // 圖片版測驗
-    if (entry.quizImages) {
-      for (const quizImg of entry.quizImages) {
-        await client.broadcast({
-          messages: [{
-            type: 'image',
-            originalContentUrl: getImageUrl(quizImg),
-            previewImageUrl: getImageUrl(quizImg),
-          }],
-        });
-        await sleep(500);
-      }
+        text: `📝 Week ${entry.week} Quiz Time!\n\n共 ${quizCount} 題，測試你這週學的內容！\n回覆答案（如 ${firstQ}A），答對答錯都會自動出下一題 ☺️`,
+      },
+    ];
+    if (entry.quizTexts && entry.quizTexts.length > 0) {
+      messages.push({ type: 'text', text: entry.quizTexts[0].q });
     }
-
-    // 文字版測驗
-    if (entry.quizTexts) {
-      for (const qt of entry.quizTexts) {
-        await client.broadcast({
-          messages: [{ type: 'text', text: qt.q }],
-        });
-        await sleep(500);
-      }
-    }
-
-    console.log(`[${today}] 測驗推播成功！`);
+    await client.broadcast({ messages });
+    console.log(`[${today}] 測驗推播成功（公告 + 第 1 題）！`);
   } catch (err) {
     console.error(`[${today}] 測驗推播失敗:`, err.message);
   }
@@ -151,38 +156,20 @@ app.get('/trigger-quiz/:week', async (req, res) => {
   if (!entry) return res.status(404).send('Quiz not found');
 
   const firstQ = (entry.week - 1) * 5 + 1;
-  const quizCount = entry.quizImages ? entry.quizImages.length : entry.quizTexts ? entry.quizTexts.length : 0;
+  const quizCount = entry.quizTexts ? entry.quizTexts.length : 0;
   try {
-    await client.broadcast({
-      messages: [{
+    // 只推播公告 + 第一題
+    const messages = [
+      {
         type: 'text',
-        text: `📝 Week ${entry.week} Quiz Time!\n\n以下有 ${quizCount} 題，測試你這週學的內容！\n每題回覆對應的編號（如 ${firstQ}A），馬上告訴你對不對 ☺️`,
-      }],
-    });
-
-    if (entry.quizImages) {
-      for (const quizImg of entry.quizImages) {
-        await client.broadcast({
-          messages: [{
-            type: 'image',
-            originalContentUrl: getImageUrl(quizImg),
-            previewImageUrl: getImageUrl(quizImg),
-          }],
-        });
-        await sleep(500);
-      }
+        text: `📝 Week ${entry.week} Quiz Time!\n\n共 ${quizCount} 題，測試你這週學的內容！\n回覆答案（如 ${firstQ}A），答對答錯都會自動出下一題 ☺️`,
+      },
+    ];
+    if (entry.quizTexts && entry.quizTexts.length > 0) {
+      messages.push({ type: 'text', text: entry.quizTexts[0].q });
     }
-
-    if (entry.quizTexts) {
-      for (const qt of entry.quizTexts) {
-        await client.broadcast({
-          messages: [{ type: 'text', text: qt.q }],
-        });
-        await sleep(500);
-      }
-    }
-
-    res.send(`Week ${week} quiz sent!`);
+    await client.broadcast({ messages });
+    res.send(`Week ${week} quiz sent (announcement + Q1)!`);
   } catch (err) {
     console.error('Manual trigger error:', err.message);
     res.status(500).send(err.message);
@@ -226,12 +213,24 @@ async function handleEvent(event) {
   const lowerText = userText.toLowerCase();
 
   if (quizReplies[upperText]) {
+    const messages = [{ type: 'text', text: quizReplies[upperText].reply }];
+
+    // 自動出下一題：從答案編號算出目前題號和下一題（獨立一則訊息）
+    const qMatch = upperText.match(/^(\d+)[A-D]$/);
+    if (qMatch) {
+      const qNum = parseInt(qMatch[1]);
+      const week = Math.ceil(qNum / 5);
+      const posInWeek = (qNum - 1) % 5; // 0-4
+      const weekEntry = schedule.find(s => s.type === 'quiz' && s.week === week);
+      if (weekEntry && weekEntry.quizTexts && posInWeek < weekEntry.quizTexts.length - 1) {
+        // 還有下一題，獨立一則訊息
+        messages.push({ type: 'text', text: weekEntry.quizTexts[posInWeek + 1].q });
+      }
+    }
+
     return client.replyMessage({
       replyToken: event.replyToken,
-      messages: [{
-        type: 'text',
-        text: quizReplies[upperText].reply,
-      }],
+      messages,
     });
   }
 
