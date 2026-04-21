@@ -7,44 +7,62 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
 
-// 45 天的片語清單（供 AI 批改參考）
-const idiomList = [
+// 每天的片語（index 0 = Day 1），用於造句練習提示和 AI 批改參考
+const dailyIdioms = [
   // Week 1: Everyday Idioms (Day 1-5)
-  'speak volumes', 'on the fence', 'a blessing in disguise',
-  'cut to the chase', 'go the extra mile',
+  'speak volumes',                            // Day 1
+  'on the fence',                             // Day 2
+  'a blessing in disguise',                   // Day 3
+  'cut to the chase',                         // Day 4
+  'go the extra mile',                        // Day 5
   // Week 2: Relationships & Communication (Day 6-10)
-  'get something off one\'s chest', 'hit it off',
-  'keep someone in the loop', 'rub someone the wrong way', 'see eye to eye',
+  'get something off one\'s chest',           // Day 6
+  'hit it off',                               // Day 7
+  'keep someone in the loop',                 // Day 8
+  'rub someone the wrong way',                // Day 9
+  'see eye to eye',                           // Day 10
   // Week 3: Phone Addiction (Day 11-15)
-  'doomscrolling', 'scroll hole', 'phubbing', 'be left on read',
-  'FOMO', 'digital detox', 'nomophobia',
+  'doomscrolling / scroll hole',              // Day 11
+  'phubbing / be left on read',               // Day 12
+  'FOMO',                                     // Day 13
+  'digital detox',                            // Day 14
+  'nomophobia',                               // Day 15
   // Week 4: Meeting People (Day 16-20)
-  'introvert', 'extrovert', 'ambivert', 'break the ice',
-  'warm up to someone', 'come out of one\'s shell',
-  'step out of one\'s comfort zone', 'culture shock',
-  'find common ground', 'social butterfly', 'wallflower',
+  'introvert / extrovert / ambivert',         // Day 16
+  'break the ice / warm up to someone',       // Day 17
+  'come out of one\'s shell / step out of one\'s comfort zone', // Day 18
+  'culture shock / find common ground',       // Day 19
+  'social butterfly / wallflower',            // Day 20
   // Week 5: Gym & Fitness (Day 21-25)
-  'work out', 'hit the gym', 'warm up', 'cool down',
-  'reps', 'sets', 'no pain no gain', 'push one\'s limits',
-  'go hard or go home', 'gym rat', 'skip leg day',
-  'get in shape', 'let oneself go', 'fit', 'toned', 'lean', 'bulky',
+  'work out / hit the gym',                   // Day 21
+  'warm up / cool down / reps / sets',        // Day 22
+  'no pain no gain / push one\'s limits / go hard or go home', // Day 23
+  'gym rat / skip leg day',                   // Day 24
+  'get in shape / let oneself go',            // Day 25
   // Week 6: Love Part 1 (Day 26-30)
-  'have a crush on', 'butterflies in one\'s stomach',
-  'shoot one\'s shot', 'make the first move',
-  'play hard to get', 'friend zone',
-  'fall for someone', 'love at first sight',
-  'head over heels', 'sweep someone off their feet',
+  'have a crush on / butterflies in one\'s stomach', // Day 26
+  'shoot one\'s shot / make the first move',  // Day 27
+  'play hard to get / friend zone',           // Day 28
+  'fall for someone / love at first sight',   // Day 29
+  'head over heels / sweep someone off their feet', // Day 30
   // Week 7: Love Part 2 (Day 31-35)
-  'go steady', 'PDA', 'on the rocks', 'give someone the cold shoulder',
-  'red flag', 'toxic relationship', 'cheat on someone',
-  'two-time someone', 'break up', 'move on', 'tie the knot',
+  'go steady / PDA',                          // Day 31
+  'on the rocks / give someone the cold shoulder', // Day 32
+  'red flag / toxic relationship',            // Day 33
+  'cheat on someone / two-time someone',      // Day 34
+  'break up / tie the knot',                  // Day 35
   // Week 8: Work & Problem Solving (Day 36-40)
-  'back to square one', 'pull one\'s weight',
-  'think outside the box', 'up in the air', 'call the shots',
+  'back to square one',                       // Day 36
+  'pull one\'s weight',                       // Day 37
+  'think outside the box',                    // Day 38
+  'up in the air',                            // Day 39
+  'call the shots',                           // Day 40
   // Week 9: Growth & Mindset (Day 41-45)
-  'step out of one\'s comfort zone', 'the bigger picture',
-  'take something with a grain of salt', 'turn over a new leaf',
-  'broaden one\'s horizons',
+  'step out of one\'s comfort zone',          // Day 41
+  'the bigger picture',                       // Day 42
+  'take something with a grain of salt',      // Day 43
+  'turn over a new leaf',                     // Day 44
+  'broaden one\'s horizons',                  // Day 45
 ];
 
 // Gemini AI 設定
@@ -81,7 +99,7 @@ cron.schedule('30 7 * * 1-5', async () => {
     return;
   }
 
-  const todayIdiom = idiomList[entry.dayNum - 1] || '';
+  const todayIdiom = dailyIdioms[entry.dayNum - 1] || '';
   console.log(`[${today}] 推播 Day ${entry.dayNum}: ${entry.image}`);
   try {
     await client.broadcast({
