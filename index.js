@@ -49,7 +49,7 @@ const idiomList = [
 
 // Gemini AI 設定
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
 // LINE Messaging API 設定
 const config = {
@@ -292,11 +292,16 @@ async function handleAIGrading(replyToken, sentence) {
 💡 小提醒：[鼓勵或補充小知識]`;
 
   try {
-    const result = await model.generateContent({
+    // 設定 8 秒超時，避免 LINE replyToken 過期（有效期約 10-30 秒）
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('AI_TIMEOUT')), 8000)
+    );
+    const aiPromise = model.generateContent({
       contents: [
         { role: 'user', parts: [{ text: systemPrompt + '\n\n學生的句子：' + sentence }] }
       ],
     });
+    const result = await Promise.race([aiPromise, timeoutPromise]);
     const reply = result.response.text().replace(/\*{1,2}/g, '');
 
     return client.replyMessage({
@@ -305,6 +310,13 @@ async function handleAIGrading(replyToken, sentence) {
     });
   } catch (err) {
     console.error('[AI grading error]', err.message);
+
+    if (err.message === 'AI_TIMEOUT') {
+      return client.replyMessage({
+        replyToken,
+        messages: [{ type: 'text', text: 'AI 批改回應時間較久，請再傳一次句子試試看 ☺️' }],
+      });
+    }
 
     if (err.status === 429) {
       return client.replyMessage({
