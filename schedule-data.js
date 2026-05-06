@@ -124,6 +124,104 @@ const schedule = [
     { q: 'Q44. After getting in trouble, he promised to ______ and start studying harder.\n\nA. broaden his horizons\nB. call the shots\nC. turn over a new leaf\nD. take it with a grain of salt\n\n回覆 44A / 44B / 44C / 44D' },
     { q: 'Q45. Traveling abroad really helped her ______.\n\nA. turn over a new leaf\nB. step out of her comfort zone\nC. take it with a grain of salt\nD. broaden her horizons\n\n回覆 45A / 45B / 45C / 45D' },
   ]},
+
+  // ===== Week 10：Travel & Culture ✈️ =====
+  { date: '2026-06-08', day: 'Mon', type: 'card', image: 'Day46_Jet_lag_and_Book_a_flight.png',          week: 10, dayNum: 46 },
+  { date: '2026-06-09', day: 'Tue', type: 'card', image: 'Day47_Off_the_beaten_path_and_Tourist_trap.png', week: 10, dayNum: 47 },
+  { date: '2026-06-10', day: 'Wed', type: 'card', image: 'Day48_When_in_Rome.png',                       week: 10, dayNum: 48 },
+  { date: '2026-06-11', day: 'Thu', type: 'card', image: 'Day49_Catch_a_flight_and_Miss_the_boat.png',   week: 10, dayNum: 49 },
+  { date: '2026-06-12', day: 'Fri', type: 'card', image: 'Day50_Wanderlust_and_Itchy_feet.png',          week: 10, dayNum: 50 },
+  { date: '2026-06-13', day: 'Sat', type: 'quiz', week: 10, quizTexts: [
+    { q: 'Q46. "I just got back from Tokyo and I\'m totally exhausted — I have terrible ______."\n\nA. wanderlust\nB. jet lag\nC. itchy feet\nD. tourist trap\n\n回覆 46A / 46B / 46C / 46D' },
+    { q: 'Q47. We avoided the crowded shopping street and discovered a quiet little café ______.\n\nA. when in Rome\nB. as a tourist trap\nC. off the beaten path\nD. with itchy feet\n\n回覆 47A / 47B / 47C / 47D' },
+    { q: 'Q48. "I don\'t usually eat snails, but ______! It\'s a French specialty."\n\nA. miss the boat\nB. when in Rome\nC. tourist trap\nD. itchy feet\n\n回覆 48A / 48B / 48C / 48D' },
+    { q: 'Q49. The early-bird flight discount ended yesterday. We waited too long and ______.\n\nA. caught a flight\nB. booked a flight\nC. got jet lag\nD. missed the boat\n\n回覆 49A / 49B / 49C / 49D' },
+    { q: 'Q50. After ten years at the same company, she\'s getting ______ and wants to move abroad.\n\nA. jet lag\nB. a tourist trap\nC. itchy feet\nD. off the beaten path\n\n回覆 50A / 50B / 50C / 50D' },
+  ]},
+
+  // ===== Week 11：Job Interview & Career 💼 =====
+  { date: '2026-06-15', day: 'Mon', type: 'card', image: 'Day51_Land_a_job_and_Get_foot_in_the_door.png',   week: 11, dayNum: 51 },
+  { date: '2026-06-16', day: 'Tue', type: 'card', image: 'Day52_On_the_same_page_and_In_the_loop.png',       week: 11, dayNum: 52 },
+  { date: '2026-06-17', day: 'Wed', type: 'card', image: 'Day53_Take_initiative_and_Go_above_and_beyond.png', week: 11, dayNum: 53 },
+  { date: '2026-06-18', day: 'Thu', type: 'card', image: 'Day54_Climb_the_corporate_ladder.png',             week: 11, dayNum: 54 },
+  { date: '2026-06-19', day: 'Fri', type: 'card', image: 'Day55_Burn_out_and_Call_it_a_day.png',             week: 11, dayNum: 55 },
+  { date: '2026-06-20', day: 'Sat', type: 'quiz', week: 11, quizTexts: [
+    { q: 'Q51. After months of interviews, she finally ______ at a top tech company!\n\nA. burned out\nB. landed a job\nC. called it a day\nD. climbed the ladder\n\n回覆 51A / 51B / 51C / 51D' },
+    { q: 'Q52. Before the meeting, let\'s confirm we\'re all ______ about the budget.\n\nA. in the loop\nB. on the same page\nC. above and beyond\nD. taking initiative\n\n回覆 52A / 52B / 52C / 52D' },
+    { q: 'Q53. She didn\'t wait for instructions — she ______ and started fixing the problem herself.\n\nA. burned out\nB. called it a day\nC. took initiative\nD. fell behind\n\n回覆 53A / 53B / 53C / 53D' },
+    { q: 'Q54. He started as an intern, and after 15 years he\'s now CEO. He really ______.\n\nA. burned out\nB. called it a day\nC. lost his cool\nD. climbed the corporate ladder\n\n回覆 54A / 54B / 54C / 54D' },
+    { q: 'Q55. We\'ve been working since 8 a.m. and it\'s now 8 p.m. — let\'s ______.\n\nA. take initiative\nB. call it a day\nC. land a job\nD. go above and beyond\n\n回覆 55A / 55B / 55C / 55D' },
+  ]},
+
+  // ===== Week 12：Food & Eating 🍰 =====
+  { date: '2026-06-22', day: 'Mon', type: 'card', image: 'Day56_A_piece_of_cake_and_A_tough_cookie.png',   week: 12, dayNum: 56 },
+  { date: '2026-06-23', day: 'Tue', type: 'card', image: 'Day57_Food_coma_and_Stuffed.png',                week: 12, dayNum: 57 },
+  { date: '2026-06-24', day: 'Wed', type: 'card', image: 'Day58_Eat_like_a_horse_and_Eat_like_a_bird.png', week: 12, dayNum: 58 },
+  { date: '2026-06-25', day: 'Thu', type: 'card', image: 'Day59_Bring_home_the_bacon_and_Breadwinner.png', week: 12, dayNum: 59 },
+  { date: '2026-06-26', day: 'Fri', type: 'card', image: 'Day60_Spill_the_beans_and_In_a_nutshell.png',    week: 12, dayNum: 60 },
+  { date: '2026-06-27', day: 'Sat', type: 'quiz', week: 12, quizTexts: [
+    { q: 'Q56. "Don\'t worry about the presentation — for someone like you, it\'s ______."\n\nA. a tough cookie\nB. a piece of cake\nC. food coma\nD. spilling the beans\n\n回覆 56A / 56B / 56C / 56D' },
+    { q: 'Q57. After eating three plates of pasta, I went straight into a ______ and fell asleep on the sofa.\n\nA. piece of cake\nB. tough cookie\nC. food coma\nD. nutshell\n\n回覆 57A / 57B / 57C / 57D' },
+    { q: 'Q58. He\'s tall and athletic, and he ______ — three burgers for lunch is normal!\n\nA. eats like a bird\nB. eats like a horse\nC. is stuffed\nD. is a tough cookie\n\n回覆 58A / 58B / 58C / 58D' },
+    { q: 'Q59. Since her husband\'s accident, she\'s the only one who ______ for the family.\n\nA. eats like a horse\nB. brings home the bacon\nC. spills the beans\nD. is a piece of cake\n\n回覆 59A / 59B / 59C / 59D' },
+    { q: 'Q60. "Sarah! Don\'t ______ about the surprise party — Mom can\'t know!"\n\nA. eat like a bird\nB. spill the beans\nC. break the bank\nD. bring home the bacon\n\n回覆 60A / 60B / 60C / 60D' },
+  ]},
+
+  // ===== Week 13：Emotions & Reactions 😊 =====
+  { date: '2026-06-29', day: 'Mon', type: 'card', image: 'Day61_On_cloud_nine_and_Over_the_moon.png',          week: 13, dayNum: 61 },
+  { date: '2026-06-30', day: 'Tue', type: 'card', image: 'Day62_Fed_up_and_Had_it_up_to_here.png',             week: 13, dayNum: 62 },
+  { date: '2026-07-01', day: 'Wed', type: 'card', image: 'Day63_Down_in_the_dumps_and_Under_the_weather.png',  week: 13, dayNum: 63 },
+  { date: '2026-07-02', day: 'Thu', type: 'card', image: 'Day64_Freak_out_and_Lose_ones_cool.png',             week: 13, dayNum: 64 },
+  { date: '2026-07-03', day: 'Fri', type: 'card', image: 'Day65_Chill_out_and_Take_it_easy.png',               week: 13, dayNum: 65 },
+  { date: '2026-07-04', day: 'Sat', type: 'quiz', week: 13, quizTexts: [
+    { q: 'Q61. She just got engaged to her boyfriend of five years — she\'s totally ______!\n\nA. fed up\nB. on cloud nine\nC. under the weather\nD. losing her cool\n\n回覆 61A / 61B / 61C / 61D' },
+    { q: 'Q62. "I\'ve ______ with my roommate leaving dirty dishes everywhere — I\'m moving out!"\n\nA. taken it easy\nB. chilled out\nC. been on cloud nine\nD. had it up to here\n\n回覆 62A / 62B / 62C / 62D' },
+    { q: 'Q63. "I\'m feeling a bit ______ today — I think I\'m catching a cold."\n\nA. on cloud nine\nB. over the moon\nC. under the weather\nD. fed up\n\n回覆 63A / 63B / 63C / 63D' },
+    { q: 'Q64. Her boss yelled at her for no reason, and she finally ______ in the meeting.\n\nA. chilled out\nB. lost her cool\nC. took it easy\nD. went over the moon\n\n回覆 64A / 64B / 64C / 64D' },
+    { q: 'Q65. "Stop worrying about the test! ______ — you\'ve studied hard."\n\nA. Freak out\nB. Be fed up\nC. Take it easy\nD. Lose your cool\n\n回覆 65A / 65B / 65C / 65D' },
+  ]},
+
+  // ===== Week 14：Money & Shopping 💰 =====
+  { date: '2026-07-06', day: 'Mon', type: 'card', image: 'Day66_Tight_budget_and_Pinch_pennies.png',     week: 14, dayNum: 66 },
+  { date: '2026-07-07', day: 'Tue', type: 'card', image: 'Day67_Splurge_and_Break_the_bank.png',         week: 14, dayNum: 67 },
+  { date: '2026-07-08', day: 'Wed', type: 'card', image: 'Day68_A_steal_and_Rip_off.png',                week: 14, dayNum: 68 },
+  { date: '2026-07-09', day: 'Thu', type: 'card', image: 'Day69_Save_up_and_Put_aside.png',              week: 14, dayNum: 69 },
+  { date: '2026-07-10', day: 'Fri', type: 'card', image: 'Day70_Live_paycheck_to_paycheck.png',          week: 14, dayNum: 70 },
+  { date: '2026-07-11', day: 'Sat', type: 'quiz', week: 14, quizTexts: [
+    { q: 'Q66. "I can\'t afford that fancy restaurant this month — I\'m ______."\n\nA. splurging\nB. on a tight budget\nC. breaking the bank\nD. living paycheck to paycheck\n\n回覆 66A / 66B / 66C / 66D' },
+    { q: 'Q67. "It\'s my birthday, so I decided to ______ on a really nice dinner."\n\nA. pinch pennies\nB. break the bank\nC. splurge\nD. put aside\n\n回覆 67A / 67B / 67C / 67D' },
+    { q: 'Q68. "This designer jacket was only $30 at the thrift store — what ______!"\n\nA. a rip-off\nB. a steal\nC. a tight budget\nD. a breadwinner\n\n回覆 68A / 68B / 68C / 68D' },
+    { q: 'Q69. She tries to ______ $300 every month for her future house.\n\nA. splurge\nB. break the bank\nC. put aside\nD. rip off\n\n回覆 69A / 69B / 69C / 69D' },
+    { q: 'Q70. With high rent and student loans, many young people end up ______.\n\nA. splurging\nB. breaking the bank\nC. living paycheck to paycheck\nD. saving up\n\n回覆 70A / 70B / 70C / 70D' },
+  ]},
+
+  // ===== Week 15：Goals & Productivity 🎯 =====
+  { date: '2026-07-13', day: 'Mon', type: 'card', image: 'Day71_Set_the_bar_high_and_Aim_high.png',          week: 15, dayNum: 71 },
+  { date: '2026-07-14', day: 'Tue', type: 'card', image: 'Day72_Hit_the_ground_running.png',                 week: 15, dayNum: 72 },
+  { date: '2026-07-15', day: 'Wed', type: 'card', image: 'Day73_Drop_the_ball_and_Fall_behind.png',          week: 15, dayNum: 73 },
+  { date: '2026-07-16', day: 'Thu', type: 'card', image: 'Day74_Bite_off_more_than_one_can_chew.png',        week: 15, dayNum: 74 },
+  { date: '2026-07-17', day: 'Fri', type: 'card', image: 'Day75_On_track_and_Behind_schedule.png',           week: 15, dayNum: 75 },
+  { date: '2026-07-18', day: 'Sat', type: 'quiz', week: 15, quizTexts: [
+    { q: 'Q71. Her older sister was the valedictorian, so she really ______ for everyone in the family.\n\nA. dropped the ball\nB. set the bar high\nC. fell behind\nD. bit off more than she could chew\n\n回覆 71A / 71B / 71C / 71D' },
+    { q: 'Q72. "On her first day, she ______ — she already closed two deals before lunch!"\n\nA. dropped the ball\nB. fell behind\nC. hit the ground running\nD. bit off more than she could chew\n\n回覆 72A / 72B / 72C / 72D' },
+    { q: 'Q73. "I really ______ — I forgot to email the client and we lost the deal."\n\nA. set the bar high\nB. aimed high\nC. dropped the ball\nD. hit the ground running\n\n回覆 73A / 73B / 73C / 73D' },
+    { q: 'Q74. Five clubs, three classes, and a part-time job? You\'re ______.\n\nA. on track\nB. setting the bar high\nC. hitting the ground running\nD. biting off more than you can chew\n\n回覆 74A / 74B / 74C / 74D' },
+    { q: 'Q75. The construction was supposed to finish in May, but they\'re three weeks ______.\n\nA. on track\nB. behind schedule\nC. ahead of schedule\nD. above and beyond\n\n回覆 75A / 75B / 75C / 75D' },
+  ]},
+
+  // ===== Week 16：School & Studying 📚 =====
+  { date: '2026-07-20', day: 'Mon', type: 'card', image: 'Day76_Cram_and_Pull_an_all_nighter.png',           week: 16, dayNum: 76 },
+  { date: '2026-07-21', day: 'Tue', type: 'card', image: 'Day77_Ace_a_test_and_Pass_with_flying_colors.png', week: 16, dayNum: 77 },
+  { date: '2026-07-22', day: 'Wed', type: 'card', image: 'Day78_Flunk_and_Barely_scrape_by.png',             week: 16, dayNum: 78 },
+  { date: '2026-07-23', day: 'Thu', type: 'card', image: 'Day79_Hit_the_books_and_Bookworm.png',             week: 16, dayNum: 79 },
+  { date: '2026-07-24', day: 'Fri', type: 'card', image: 'Day80_Brain_fart_and_Blank_out.png',               week: 16, dayNum: 80 },
+  { date: '2026-07-25', day: 'Sat', type: 'quiz', week: 16, quizTexts: [
+    { q: 'Q76. "I haven\'t studied all month, so I\'m going to have to ______ tonight."\n\nA. ace the test\nB. flunk\nC. cram\nD. blank out\n\n回覆 76A / 76B / 76C / 76D' },
+    { q: 'Q77. She studied for two weeks and ______ — she got 99 out of 100!\n\nA. flunked\nB. barely scraped by\nC. blanked out\nD. aced the test\n\n回覆 77A / 77B / 77C / 77D' },
+    { q: 'Q78. "I got a 60 on the final — I ______, but at least I passed."\n\nA. aced it\nB. barely scraped by\nC. passed with flying colors\nD. hit the books\n\n回覆 78A / 78B / 78C / 78D' },
+    { q: 'Q79. "Finals are next week — I really need to stop watching Netflix and ______."\n\nA. pull an all-nighter\nB. blank out\nC. hit the books\nD. flunk\n\n回覆 79A / 79B / 79C / 79D' },
+    { q: 'Q80. "I knew the answer perfectly, but when the teacher called on me, I totally ______."\n\nA. aced it\nB. blanked out\nC. crammed\nD. hit the books\n\n回覆 80A / 80B / 80C / 80D' },
+  ]},
 ];
 
 // 補看用的圖卡列表
@@ -137,6 +235,13 @@ const weekCards = {
   7: ['Day31_Go_steady_and_PDA.png', 'Day32_On_the_rocks_and_Cold_shoulder.png', 'Day33_Red_flag_and_Toxic_relationship.png', 'Day34_Cheat_on_and_Two_time.png', 'Day35_Two_endings_Break_up_Tie_the_knot.png'],
   8: ['Day36_Back_to_square_one.png', 'Day37_Pull_ones_weight.png', 'Day38_Think_outside_the_box.png', 'Day39_Up_in_the_air.png', 'Day40_Call_the_shots.png'],
   9: ['Day41_Step_out_of_ones_comfort_zone.png', 'Day42_The_bigger_picture.png', 'Day43_Take_with_a_grain_of_salt.png', 'Day44_Turn_over_a_new_leaf.png', 'Day45_Broaden_ones_horizons.png'],
+  10: ['Day46_Jet_lag_and_Book_a_flight.png', 'Day47_Off_the_beaten_path_and_Tourist_trap.png', 'Day48_When_in_Rome.png', 'Day49_Catch_a_flight_and_Miss_the_boat.png', 'Day50_Wanderlust_and_Itchy_feet.png'],
+  11: ['Day51_Land_a_job_and_Get_foot_in_the_door.png', 'Day52_On_the_same_page_and_In_the_loop.png', 'Day53_Take_initiative_and_Go_above_and_beyond.png', 'Day54_Climb_the_corporate_ladder.png', 'Day55_Burn_out_and_Call_it_a_day.png'],
+  12: ['Day56_A_piece_of_cake_and_A_tough_cookie.png', 'Day57_Food_coma_and_Stuffed.png', 'Day58_Eat_like_a_horse_and_Eat_like_a_bird.png', 'Day59_Bring_home_the_bacon_and_Breadwinner.png', 'Day60_Spill_the_beans_and_In_a_nutshell.png'],
+  13: ['Day61_On_cloud_nine_and_Over_the_moon.png', 'Day62_Fed_up_and_Had_it_up_to_here.png', 'Day63_Down_in_the_dumps_and_Under_the_weather.png', 'Day64_Freak_out_and_Lose_ones_cool.png', 'Day65_Chill_out_and_Take_it_easy.png'],
+  14: ['Day66_Tight_budget_and_Pinch_pennies.png', 'Day67_Splurge_and_Break_the_bank.png', 'Day68_A_steal_and_Rip_off.png', 'Day69_Save_up_and_Put_aside.png', 'Day70_Live_paycheck_to_paycheck.png'],
+  15: ['Day71_Set_the_bar_high_and_Aim_high.png', 'Day72_Hit_the_ground_running.png', 'Day73_Drop_the_ball_and_Fall_behind.png', 'Day74_Bite_off_more_than_one_can_chew.png', 'Day75_On_track_and_Behind_schedule.png'],
+  16: ['Day76_Cram_and_Pull_an_all_nighter.png', 'Day77_Ace_a_test_and_Pass_with_flying_colors.png', 'Day78_Flunk_and_Barely_scrape_by.png', 'Day79_Hit_the_books_and_Bookworm.png', 'Day80_Brain_fart_and_Blank_out.png'],
 };
 
 module.exports = { schedule, weekCards };

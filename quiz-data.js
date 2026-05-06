@@ -289,6 +289,230 @@ const quizReplies = {
   '45B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 broaden one\'s horizons = 拓展視野\n\n出國旅行讓你「看得更遠、更廣」！\n\n例句：Reading books from different countries can broaden your horizons.\n\n💡 the bigger picture 是「大局、全貌」的意思喔！' },
   '45C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 broaden one\'s horizons = 拓展視野\n\n出國旅行讓你「看得更遠、更廣」！\n\n例句：Reading books from different countries can broaden your horizons.\n\n💡 take something with a grain of salt 是「半信半疑」的意思喔！' },
   '45D': { correct: true,  reply: '✅ 答對了！\n👉 broaden one\'s horizons = 拓展視野\n\n出國旅行讓你看到不同的世界，視野變得更開闊！\n\n例句：Reading books from different countries can broaden your horizons.\n\n🎉 Week 9 測驗完成！你已經是 growth & mindset 詞彙達人了！' },
+
+  // ===== Week 10: Travel & Culture =====
+
+  // Q46 - 正確答案: B (jet lag)
+  '46A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 jet lag = 時差（疲倦感）\n\n剛從東京回來累爆，就是「時差還沒調過來」。\n\n例句：I always have jet lag for a few days after a long flight.\n\n💡 wanderlust 是「渴望旅行」的意思喔！' },
+  '46B': { correct: true,  reply: '✅ 答對了！\n👉 jet lag = 時差導致的疲倦感\n\n長途飛行後身體還沒調整時區，就是 jet lag。\n\n例句：I always have jet lag for a few days after a long flight.\n\n👏 繼續下一題！' },
+  '46C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 jet lag = 時差（疲倦感）\n\n剛從東京回來累爆，就是「時差還沒調過來」。\n\n例句：I always have jet lag for a few days after a long flight.\n\n💡 itchy feet 是「想出去走走」的意思喔！' },
+  '46D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 jet lag = 時差（疲倦感）\n\n剛從東京回來累爆，就是「時差還沒調過來」。\n\n例句：I always have jet lag for a few days after a long flight.\n\n💡 tourist trap 是「坑觀光客的地方」的意思喔！' },
+
+  // Q47 - 正確答案: C (off the beaten path)
+  '47A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 off the beaten path = 人煙稀少的地方、私房景點\n\n避開觀光人潮，找到一間安靜的小咖啡店。\n\n例句：The best restaurants are often off the beaten path.\n\n💡 when in Rome 是「入境隨俗」的意思喔！' },
+  '47B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 off the beaten path = 人煙稀少的地方、私房景點\n\n避開觀光人潮，找到一間安靜的小咖啡店。\n\n例句：The best restaurants are often off the beaten path.\n\n💡 tourist trap 剛好相反，是「坑觀光客的景點」喔！' },
+  '47C': { correct: true,  reply: '✅ 答對了！\n👉 off the beaten path = 人煙稀少、私房景點\n\nbeaten path 是「被踩過的路」（觀光客都走的路），off 就是「離開」那條路！\n\n例句：The best restaurants are often off the beaten path.\n\n👏 繼續下一題！' },
+  '47D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 off the beaten path = 人煙稀少的地方、私房景點\n\n避開觀光人潮，找到一間安靜的小咖啡店。\n\n例句：The best restaurants are often off the beaten path.\n\n💡 itchy feet 是「想出去走走」的意思喔！' },
+
+  // Q48 - 正確答案: B (when in Rome)
+  '48A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 when in Rome = 入境隨俗\n\n通常不吃蝸牛，但既然來法國就試試看，「入境隨俗嘛」！\n\n例句：I don\'t usually drink coffee, but when in Rome!\n\n💡 miss the boat 是「錯失良機」的意思喔！' },
+  '48B': { correct: true,  reply: '✅ 答對了！\n👉 when in Rome = 入境隨俗\n\n完整版是 "When in Rome, do as the Romans do."（在羅馬就要學羅馬人）。出國嘗試當地特色就用這句！\n\n例句：I don\'t usually drink coffee, but when in Rome!\n\n👏 繼續下一題！' },
+  '48C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 when in Rome = 入境隨俗\n\n通常不吃蝸牛，但既然來法國就試試看，「入境隨俗嘛」！\n\n例句：I don\'t usually drink coffee, but when in Rome!\n\n💡 tourist trap 是「坑觀光客的景點」的意思喔！' },
+  '48D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 when in Rome = 入境隨俗\n\n通常不吃蝸牛，但既然來法國就試試看，「入境隨俗嘛」！\n\n例句：I don\'t usually drink coffee, but when in Rome!\n\n💡 itchy feet 是「想出去走走」的意思喔！' },
+
+  // Q49 - 正確答案: D (missed the boat)
+  '49A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 miss the boat = 錯失良機\n\n早鳥優惠昨天就結束了，等太久就「錯過了」！\n\n例句：If you don\'t apply now, you\'ll miss the boat.\n\n💡 catch a flight 是「趕上飛機」的意思喔！' },
+  '49B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 miss the boat = 錯失良機\n\n早鳥優惠昨天就結束了，等太久就「錯過了」！\n\n例句：If you don\'t apply now, you\'ll miss the boat.\n\n💡 book a flight 是「訂機票」的意思喔！' },
+  '49C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 miss the boat = 錯失良機\n\n早鳥優惠昨天就結束了，等太久就「錯過了」！\n\n例句：If you don\'t apply now, you\'ll miss the boat.\n\n💡 jet lag 是「時差疲倦」的意思喔！' },
+  '49D': { correct: true,  reply: '✅ 答對了！\n👉 miss the boat = 錯失良機\n\n字面是「錯過船」，比喻「錯過機會」。等太久優惠就沒了！\n\n例句：If you don\'t apply now, you\'ll miss the boat.\n\n👏 繼續下一題！' },
+
+  // Q50 - 正確答案: C (itchy feet)
+  '50A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 itchy feet = 想出去走走、坐不住\n\n在同一家公司待十年，就會「腳癢」想去外面闖闖！\n\n例句：After five years here, I\'m getting itchy feet.\n\n💡 jet lag 是「時差疲倦」的意思喔！' },
+  '50B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 itchy feet = 想出去走走、坐不住\n\n在同一家公司待十年，就會「腳癢」想去外面闖闖！\n\n例句：After five years here, I\'m getting itchy feet.\n\n💡 tourist trap 是「坑觀光客的景點」的意思喔！' },
+  '50C': { correct: true,  reply: '✅ 答對了！\n👉 itchy feet = 想出去走走、想換環境\n\n字面是「腳癢」，畫面感超強——癢到坐不住，想往外跑！\n\n例句：After five years here, I\'m getting itchy feet.\n\n🎉 Week 10 測驗完成！恭喜你又學會 5 個旅行片語！' },
+  '50D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 itchy feet = 想出去走走、坐不住\n\n在同一家公司待十年，就會「腳癢」想去外面闖闖！\n\n例句：After five years here, I\'m getting itchy feet.\n\n💡 off the beaten path 是「人煙稀少的地方」的意思喔！' },
+
+  // ===== Week 11: Job Interview & Career =====
+
+  // Q51 - 正確答案: B (landed a job)
+  '51A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 land a job = 成功找到工作\n\n面試了好幾個月，終於拿到頂尖科技公司的 offer！\n\n例句：She finally landed a job at Google after 20 interviews.\n\n💡 burn out 是「過勞」的意思喔！' },
+  '51B': { correct: true,  reply: '✅ 答對了！\n👉 land a job = 成功找到工作\n\nland 當動詞有「成功獲得」的意思，比 get 更有「努力後拿到」的感覺！\n\n例句：She finally landed a job at Google after 20 interviews.\n\n👏 繼續下一題！' },
+  '51C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 land a job = 成功找到工作\n\n面試了好幾個月，終於拿到頂尖科技公司的 offer！\n\n例句：She finally landed a job at Google after 20 interviews.\n\n💡 call it a day 是「今天收工」的意思喔！' },
+  '51D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 land a job = 成功找到工作\n\n面試了好幾個月，終於拿到頂尖科技公司的 offer！\n\n例句：She finally landed a job at Google after 20 interviews.\n\n💡 climb the ladder 是「步步高升」的意思喔！' },
+
+  // Q52 - 正確答案: B (on the same page)
+  '52A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on the same page = 想法一致、達成共識\n\n會議前確認大家「想法一致」最重要！\n\n例句：Let\'s make sure we\'re on the same page before the meeting.\n\n💡 in the loop 是「掌握最新消息」，強調資訊同步喔！' },
+  '52B': { correct: true,  reply: '✅ 答對了！\n👉 on the same page = 想法一致、達成共識\n\n字面是「在同一頁」，比喻「在同一個理解上」。職場超常用！\n\n例句：Let\'s make sure we\'re on the same page before the meeting.\n\n👏 繼續下一題！' },
+  '52C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on the same page = 想法一致、達成共識\n\n會議前確認大家「想法一致」最重要！\n\n例句：Let\'s make sure we\'re on the same page before the meeting.\n\n💡 above and beyond 是「超越本分」的意思喔！' },
+  '52D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on the same page = 想法一致、達成共識\n\n會議前確認大家「想法一致」最重要！\n\n例句：Let\'s make sure we\'re on the same page before the meeting.\n\n💡 take initiative 是「主動出擊」的意思喔！' },
+
+  // Q53 - 正確答案: C (took initiative)
+  '53A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take initiative = 主動採取行動\n\n不等指示就自己動手解決，就是「主動出擊」！\n\n例句：Good employees take initiative without being told.\n\n💡 burn out 是「過勞」的意思喔！' },
+  '53B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take initiative = 主動採取行動\n\n不等指示就自己動手解決，就是「主動出擊」！\n\n例句：Good employees take initiative without being told.\n\n💡 call it a day 是「今天收工」的意思喔！' },
+  '53C': { correct: true,  reply: '✅ 答對了！\n👉 take initiative = 主動採取行動\n\ninitiative 是「主動性、主動權」，take initiative 就是「自己想到就去做」。面試超加分！\n\n例句：Good employees take initiative without being told.\n\n👏 繼續下一題！' },
+  '53D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take initiative = 主動採取行動\n\n不等指示就自己動手解決，就是「主動出擊」！\n\n例句：Good employees take initiative without being told.\n\n💡 fall behind 是「進度落後」的意思喔！' },
+
+  // Q54 - 正確答案: D (climbed the corporate ladder)
+  '54A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 climb the corporate ladder = 步步高升\n\n從實習生爬到 CEO，就是經典的「在公司爬升」！\n\n例句：He spent 20 years climbing the corporate ladder.\n\n💡 burn out 是「過勞」的意思喔！' },
+  '54B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 climb the corporate ladder = 步步高升\n\n從實習生爬到 CEO，就是經典的「在公司爬升」！\n\n例句：He spent 20 years climbing the corporate ladder.\n\n💡 call it a day 是「今天收工」的意思喔！' },
+  '54C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 climb the corporate ladder = 步步高升\n\n從實習生爬到 CEO，就是經典的「在公司爬升」！\n\n例句：He spent 20 years climbing the corporate ladder.\n\n💡 lose one\'s cool 是「失控發脾氣」的意思喔！' },
+  '54D': { correct: true,  reply: '✅ 答對了！\n👉 climb the corporate ladder = 步步高升\n\ncorporate ladder 是「公司的梯子」，比喻職場層級。一階一階往上爬！\n\n例句：He spent 20 years climbing the corporate ladder.\n\n👏 繼續下一題！' },
+
+  // Q55 - 正確答案: B (call it a day)
+  '55A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 call it a day = 今天就到這裡、收工\n\n從早上 8 點工作到晚上 8 點，是時候「收工」了！\n\n例句：It\'s getting late — let\'s call it a day.\n\n💡 take initiative 是「主動出擊」的意思喔！' },
+  '55B': { correct: true,  reply: '✅ 答對了！\n👉 call it a day = 今天就到這裡、收工\n\n字面是「把今天叫做一天」（夠了），意思是「今天就工作到這吧」。晚上的話可以說 call it a night。\n\n例句：It\'s getting late — let\'s call it a day.\n\n🎉 Week 11 測驗完成！職場英文你已經很熟啦！' },
+  '55C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 call it a day = 今天就到這裡、收工\n\n從早上 8 點工作到晚上 8 點，是時候「收工」了！\n\n例句：It\'s getting late — let\'s call it a day.\n\n💡 land a job 是「成功找到工作」的意思喔！' },
+  '55D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 call it a day = 今天就到這裡、收工\n\n從早上 8 點工作到晚上 8 點，是時候「收工」了！\n\n例句：It\'s getting late — let\'s call it a day.\n\n💡 go above and beyond 是「超越本分」的意思喔！' },
+
+  // ===== Week 12: Food & Eating =====
+
+  // Q56 - 正確答案: B (a piece of cake)
+  '56A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a piece of cake = 小菜一碟、非常容易\n\n對你這種人來說，這個簡報「超簡單」啦！\n\n例句：The math test was a piece of cake.\n\n💡 a tough cookie 是「堅強的人、不好對付的人」的意思喔！' },
+  '56B': { correct: true,  reply: '✅ 答對了！\n👉 a piece of cake = 小菜一碟、非常容易\n\n蛋糕軟好咬→簡單，畫面感超強！\n\n例句：The math test was a piece of cake.\n\n👏 繼續下一題！' },
+  '56C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a piece of cake = 小菜一碟、非常容易\n\n對你這種人來說，這個簡報「超簡單」啦！\n\n例句：The math test was a piece of cake.\n\n💡 food coma 是「吃飽想睡」的意思喔！' },
+  '56D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a piece of cake = 小菜一碟、非常容易\n\n對你這種人來說，這個簡報「超簡單」啦！\n\n例句：The math test was a piece of cake.\n\n💡 spill the beans 是「洩漏祕密」的意思喔！' },
+
+  // Q57 - 正確答案: C (food coma)
+  '57A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 food coma = 吃飽想睡、飯後昏沉\n\n吃了三盤義大利麵，馬上「飯後昏沉」倒在沙發上！\n\n例句：After Thanksgiving dinner, I went into a food coma.\n\n💡 a piece of cake 是「小菜一碟」的意思喔！' },
+  '57B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 food coma = 吃飽想睡、飯後昏沉\n\n吃了三盤義大利麵，馬上「飯後昏沉」倒在沙發上！\n\n例句：After Thanksgiving dinner, I went into a food coma.\n\n💡 a tough cookie 是「堅強的人」的意思喔！' },
+  '57C': { correct: true,  reply: '✅ 答對了！\n👉 food coma = 吃飽想睡、飯後昏沉\n\ncoma 原意「昏迷」，food coma 是用誇飾法形容「飯後超想睡」！\n\n例句：After Thanksgiving dinner, I went into a food coma.\n\n👏 繼續下一題！' },
+  '57D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 food coma = 吃飽想睡、飯後昏沉\n\n吃了三盤義大利麵，馬上「飯後昏沉」倒在沙發上！\n\n例句：After Thanksgiving dinner, I went into a food coma.\n\n💡 in a nutshell 是「簡單來說」的意思喔！' },
+
+  // Q58 - 正確答案: B (eats like a horse)
+  '58A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 eat like a horse = 食量很大\n\n午餐吃三個漢堡，這就是「食量很大」！\n\n例句：He\'s skinny but eats like a horse.\n\n💡 eat like a bird 剛好相反，是「食量很小」喔！' },
+  '58B': { correct: true,  reply: '✅ 答對了！\n👉 eat like a horse = 食量很大、超會吃\n\n馬大、鳥小，這個比喻超直覺！注意要用 LIKE，不能省略。\n\n例句：He\'s skinny but eats like a horse.\n\n👏 繼續下一題！' },
+  '58C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 eat like a horse = 食量很大\n\n午餐吃三個漢堡，這就是「食量很大」！\n\n例句：He\'s skinny but eats like a horse.\n\n💡 stuffed 是「吃太飽」（一次性的狀態），題目說「正常情況」喔！' },
+  '58D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 eat like a horse = 食量很大\n\n午餐吃三個漢堡，這就是「食量很大」！\n\n例句：He\'s skinny but eats like a horse.\n\n💡 a tough cookie 是「堅強的人」的意思喔！' },
+
+  // Q59 - 正確答案: B (brings home the bacon)
+  '59A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 bring home the bacon = 賺錢養家\n\n先生出意外後，她變成唯一「賺錢養家」的人。\n\n例句：My mom brings home the bacon while my dad takes care of us.\n\n💡 eat like a horse 是「食量很大」的意思喔！' },
+  '59B': { correct: true,  reply: '✅ 答對了！\n👉 bring home the bacon = 賺錢養家\n\n以前 bacon 是珍貴的肉，能把它帶回家就是養家！類似的還有 breadwinner（家中經濟支柱）。\n\n例句：My mom brings home the bacon while my dad takes care of us.\n\n👏 繼續下一題！' },
+  '59C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 bring home the bacon = 賺錢養家\n\n先生出意外後，她變成唯一「賺錢養家」的人。\n\n例句：My mom brings home the bacon while my dad takes care of us.\n\n💡 spill the beans 是「洩漏祕密」的意思喔！' },
+  '59D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 bring home the bacon = 賺錢養家\n\n先生出意外後，她變成唯一「賺錢養家」的人。\n\n例句：My mom brings home the bacon while my dad takes care of us.\n\n💡 a piece of cake 是「小菜一碟」的意思喔！' },
+
+  // Q60 - 正確答案: B (spill the beans)
+  '60A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 spill the beans = 洩漏祕密、爆料\n\n驚喜派對的事「不要說出去」喔！\n\n例句：Don\'t spill the beans about the surprise party!\n\n💡 eat like a bird 是「食量很小」的意思喔！' },
+  '60B': { correct: true,  reply: '✅ 答對了！\n👉 spill the beans = 洩漏祕密、爆料\n\n字面是「打翻豆子」，比喻「不小心說出秘密」。畫面感超強！\n\n例句：Don\'t spill the beans about the surprise party!\n\n👏 繼續下一題！' },
+  '60C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 spill the beans = 洩漏祕密、爆料\n\n驚喜派對的事「不要說出去」喔！\n\n例句：Don\'t spill the beans about the surprise party!\n\n💡 break the bank 是「花光積蓄」的意思喔！' },
+  '60D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 spill the beans = 洩漏祕密、爆料\n\n驚喜派對的事「不要說出去」喔！\n\n例句：Don\'t spill the beans about the surprise party!\n\n🎉 Week 12 測驗完成！food idioms 你已經是達人了！' },
+
+  // ===== Week 13: Emotions & Reactions =====
+
+  // Q61 - 正確答案: B (on cloud nine)
+  '61A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on cloud nine = 飛上天、超開心\n\n剛訂婚，當然「開心到飛起來」！\n\n例句：She\'s been on cloud nine since her engagement.\n\n💡 fed up 是「受夠了」的意思喔！' },
+  '61B': { correct: true,  reply: '✅ 答對了！\n👉 on cloud nine = 超開心、開心到飛起來\n\n想像自己飛到第九朵雲上——超興奮的畫面！類似的還有 over the moon。\n\n例句：She\'s been on cloud nine since her engagement.\n\n👏 繼續下一題！' },
+  '61C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on cloud nine = 飛上天、超開心\n\n剛訂婚，當然「開心到飛起來」！\n\n例句：She\'s been on cloud nine since her engagement.\n\n💡 under the weather 是「身體不舒服」的意思喔！' },
+  '61D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on cloud nine = 飛上天、超開心\n\n剛訂婚，當然「開心到飛起來」！\n\n例句：She\'s been on cloud nine since her engagement.\n\n💡 lose one\'s cool 是「失控發脾氣」的意思喔！' },
+
+  // Q62 - 正確答案: D (had it up to here)
+  '62A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 have had it up to here = 忍無可忍、受夠了\n\n室友老是亂丟碗盤，受夠了要搬走！\n\n例句：I\'ve had it up to here with his lies.\n\n💡 take it easy 是「放輕鬆」的意思喔！' },
+  '62B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 have had it up to here = 忍無可忍、受夠了\n\n室友老是亂丟碗盤，受夠了要搬走！\n\n例句：I\'ve had it up to here with his lies.\n\n💡 chill out 是「放鬆」的意思喔！' },
+  '62C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 have had it up to here = 忍無可忍、受夠了\n\n室友老是亂丟碗盤，受夠了要搬走！\n\n例句：I\'ve had it up to here with his lies.\n\n💡 on cloud nine 是「超開心」的意思喔！' },
+  '62D': { correct: true,  reply: '✅ 答對了！\n👉 have had it up to here = 忍無可忍、受夠了\n\n通常會配上「手比到下巴」的動作——忍耐已經滿到喉嚨了！\n\n例句：I\'ve had it up to here with his lies.\n\n👏 繼續下一題！' },
+
+  // Q63 - 正確答案: C (under the weather)
+  '63A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 under the weather = 身體不舒服\n\n感覺要感冒了，身體有點「不太對勁」。\n\n例句：I\'m feeling under the weather today.\n\n💡 on cloud nine 是「超開心」的意思喔！' },
+  '63B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 under the weather = 身體不舒服\n\n感覺要感冒了，身體有點「不太對勁」。\n\n例句：I\'m feeling under the weather today.\n\n💡 over the moon 是「超開心」的意思喔！' },
+  '63C': { correct: true,  reply: '✅ 答對了！\n👉 under the weather = 身體不舒服\n\n輕微感冒不想直接說 I\'m sick 時超好用！比較委婉。\n\n例句：I\'m feeling under the weather today.\n\n👏 繼續下一題！' },
+  '63D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 under the weather = 身體不舒服\n\n感覺要感冒了，身體有點「不太對勁」。\n\n例句：I\'m feeling under the weather today.\n\n💡 fed up 是「受夠了」的意思喔！' },
+
+  // Q64 - 正確答案: B (lost her cool)
+  '64A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 lose one\'s cool = 失控、發脾氣\n\n被老闆無理罵後，在會議上「失控」了！\n\n例句：He lost his cool and started shouting.\n\n💡 chill out 剛好相反，是「冷靜」的意思喔！' },
+  '64B': { correct: true,  reply: '✅ 答對了！\n👉 lose one\'s cool = 失控、發脾氣\n\ncool 是「冷靜」，lose your cool 就是「失去冷靜」。相反詞 keep your cool！\n\n例句：He lost his cool and started shouting.\n\n👏 繼續下一題！' },
+  '64C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 lose one\'s cool = 失控、發脾氣\n\n被老闆無理罵後，在會議上「失控」了！\n\n例句：He lost his cool and started shouting.\n\n💡 take it easy 是「放輕鬆」的意思喔！' },
+  '64D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 lose one\'s cool = 失控、發脾氣\n\n被老闆無理罵後，在會議上「失控」了！\n\n例句：He lost his cool and started shouting.\n\n💡 over the moon 是「超開心」的意思喔！' },
+
+  // Q65 - 正確答案: C (Take it easy)
+  '65A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take it easy = 放輕鬆、別緊張\n\n別擔心考試啦，「放輕鬆」就好！\n\n例句：Take it easy — you\'ve studied hard.\n\n💡 freak out 剛好相反，是「抓狂」的意思喔！' },
+  '65B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take it easy = 放輕鬆、別緊張\n\n別擔心考試啦，「放輕鬆」就好！\n\n例句：Take it easy — you\'ve studied hard.\n\n💡 fed up 是「受夠了」的意思喔！' },
+  '65C': { correct: true,  reply: '✅ 答對了！\n👉 take it easy = 放輕鬆、別太緊繃\n\n也可以當再見的告別語：See you later, take it easy!（回去放輕鬆喔！）\n\n例句：Take it easy — you\'ve studied hard.\n\n🎉 Week 13 測驗完成！情緒英文你掌握得很好！' },
+  '65D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take it easy = 放輕鬆、別緊張\n\n別擔心考試啦，「放輕鬆」就好！\n\n例句：Take it easy — you\'ve studied hard.\n\n💡 lose your cool 是「失控發脾氣」的意思喔！' },
+
+  // ===== Week 14: Money & Shopping =====
+
+  // Q66 - 正確答案: B (on a tight budget)
+  '66A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on a tight budget = 預算很緊\n\n吃不起高級餐廳，因為這個月「預算很緊」。\n\n例句：I\'m on a tight budget this month.\n\n💡 splurge 剛好相反，是「大手筆花錢」的意思喔！' },
+  '66B': { correct: true,  reply: '✅ 答對了！\n👉 on a tight budget = 預算很緊、手頭不寬裕\n\ntight 是「緊」，預算緊就是錢不多！\n\n例句：I\'m on a tight budget this month.\n\n👏 繼續下一題！' },
+  '66C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on a tight budget = 預算很緊\n\n吃不起高級餐廳，因為這個月「預算很緊」。\n\n例句：I\'m on a tight budget this month.\n\n💡 break the bank 是「花光積蓄」的意思喔！' },
+  '66D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 on a tight budget = 預算很緊\n\n吃不起高級餐廳，因為這個月「預算很緊」。\n\n例句：I\'m on a tight budget this month.\n\n💡 live paycheck to paycheck 是「月光族」，題目強調「這個月」喔！' },
+
+  // Q67 - 正確答案: C (splurge)
+  '67A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 splurge = 大手筆花錢、犒賞自己\n\n生日決定「大手筆」吃頓好的！\n\n例句：I splurged on a designer bag for my birthday.\n\n💡 pinch pennies 剛好相反，是「省吃儉用」的意思喔！' },
+  '67B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 splurge = 大手筆花錢、犒賞自己\n\n生日決定「大手筆」吃頓好的！\n\n例句：I splurged on a designer bag for my birthday.\n\n💡 break the bank 是「花光積蓄」（負面），但 splurge 比較正面，是「偶爾犒賞自己」喔！' },
+  '67C': { correct: true,  reply: '✅ 答對了！\n👉 splurge = 大手筆花錢、犒賞自己\n\n後面常接 on：splurge on a watch / a meal. 這是「偶爾犒賞自己」，比較正面！\n\n例句：I splurged on a designer bag for my birthday.\n\n👏 繼續下一題！' },
+  '67D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 splurge = 大手筆花錢、犒賞自己\n\n生日決定「大手筆」吃頓好的！\n\n例句：I splurged on a designer bag for my birthday.\n\n💡 put aside 是「把錢留下來」的意思喔！' },
+
+  // Q68 - 正確答案: B (a steal)
+  '68A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a steal = 超划算、便宜到像偷的\n\n名牌外套只要 30 美元，「超划算」！\n\n例句：This jacket was only $20 — what a steal!\n\n💡 a rip-off 剛好相反，是「坑人」的意思喔！' },
+  '68B': { correct: true,  reply: '✅ 答對了！\n👉 a steal = 超划算、便宜到像偷的\n\n字面雖然是「偷」，但口語就是「便宜到像偷來的」，是稱讚！\n\n例句：This jacket was only $20 — what a steal!\n\n👏 繼續下一題！' },
+  '68C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a steal = 超划算、便宜到像偷的\n\n名牌外套只要 30 美元，「超划算」！\n\n例句：This jacket was only $20 — what a steal!\n\n💡 a tight budget 是「預算緊」的意思喔！' },
+  '68D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a steal = 超划算、便宜到像偷的\n\n名牌外套只要 30 美元，「超划算」！\n\n例句：This jacket was only $20 — what a steal!\n\n💡 breadwinner 是「家中經濟支柱」的意思喔！' },
+
+  // Q69 - 正確答案: C (put aside)
+  '69A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 put aside = 把錢留下來、存一筆\n\n每個月「存」300 美元為了未來買房子。\n\n例句：She puts aside $200 every month for emergencies.\n\n💡 splurge 剛好相反，是「大手筆花錢」的意思喔！' },
+  '69B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 put aside = 把錢留下來、存一筆\n\n每個月「存」300 美元為了未來買房子。\n\n例句：She puts aside $200 every month for emergencies.\n\n💡 break the bank 是「花光積蓄」的意思喔！' },
+  '69C': { correct: true,  reply: '✅ 答對了！\n👉 put aside = 把錢留下來、存一筆\n\n字面是「放到旁邊」，意思是「先把錢挪出來存起來」。也可以用在時間上！\n\n例句：She puts aside $200 every month for emergencies.\n\n👏 繼續下一題！' },
+  '69D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 put aside = 把錢留下來、存一筆\n\n每個月「存」300 美元為了未來買房子。\n\n例句：She puts aside $200 every month for emergencies.\n\n💡 rip off 是「敲竹槓」的意思喔！' },
+
+  // Q70 - 正確答案: C (living paycheck to paycheck)
+  '70A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 live paycheck to paycheck = 月光族、領多少花多少\n\n房租高、學貸多，很多年輕人都是「月光族」。\n\n例句：Many young people live paycheck to paycheck.\n\n💡 splurge 是「大手筆花錢」的意思喔！' },
+  '70B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 live paycheck to paycheck = 月光族、領多少花多少\n\n房租高、學貸多，很多年輕人都是「月光族」。\n\n例句：Many young people live paycheck to paycheck.\n\n💡 break the bank 是「一次性花光積蓄」，題目說「持續狀態」喔！' },
+  '70C': { correct: true,  reply: '✅ 答對了！\n👉 live paycheck to paycheck = 月光族\n\npaycheck 是薪水支票，字面是「靠每張薪水支票過活」——下個月薪水進來才能繼續過。就是月光族！\n\n例句：Many young people live paycheck to paycheck.\n\n🎉 Week 14 測驗完成！理財英文你掌握得很好！' },
+  '70D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 live paycheck to paycheck = 月光族、領多少花多少\n\n房租高、學貸多，很多年輕人都是「月光族」。\n\n例句：Many young people live paycheck to paycheck.\n\n💡 save up 是「存錢」，剛好相反喔！' },
+
+  // ===== Week 15: Goals & Productivity =====
+
+  // Q71 - 正確答案: B (set the bar high)
+  '71A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 set the bar high = 設定高標準\n\n姊姊是榜首，「把標準設得很高」，弟弟妹妹壓力山大！\n\n例句：Her first novel set the bar high for her next book.\n\n💡 drop the ball 是「出包」的意思喔！' },
+  '71B': { correct: true,  reply: '✅ 答對了！\n👉 set the bar high = 設定高標準\n\nbar 是跳高比賽的橫桿，把橫桿設高就是「設定高標準」！\n\n例句：Her first novel set the bar high for her next book.\n\n👏 繼續下一題！' },
+  '71C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 set the bar high = 設定高標準\n\n姊姊是榜首，「把標準設得很高」，弟弟妹妹壓力山大！\n\n例句：Her first novel set the bar high for her next book.\n\n💡 fall behind 是「進度落後」的意思喔！' },
+  '71D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 set the bar high = 設定高標準\n\n姊姊是榜首，「把標準設得很高」，弟弟妹妹壓力山大！\n\n例句：Her first novel set the bar high for her next book.\n\n💡 bite off more than one can chew 是「逞強」的意思喔！' },
+
+  // Q72 - 正確答案: C (hit the ground running)
+  '72A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the ground running = 一上手就全力衝刺\n\n第一天上班就成交兩筆，「快速進入狀況」！\n\n例句：She hit the ground running in her new job.\n\n💡 drop the ball 剛好相反，是「出包」的意思喔！' },
+  '72B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the ground running = 一上手就全力衝刺\n\n第一天上班就成交兩筆，「快速進入狀況」！\n\n例句：She hit the ground running in her new job.\n\n💡 fall behind 剛好相反，是「進度落後」喔！' },
+  '72C': { correct: true,  reply: '✅ 答對了！\n👉 hit the ground running = 一上手就全力衝刺\n\n想像跳傘落地後馬上跑起來，不能停！面試自我介紹超加分。\n\n例句：She hit the ground running in her new job.\n\n👏 繼續下一題！' },
+  '72D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the ground running = 一上手就全力衝刺\n\n第一天上班就成交兩筆，「快速進入狀況」！\n\n例句：She hit the ground running in her new job.\n\n💡 bite off more than one can chew 是「逞強」的意思喔！' },
+
+  // Q73 - 正確答案: C (dropped the ball)
+  '73A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 drop the ball = 出包、犯下重大失誤\n\n忘了寄信給客戶，案子飛了，這就是「出包」！\n\n例句：I really dropped the ball on this project.\n\n💡 set the bar high 是「設定高標準」的意思喔！' },
+  '73B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 drop the ball = 出包、犯下重大失誤\n\n忘了寄信給客戶，案子飛了，這就是「出包」！\n\n例句：I really dropped the ball on this project.\n\n💡 aim high 是「志向遠大」的意思喔！' },
+  '73C': { correct: true,  reply: '✅ 答對了！\n👉 drop the ball = 出包、犯下重大失誤\n\n來自運動，球掉了就是失誤！職場常用，誠實承認錯誤的好說法。\n\n例句：I really dropped the ball on this project.\n\n👏 繼續下一題！' },
+  '73D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 drop the ball = 出包、犯下重大失誤\n\n忘了寄信給客戶，案子飛了，這就是「出包」！\n\n例句：I really dropped the ball on this project.\n\n💡 hit the ground running 是「快速進入狀況」的意思喔！' },
+
+  // Q74 - 正確答案: D (biting off more than you can chew)
+  '74A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 bite off more than one can chew = 逞強、做超出能力的事\n\n五個社團、三堂課還打工，根本「攬太多」啦！\n\n例句：Don\'t bite off more than you can chew.\n\n💡 on track 是「進度正常」的意思喔！' },
+  '74B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 bite off more than one can chew = 逞強、做超出能力的事\n\n五個社團、三堂課還打工，根本「攬太多」啦！\n\n例句：Don\'t bite off more than you can chew.\n\n💡 set the bar high 是「設高標準」，比較正面喔！' },
+  '74C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 bite off more than one can chew = 逞強、做超出能力的事\n\n五個社團、三堂課還打工，根本「攬太多」啦！\n\n例句：Don\'t bite off more than you can chew.\n\n💡 hit the ground running 是「快速進入狀況」（正面）的意思喔！' },
+  '74D': { correct: true,  reply: '✅ 答對了！\n👉 bite off more than one can chew = 逞強、攬太多事\n\n字面是「咬下比能咀嚼還多的食物」——畫面超清楚！one\'s 要根據主詞變化。\n\n例句：Don\'t bite off more than you can chew.\n\n👏 繼續下一題！' },
+
+  // Q75 - 正確答案: B (behind schedule)
+  '75A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 behind schedule = 進度落後\n\n本來 5 月要完工，現在晚了三週，就是「落後進度」！\n\n例句：The project is behind schedule.\n\n💡 on track 是「進度正常」，剛好相反喔！' },
+  '75B': { correct: true,  reply: '✅ 答對了！\n👉 behind schedule = 進度落後\n\n相反詞 ahead of schedule（超前）；on schedule 是「準時」。\n\n例句：The project is behind schedule.\n\n👏 繼續下一題！' },
+  '75C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 behind schedule = 進度落後\n\n本來 5 月要完工，現在晚了三週，就是「落後進度」！\n\n例句：The project is behind schedule.\n\n💡 ahead of schedule 是「超前進度」，剛好相反喔！' },
+  '75D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 behind schedule = 進度落後\n\n本來 5 月要完工，現在晚了三週，就是「落後進度」！\n\n例句：The project is behind schedule.\n\n💡 above and beyond 是「超越本分」的意思喔！' },
+
+  // ===== Week 16: School & Studying =====
+
+  // Q76 - 正確答案: C (cram)
+  '76A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 cram = 臨時抱佛腳、惡補\n\n整個月沒讀書，今晚只能「臨時抱佛腳」！\n\n例句：I crammed all night for the test.\n\n💡 ace the test 是「考超高分」（結果），題目問的是「動作」喔！' },
+  '76B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 cram = 臨時抱佛腳、惡補\n\n整個月沒讀書，今晚只能「臨時抱佛腳」！\n\n例句：I crammed all night for the test.\n\n💡 flunk 是「考不及格」的意思喔！' },
+  '76C': { correct: true,  reply: '✅ 答對了！\n👉 cram = 臨時抱佛腳、惡補\n\n字面是「塞」資訊進腦袋，補習班就叫 cram school！\n\n例句：I crammed all night for the test.\n\n👏 繼續下一題！' },
+  '76D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 cram = 臨時抱佛腳、惡補\n\n整個月沒讀書，今晚只能「臨時抱佛腳」！\n\n例句：I crammed all night for the test.\n\n💡 blank out 是「腦袋一片空白」的意思喔！' },
+
+  // Q77 - 正確答案: D (aced the test)
+  '77A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 ace a test = 考超高分\n\n讀了兩週，得了 99 分，這就是「考超棒」！\n\n例句：She aced the math test.\n\n💡 flunk 剛好相反，是「考不及格」喔！' },
+  '77B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 ace a test = 考超高分\n\n讀了兩週，得了 99 分，這就是「考超棒」！\n\n例句：She aced the math test.\n\n💡 barely scrape by 是「勉強過關」（剛好及格），不是高分喔！' },
+  '77C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 ace a test = 考超高分\n\n讀了兩週，得了 99 分，這就是「考超棒」！\n\n例句：She aced the math test.\n\n💡 blank out 是「腦袋一片空白」的意思喔！' },
+  '77D': { correct: true,  reply: '✅ 答對了！\n👉 ace a test = 考超高分、表現超棒\n\nace 當動詞超實用：ace an interview / ace a presentation 都行！\n\n例句：She aced the math test.\n\n👏 繼續下一題！' },
+
+  // Q78 - 正確答案: B (barely scraped by)
+  '78A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 barely scrape by = 勉強過關、低空飛過\n\n60 分剛好及格，「低空飛過」啊！\n\n例句：I barely scraped by on the final.\n\n💡 ace it 是「考超好」，60 分不算高喔！' },
+  '78B': { correct: true,  reply: '✅ 答對了！\n👉 barely scrape by = 勉強過關、低空飛過\n\nscrape 是「擦過」，barely 是「勉強」。也可以用在錢上：scrape by on a small income.\n\n例句：I barely scraped by on the final.\n\n👏 繼續下一題！' },
+  '78C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 barely scrape by = 勉強過關、低空飛過\n\n60 分剛好及格，「低空飛過」啊！\n\n例句：I barely scraped by on the final.\n\n💡 pass with flying colors 是「高分通過」，60 分不算高喔！' },
+  '78D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 barely scrape by = 勉強過關、低空飛過\n\n60 分剛好及格，「低空飛過」啊！\n\n例句：I barely scraped by on the final.\n\n💡 hit the books 是「開始用功」（動作），題目問的是「結果」喔！' },
+
+  // Q79 - 正確答案: C (hit the books)
+  '79A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the books = 開始用功讀書\n\n期末考下週，不能再看 Netflix 了，要「開始用功」！\n\n例句：I really need to hit the books before finals.\n\n💡 pull an all-nighter 是「熬夜通宵」（特定一晚），題目說「停止 Netflix 開始讀」，意思是長期投入喔！' },
+  '79B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the books = 開始用功讀書\n\n期末考下週，不能再看 Netflix 了，要「開始用功」！\n\n例句：I really need to hit the books before finals.\n\n💡 blank out 是「腦袋一片空白」的意思喔！' },
+  '79C': { correct: true,  reply: '✅ 答對了！\n👉 hit the books = 開始用功讀書\n\nhit 不是「打」，是「開始投入」！類似的有 hit the gym（去健身）、hit the road（上路）。\n\n例句：I really need to hit the books before finals.\n\n👏 繼續最後一題！' },
+  '79D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the books = 開始用功讀書\n\n期末考下週，不能再看 Netflix 了，要「開始用功」！\n\n例句：I really need to hit the books before finals.\n\n💡 flunk 是「考不及格」的意思喔！' },
+
+  // Q80 - 正確答案: B (blanked out)
+  '80A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 blank out = 腦袋一片空白\n\n明明會的答案，被叫到時「腦袋空白」想不起來！\n\n例句：I blanked out during the presentation.\n\n💡 ace it 是「考超好」，題目情境是想不起來喔！' },
+  '80B': { correct: true,  reply: '✅ 答對了！\n👉 blank out = 腦袋一片空白\n\n字面是「變空白」，常用在考試、上台緊張時——突然什麼都想不起來。類似的有 brain fart！\n\n例句：I blanked out during the presentation.\n\n🎉 Week 16 測驗完成！恭喜你完成 80 天的英文片語挑戰！你超棒！💪' },
+  '80C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 blank out = 腦袋一片空白\n\n明明會的答案，被叫到時「腦袋空白」想不起來！\n\n例句：I blanked out during the presentation.\n\n💡 cram 是「臨時抱佛腳」（事前），題目情境是當下想不起來喔！' },
+  '80D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 blank out = 腦袋一片空白\n\n明明會的答案，被叫到時「腦袋空白」想不起來！\n\n例句：I blanked out during the presentation.\n\n💡 hit the books 是「開始用功讀書」的意思喔！' },
 };
 
 // 其他關鍵字回覆

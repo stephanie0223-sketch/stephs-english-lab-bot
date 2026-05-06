@@ -63,6 +63,48 @@ const dailyIdioms = [
   'take something with a grain of salt',      // Day 43
   'turn over a new leaf',                     // Day 44
   'broaden one\'s horizons',                  // Day 45
+  // Week 10: Travel & Culture (Day 46-50)
+  'jet lag / book a flight',                  // Day 46
+  'off the beaten path / tourist trap',       // Day 47
+  'when in Rome',                             // Day 48
+  'catch a flight / miss the boat',           // Day 49
+  'wanderlust / itchy feet',                  // Day 50
+  // Week 11: Job Interview & Career (Day 51-55)
+  'land a job / get one\'s foot in the door', // Day 51
+  'on the same page / in the loop',           // Day 52
+  'take initiative / go above and beyond',    // Day 53
+  'climb the corporate ladder',               // Day 54
+  'burn out / call it a day',                 // Day 55
+  // Week 12: Food & Eating (Day 56-60)
+  'a piece of cake / a tough cookie',         // Day 56
+  'food coma / stuffed',                      // Day 57
+  'eat like a horse / eat like a bird',       // Day 58
+  'bring home the bacon / breadwinner',       // Day 59
+  'spill the beans / in a nutshell',          // Day 60
+  // Week 13: Emotions & Reactions (Day 61-65)
+  'on cloud nine / over the moon',            // Day 61
+  'fed up / had it up to here',               // Day 62
+  'down in the dumps / under the weather',    // Day 63
+  'freak out / lose one\'s cool',             // Day 64
+  'chill out / take it easy',                 // Day 65
+  // Week 14: Money & Shopping (Day 66-70)
+  'on a tight budget / pinch pennies',        // Day 66
+  'splurge / break the bank',                 // Day 67
+  'a steal / rip-off',                        // Day 68
+  'save up / put aside',                      // Day 69
+  'live paycheck to paycheck',                // Day 70
+  // Week 15: Goals & Productivity (Day 71-75)
+  'set the bar high / aim high',              // Day 71
+  'hit the ground running',                   // Day 72
+  'drop the ball / fall behind',              // Day 73
+  'bite off more than one can chew',          // Day 74
+  'on track / behind schedule',               // Day 75
+  // Week 16: School & Studying (Day 76-80)
+  'cram / pull an all-nighter',               // Day 76
+  'ace a test / pass with flying colors',     // Day 77
+  'flunk / barely scrape by',                 // Day 78
+  'hit the books / bookworm',                 // Day 79
+  'brain fart / blank out',                   // Day 80
 ];
 
 // Gemini AI 設定
