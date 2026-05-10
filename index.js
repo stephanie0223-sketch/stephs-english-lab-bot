@@ -3,7 +3,6 @@ const path = require('path');
 const cron = require('node-cron');
 const { messagingApi, middleware } = require('@line/bot-sdk');
 const { MessagingApiClient } = messagingApi;
-const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
 
@@ -107,10 +106,6 @@ const dailyIdioms = [
   'brain fart / blank out',                   // Day 80
 ];
 
-// Gemini AI 設定
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-
 // LINE Messaging API 設定
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -153,7 +148,7 @@ cron.schedule('30 7 * * 1-5', async () => {
         },
         {
           type: 'text',
-          text: `✏️ 造句練習時間！\n\n用今天學的「${todayIdiom}」或任何你學過的 idiom 造一個英文句子，直接打在聊天室裡，幾秒鐘內就會收到 AI 批改回饋喔！`,
+          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後可以丟給 ChatGPT 或 Claude 批改，問他們：「請幫我批改這句英文，idiom 有用對嗎？」就會得到完整回饋 💡`,
         },
       ],
     });
@@ -323,73 +318,18 @@ async function handleEvent(event) {
     });
   }
 
-  // 句子長度 >= 10 才送 AI 批改（避免短訊息誤觸發）
-  if (userText.length >= 10) {
-    return handleAIGrading(event.replyToken, userText);
+  // 看起來像英文句子（長度 >= 10 且含英文字母）→ 推薦使用其他 AI 工具批改
+  if (userText.length >= 10 && /[a-zA-Z]/.test(userText)) {
+    return client.replyMessage({
+      replyToken: event.replyToken,
+      messages: [{
+        type: 'text',
+        text: `看起來你想練習造句 ✏️\n\n推薦你用 ChatGPT 或 Claude 幫你批改！只要這樣問：\n\n「請幫我批改這句英文，看 idiom 用得對不對、文法有沒有錯，並示範 native speaker 會怎麼說：\n[你的句子]」\n\n他們會給你很棒的回饋 💡\n\n🔗 ChatGPT：chat.openai.com\n🔗 Claude：claude.ai\n\n練習完歡迎在 IG 私訊跟我分享你寫的句子 ☺️`,
+      }],
+    });
   }
 
   return null;
-}
-
-// ==========================================
-// AI 造句批改（Gemini）
-// ==========================================
-async function handleAIGrading(replyToken, sentence) {
-  const systemPrompt = `你是 Steph's English Lab 的 AI 英文助教。學生會用英文 idiom 造句，請幫他們批改。
-
-批改重點：idiom 是否正確使用、文法、用字，並示範 native speaker 會怎麼說。
-語氣：親切鼓勵，像溫暖的英文老師。
-語言：繁體中文 + 英文混合。
-如果學生沒有用到任何 idiom 或不是英文句子，友善引導他造句。
-判定 ✅ 或 ⚠️ 必須跟後面的分析一致，不能矛盾。
-
-回覆格式：
-📝 你的句子：[複述原句]
-✅ 片語用法正確！ 或 ⚠️ 片語用法有誤
-📖 片語解析：[這個 idiom 的意思和用法]
-📝 文法批改：[有錯指出，沒錯寫「文法正確！」]
-✨ Native 說法：[native speaker 最自然的寫法]
-💡 小提醒：[鼓勵或補充小知識]`;
-
-  try {
-    // 設定 8 秒超時，避免 LINE replyToken 過期（有效期約 10-30 秒）
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('AI_TIMEOUT')), 8000)
-    );
-    const aiPromise = model.generateContent({
-      contents: [
-        { role: 'user', parts: [{ text: systemPrompt + '\n\n學生的句子：' + sentence }] }
-      ],
-    });
-    const result = await Promise.race([aiPromise, timeoutPromise]);
-    const reply = result.response.text().replace(/\*{1,2}/g, '');
-
-    return client.replyMessage({
-      replyToken,
-      messages: [{ type: 'text', text: reply }],
-    });
-  } catch (err) {
-    console.error('[AI grading error]', err.message);
-
-    if (err.message === 'AI_TIMEOUT') {
-      return client.replyMessage({
-        replyToken,
-        messages: [{ type: 'text', text: 'AI 批改回應時間較久，請再傳一次句子試試看 ☺️' }],
-      });
-    }
-
-    if (err.status === 429) {
-      return client.replyMessage({
-        replyToken,
-        messages: [{ type: 'text', text: '目前批改的人比較多，請稍後再試一次 ☺️' }],
-      });
-    }
-
-    return client.replyMessage({
-      replyToken,
-      messages: [{ type: 'text', text: '批改功能暫時無法使用，請稍後再試 🙏' }],
-    });
-  }
 }
 
 function getToday() {
