@@ -324,7 +324,7 @@ async function handleEvent(event) {
       replyToken: event.replyToken,
       messages: [{
         type: 'text',
-        text: `看起來你想練習造句 ✏️\n\n我做了一個專屬的「造句小助教 Gem」幫你批改！直接點下面連結，把你的句子貼進去就會收到完整回饋 💡\n\n🌿 Steph's 造句小助教：\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n他會幫你檢查：\n✅ idiom 用得對不對\n📝 文法和用字\n✨ Native speaker 會怎麼說\n\n練習完歡迎在 IG 私訊跟我分享你寫的句子 ☺️`,
+        text: `看起來你想練習造句 ✏️\n\n我做了一個專屬的「造句小助教 Gem」幫你批改！直接點下面連結，把你的句子貼進去就會收到完整回饋 💡\n\n🌿 Steph's 造句小助教：\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n他會幫你檢查：\n✅ idiom 用得對不對\n📝 文法和用字\n✨ Native speaker 會怎麼說`,
       }],
     });
   }
