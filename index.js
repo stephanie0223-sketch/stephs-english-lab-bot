@@ -148,7 +148,7 @@ cron.schedule('30 7 * * 1-5', async () => {
         },
         {
           type: 'text',
-          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後可以丟給 ChatGPT、Claude 或 Gemini 批改，問他們：「請幫我批改這句英文，idiom 有用對嗎？」就會得到完整回饋 💡`,
+          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n直接貼上句子就會收到 idiom 用法、文法、native 說法的完整回饋 💡`,
         },
       ],
     });
@@ -324,7 +324,7 @@ async function handleEvent(event) {
       replyToken: event.replyToken,
       messages: [{
         type: 'text',
-        text: `看起來你想練習造句 ✏️\n\n推薦你用 ChatGPT、Claude 或 Gemini 幫你批改！只要這樣問：\n\n「請幫我批改這句英文，看 idiom 用得對不對、文法有沒有錯，並示範 native speaker 會怎麼說：\n[你的句子]」\n\n他們會給你很棒的回饋 💡\n\n🔗 ChatGPT：chat.openai.com\n🔗 Claude：claude.ai\n🔗 Gemini：gemini.google.com\n\n練習完歡迎在 IG 私訊跟我分享你寫的句子 ☺️`,
+        text: `看起來你想練習造句 ✏️\n\n我做了一個專屬的「造句小助教 Gem」幫你批改！直接點下面連結，把你的句子貼進去就會收到完整回饋 💡\n\n🌿 Steph's 造句小助教：\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n他會幫你檢查：\n✅ idiom 用得對不對\n📝 文法和用字\n✨ Native speaker 會怎麼說\n\n練習完歡迎在 IG 私訊跟我分享你寫的句子 ☺️`,
       }],
     });
   }
