@@ -205,6 +205,33 @@ cron.schedule('*/14 * * * *', () => {
 // ==========================================
 // 手動觸發推播（補發用）
 // ==========================================
+app.get('/trigger-card/:day', async (req, res) => {
+  const dayNum = parseInt(req.params.day);
+  const entry = schedule.find(s => s.type === 'card' && s.dayNum === dayNum);
+  if (!entry) return res.status(404).send(`Day ${dayNum} card not found`);
+
+  const todayIdiom = dailyIdioms[entry.dayNum - 1] || '';
+  try {
+    await client.broadcast({
+      messages: [
+        {
+          type: 'image',
+          originalContentUrl: getImageUrl(entry.image),
+          previewImageUrl: getImageUrl(entry.image),
+        },
+        {
+          type: 'text',
+          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n直接貼上句子就會收到 idiom 用法、文法、native 說法的完整回饋 💡`,
+        },
+      ],
+    });
+    res.send(`Day ${dayNum} card sent: ${entry.image}`);
+  } catch (err) {
+    console.error('Manual card trigger error:', err.message);
+    res.status(500).send(err.message);
+  }
+});
+
 app.get('/trigger-quiz/:week', async (req, res) => {
   const week = parseInt(req.params.week);
   const entry = schedule.find(s => s.type === 'quiz' && s.week === week);
