@@ -6,14 +6,15 @@
 <title>複習遊戲 — Steph's English Lab</title>
 <style>
   :root {
-    --teal: #0d7377;
-    --teal-light: #e0f5f5;
-    --bg: #f5fafa;
-    --ink: #2a2a2a;
-    --muted: #6b9a9c;
-    --green: #4a7c59;
-    --red: #e05252;
-    --amber: #d4a574;
+    /* Steph's English Lab 品牌色 */
+    --teal: #4a7c59;        /* 主色：森林綠 */
+    --teal-light: #e6efe8;  /* 主色淡底 */
+    --bg: #faf8f5;          /* 背景：米白 */
+    --ink: #2f3a32;
+    --muted: #8a9a8d;
+    --green: #6b9f78;       /* 副色 */
+    --red: #e74c3c;         /* 品牌紅 */
+    --amber: #d4a574;       /* 暖色 */
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body {
@@ -36,7 +37,7 @@
     background: #fff;
     border-radius: 20px;
     padding: 28px 24px;
-    box-shadow: 0 4px 24px rgba(13,115,119,.10);
+    box-shadow: 0 4px 24px rgba(74,124,89,.10);
   }
   .brand { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: 2px; margin-bottom: 18px; }
   h1 { font-size: 26px; color: var(--teal); text-align: center; margin-bottom: 8px; }
@@ -84,9 +85,9 @@
     background: var(--teal-light); color: var(--teal);
     display: grid; place-items: center; font-weight: 700; font-size: 14px;
   }
-  .opt.correct { background: #eaf5ee; border-color: var(--green); }
+  .opt.correct { background: #eef4ef; border-color: var(--green); }
   .opt.correct .k { background: var(--green); color: #fff; }
-  .opt.wrong { background: #fdeeee; border-color: var(--red); }
+  .opt.wrong { background: #fdefed; border-color: var(--red); }
   .opt.wrong .k { background: var(--red); color: #fff; }
   .opt.locked { pointer-events: none; }
   .opt.dim { opacity: .45; }
@@ -94,19 +95,19 @@
   /* --- 答題回饋（教學區）--- */
   .fb { margin-top: 16px; border-radius: 14px; padding: 15px 16px; display: none; }
   .fb.on { display: block; animation: fade .25s ease; }
-  .fb.good { background: #eaf5ee; border: 1px solid #cfe6d7; }
-  .fb.bad  { background: #fdeeee; border: 1px solid #f5d5d5; }
+  .fb.good { background: #eef4ef; border: 1px solid #cfe0d4; }
+  .fb.bad  { background: #fdefed; border: 1px solid #f3d6d1; }
   .fb .verdict { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
   .fb.good .verdict { color: var(--green); }
   .fb.bad  .verdict { color: var(--red); }
   .fb .idiom {
     font-size: 15px; font-weight: 700; color: var(--teal);
     padding-bottom: 8px; margin-bottom: 8px;
-    border-bottom: 1px dashed rgba(13,115,119,.25);
+    border-bottom: 1px dashed rgba(74,124,89,.28);
   }
   .fb .explain { font-size: 14px; color: var(--ink); white-space: pre-wrap; }
   .fb .example {
-    font-size: 13px; color: #4a6b6d; margin-top: 10px;
+    font-size: 13px; color: #5f6f62; margin-top: 10px;
     padding: 9px 12px; background: rgba(255,255,255,.7); border-radius: 9px;
   }
   .fb .example b { color: var(--teal); }
@@ -486,7 +487,7 @@
     var grade = $('grade');
     if (acc === 100)      { grade.textContent = '🏆 完美通關！'; grade.style.color = '#d4a574'; }
     else if (acc >= 80)   { grade.textContent = '🌟 表現很棒！';  grade.style.color = '#4a7c59'; }
-    else if (acc >= 60)   { grade.textContent = '💪 再加把勁！';  grade.style.color = '#0d7377'; }
+    else if (acc >= 60)   { grade.textContent = '💪 再加把勁！';  grade.style.color = '#4a7c59'; }
     else                  { grade.textContent = '📖 回去複習一下'; grade.style.color = '#6b9a9c'; }
 
     sfx.finish();
