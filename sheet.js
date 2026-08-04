@@ -3,9 +3,12 @@
 
 const SHEET_URL = process.env.SHEET_WEBHOOK_URL || '';
 
-async function callSheet(payload, timeoutMs = 6000) {
-  if (!SHEET_URL) return { ok: false, error: 'SHEET_WEBHOOK_URL not set' };
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
+// Apps Script 偶爾會回傳 HTML 錯誤頁（短時間內請求過多），此時重試一次
+async function callOnce(payload, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -17,13 +20,30 @@ async function callSheet(payload, timeoutMs = 6000) {
       signal: controller.signal,
       redirect: 'follow',
     });
-    return await res.json();
+    const text = await res.text();
+    try {
+      return JSON.parse(text);
+    } catch {
+      return { ok: false, retryable: true, error: 'non-JSON response' };
+    }
   } catch (err) {
-    console.error('[sheet]', payload.action, err.message);
-    return { ok: false, error: err.message };
+    return { ok: false, retryable: true, error: err.message };
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function callSheet(payload, timeoutMs = 7000) {
+  if (!SHEET_URL) return { ok: false, error: 'SHEET_WEBHOOK_URL not set' };
+
+  let result = await callOnce(payload, timeoutMs);
+  if (result.retryable) {
+    await sleep(700);
+    result = await callOnce(payload, timeoutMs);
+  }
+
+  if (!result.ok) console.error('[sheet]', payload.action, result.error);
+  return result;
 }
 
 const sheet = {
