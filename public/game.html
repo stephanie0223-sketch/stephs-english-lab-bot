@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>複習遊戲 — Steph's English Lab</title>
+<style>
+  :root {
+    --teal: #0d7377;
+    --teal-light: #e0f5f5;
+    --bg: #f5fafa;
+    --ink: #2a2a2a;
+    --muted: #6b9a9c;
+    --green: #4a7c59;
+    --red: #e05252;
+    --amber: #d4a574;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "PingFang TC", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    line-height: 1.6;
+  }
+  .app { width: 100%; max-width: 480px; }
+  .screen { display: none; animation: fade .3s ease; }
+  .screen.on { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 24px rgba(13,115,119,.10);
+  }
+  .brand { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: 2px; margin-bottom: 18px; }
+  h1 { font-size: 26px; color: var(--teal); text-align: center; margin-bottom: 8px; }
+  .sub { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+
+  label { display: block; font-size: 14px; color: var(--teal); font-weight: 600; margin: 14px 0 6px; }
+  input {
+    width: 100%; padding: 13px 15px; font-size: 16px;
+    border: 2px solid var(--teal-light); border-radius: 12px;
+    background: var(--bg); font-family: inherit; color: var(--ink);
+  }
+  input:focus { outline: none; border-color: var(--teal); }
+
+  button {
+    width: 100%; padding: 15px; font-size: 17px; font-weight: 700;
+    background: var(--teal); color: #fff; border: none; border-radius: 14px;
+    cursor: pointer; font-family: inherit; margin-top: 20px;
+    transition: transform .1s, opacity .2s;
+  }
+  button:active { transform: scale(.98); }
+  button:disabled { opacity: .5; cursor: default; }
+  button.ghost { background: transparent; color: var(--teal); border: 2px solid var(--teal-light); margin-top: 10px; }
+
+  /* --- 遊戲進行中 --- */
+  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 14px; }
+  .hud .qnum { color: var(--muted); font-weight: 600; }
+  .hud .streak { color: var(--amber); font-weight: 700; }
+  .bar { height: 8px; background: var(--teal-light); border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
+  .bar > i { display: block; height: 100%; background: var(--teal); border-radius: 99px; transition: width .3s; }
+  .timer { height: 5px; background: #eee; border-radius: 99px; overflow: hidden; margin-bottom: 22px; }
+  .timer > i { display: block; height: 100%; background: var(--amber); border-radius: 99px; transition: width .1s linear; }
+  .timer.danger > i { background: var(--red); }
+
+  .qtext { font-size: 17px; font-weight: 600; margin-bottom: 20px; white-space: pre-wrap; }
+  .opts { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; background: var(--bg);
+    border: 2px solid var(--teal-light); border-radius: 14px;
+    cursor: pointer; font-size: 15px; transition: all .15s;
+  }
+  .opt:active { transform: scale(.99); }
+  .opt .k {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+    background: var(--teal-light); color: var(--teal);
+    display: grid; place-items: center; font-weight: 700; font-size: 14px;
+  }
+  .opt.correct { background: #eaf5ee; border-color: var(--green); }
+  .opt.correct .k { background: var(--green); color: #fff; }
+  .opt.wrong { background: #fdeeee; border-color: var(--red); }
+  .opt.wrong .k { background: var(--red); color: #fff; }
+  .opt.locked { pointer-events: none; }
+  .opt.dim { opacity: .45; }
+
+  .toast {
+    margin-top: 16px; padding: 13px 16px; border-radius: 12px;
+    font-size: 14px; display: none;
+  }
+  .toast.on { display: block; animation: fade .25s ease; }
+  .toast.good { background: #eaf5ee; color: var(--green); }
+  .toast.bad { background: #fdeeee; color: var(--red); }
+
+  /* --- 結果 --- */
+  .score-ring { text-align: center; margin: 8px 0 20px; }
+  .score-num { font-size: 56px; font-weight: 800; color: var(--teal); line-height: 1; }
+  .score-of { font-size: 16px; color: var(--muted); }
+  .grade { font-size: 22px; font-weight: 700; margin-top: 10px; }
+  .stats { display: flex; gap: 10px; margin-top: 20px; }
+  .stat { flex: 1; background: var(--bg); border-radius: 14px; padding: 14px; text-align: center; }
+  .stat b { display: block; font-size: 20px; color: var(--teal); }
+  .stat span { font-size: 12px; color: var(--muted); }
+  .saved { text-align: center; font-size: 13px; color: var(--muted); margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- 身分登記 -->
+  <section class="screen on" id="s-id">
+    <div class="card">
+      <div class="brand">STEPH'S ENGLISH LAB</div>
+      <h1>🎮 複習遊戲</h1>
+      <p class="sub" id="id-sub">第一次來？先登記一下你的身分</p>
+      <label for="sid">學號</label>
+      <input id="sid" inputmode="numeric" placeholder="例：10523" autocomplete="off">
+      <label for="sname">姓名</label>
+      <input id="sname" placeholder="例：王小明" autocomplete="off">
+      <button id="btn-id">開始挑戰 →</button>
+    </div>
+  </section>
+
+  <!-- 開始畫面 -->
+  <section class="screen" id="s-start">
+    <div class="card">
+      <div class="brand">STEPH'S ENGLISH LAB</div>
+      <h1 id="game-title">複習遊戲</h1>
+      <p class="sub" id="game-sub"></p>
+      <div class="stats">
+        <div class="stat"><b id="pre-count">10</b><span>題目</span></div>
+        <div class="stat"><b>20</b><span>秒／題</span></div>
+        <div class="stat"><b id="pre-name">—</b><span>挑戰者</span></div>
+      </div>
+      <button id="btn-start">開始 🚀</button>
+      <button class="ghost" id="btn-switch">不是我？換人</button>
+    </div>
+  </section>
+
+  <!-- 遊戲中 -->
+  <section class="screen" id="s-play">
+    <div class="card">
+      <div class="hud">
+        <span class="qnum" id="qnum">第 1 / 10 題</span>
+        <span class="streak" id="streak"></span>
+      </div>
+      <div class="bar"><i id="bar" style="width:0%"></i></div>
+      <div class="timer" id="timerWrap"><i id="timer" style="width:100%"></i></div>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="toast" id="toast"></div>
+    </div>
+  </section>
+
+  <!-- 結果 -->
+  <section class="screen" id="s-end">
+    <div class="card">
+      <div class="brand">STEPH'S ENGLISH LAB</div>
+      <div class="score-ring">
+        <div class="score-num" id="final-score">0</div>
+        <div class="score-of">／ <span id="final-total">10</span> 題</div>
+        <div class="grade" id="grade"></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="final-time">0s</b><span>總用時</span></div>
+        <div class="stat"><b id="final-streak">0</b><span>最長連對</span></div>
+        <div class="stat"><b id="final-acc">0%</b><span>正確率</span></div>
+      </div>
+      <button id="btn-again">再挑戰一次 🔄</button>
+      <p class="saved" id="saved-note">成績記錄中…</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var QUESTION_SECONDS = 20;
+  var KEYS = ['A', 'B', 'C', 'D'];
+
+  var params = new URLSearchParams(location.search);
+  var gameId = params.get('g') || '';
+
+  var state = {
+    student: null,
+    questions: [],
+    idx: 0,
+    score: 0,
+    streak: 0,
+    bestStreak: 0,
+    startedAt: 0,
+    timerId: null,
+    remaining: 0,
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function show(id) {
+    var all = document.querySelectorAll('.screen');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('on');
+    $(id).classList.add('on');
+  }
+
+  // ---------- 音效（Web Audio，不需外部檔案） ----------
+  var actx = null;
+  function beep(freqs, dur, type) {
+    try {
+      if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+      freqs.forEach(function (f, i) {
+        var o = actx.createOscillator();
+        var g = actx.createGain();
+        o.type = type || 'sine';
+        o.frequency.value = f;
+        o.connect(g); g.connect(actx.destination);
+        var t = actx.currentTime + i * (dur * 0.7);
+        g.gain.setValueAtTime(0.12, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+        o.start(t); o.stop(t + dur);
+      });
+    } catch (e) { /* 靜音也沒關係 */ }
+  }
+  var sfx = {
+    correct: function () { beep([660, 880], 0.16); },
+    wrong:   function () { beep([180, 130], 0.22, 'square'); },
+    finish:  function () { beep([523, 659, 784, 1046], 0.18); },
+    tick:    function () { beep([440], 0.05, 'triangle'); },
+  };
+
+  // ---------- 身分 ----------
+  function loadStudent() {
+    try {
+      var raw = localStorage.getItem('sel_student');
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveStudent(s) {
+    try { localStorage.setItem('sel_student', JSON.stringify(s)); } catch (e) {}
+  }
+
+  $('btn-id').addEventListener('click', function () {
+    var sid = $('sid').value.trim();
+    var name = $('sname').value.trim();
+    if (!sid || !name) {
+      alert('學號和姓名都要填喔 ☺️');
+      return;
+    }
+    state.student = { studentId: sid, name: name };
+    saveStudent(state.student);
+    goStart();
+  });
+
+  $('btn-switch').addEventListener('click', function () {
+    $('sid').value = '';
+    $('sname').value = '';
+    $('id-sub').textContent = '換一位同學，請重新登記';
+    show('s-id');
+  });
+
+  // ---------- 載入題目 ----------
+  function loadQuestions() {
+    return fetch('/api/quiz?g=' + encodeURIComponent(gameId))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data.ok) throw new Error(data.error || 'load failed');
+        state.questions = data.questions;
+        $('game-title').textContent = data.title || '複習遊戲';
+        $('game-sub').textContent = data.subtitle || '';
+        $('pre-count').textContent = data.questions.length;
+        $('final-total').textContent = data.questions.length;
+        return data;
+      });
+  }
+
+  function goStart() {
+    $('pre-name').textContent = state.student.name;
+    show('s-start');
+  }
+
+  // ---------- 遊戲流程 ----------
+  $('btn-start').addEventListener('click', startGame);
+  $('btn-again').addEventListener('click', function () {
+    shuffle(state.questions);
+    startGame();
+  });
+
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+
+  function startGame() {
+    state.idx = 0;
+    state.score = 0;
+    state.streak = 0;
+    state.bestStreak = 0;
+    state.startedAt = Date.now();
+    show('s-play');
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    var q = state.questions[state.idx];
+    var total = state.questions.length;
+
+    $('qnum').textContent = '第 ' + (state.idx + 1) + ' / ' + total + ' 題';
+    $('streak').textContent = state.streak >= 2 ? '🔥 連對 ' + state.streak : '';
+    $('bar').style.width = (state.idx / total * 100) + '%';
+    $('qtext').textContent = q.question;
+    $('toast').className = 'toast';
+
+    var box = $('opts');
+    box.innerHTML = '';
+    q.options.forEach(function (text, i) {
+      var el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = '<span class="k">' + KEYS[i] + '</span><span></span>';
+      el.lastChild.textContent = text;
+      el.addEventListener('click', function () { answer(i, el); });
+      box.appendChild(el);
+    });
+
+    startTimer();
+  }
+
+  function startTimer() {
+    clearInterval(state.timerId);
+    state.remaining = QUESTION_SECONDS;
+    $('timerWrap').classList.remove('danger');
+    $('timer').style.width = '100%';
+
+    state.timerId = setInterval(function () {
+      state.remaining -= 0.1;
+      var pct = Math.max(0, state.remaining / QUESTION_SECONDS * 100);
+      $('timer').style.width = pct + '%';
+      if (state.remaining <= 5) $('timerWrap').classList.add('danger');
+      if (state.remaining <= 0) {
+        clearInterval(state.timerId);
+        answer(-1, null);
+      }
+    }, 100);
+  }
+
+  function answer(picked, el) {
+    clearInterval(state.timerId);
+    var q = state.questions[state.idx];
+    var right = picked === q.answer;
+
+    var opts = document.querySelectorAll('.opt');
+    for (var i = 0; i < opts.length; i++) {
+      opts[i].classList.add('locked');
+      if (i === q.answer) opts[i].classList.add('correct');
+      else if (i === picked) opts[i].classList.add('wrong');
+      else opts[i].classList.add('dim');
+    }
+
+    var toast = $('toast');
+    if (right) {
+      state.score++;
+      state.streak++;
+      if (state.streak > state.bestStreak) state.bestStreak = state.streak;
+      sfx.correct();
+      toast.className = 'toast on good';
+      toast.textContent = '✅ 答對了！' + (state.streak >= 3 ? ' 連對 ' + state.streak + ' 題，太強了 🔥' : '');
+    } else {
+      state.streak = 0;
+      sfx.wrong();
+      toast.className = 'toast on bad';
+      toast.textContent = picked === -1
+        ? '⏰ 時間到！正確答案是 ' + KEYS[q.answer]
+        : '❌ 正確答案是 ' + KEYS[q.answer];
+    }
+
+    setTimeout(function () {
+      state.idx++;
+      if (state.idx >= state.questions.length) finish();
+      else renderQuestion();
+    }, right ? 900 : 1700);
+  }
+
+  function finish() {
+    var total = state.questions.length;
+    var seconds = Math.round((Date.now() - state.startedAt) / 1000);
+    var acc = Math.round(state.score / total * 100);
+
+    $('bar').style.width = '100%';
+    $('final-score').textContent = state.score;
+    $('final-total').textContent = total;
+    $('final-time').textContent = seconds + 's';
+    $('final-streak').textContent = state.bestStreak;
+    $('final-acc').textContent = acc + '%';
+
+    var grade = $('grade');
+    if (acc === 100)      { grade.textContent = '🏆 完美通關！'; grade.style.color = '#d4a574'; }
+    else if (acc >= 80)   { grade.textContent = '🌟 表現很棒！';  grade.style.color = '#4a7c59'; }
+    else if (acc >= 60)   { grade.textContent = '💪 再加把勁！';  grade.style.color = '#0d7377'; }
+    else                  { grade.textContent = '📖 回去複習一下'; grade.style.color = '#6b9a9c'; }
+
+    sfx.finish();
+    show('s-end');
+    submitScore(seconds, total);
+  }
+
+  function submitScore(seconds, total) {
+    $('saved-note').textContent = '成績記錄中…';
+    fetch('/api/score', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        studentId: state.student.studentId,
+        name: state.student.name,
+        gameId: gameId,
+        score: state.score,
+        total: total,
+        seconds: seconds,
+      }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        $('saved-note').textContent = d.ok
+          ? '✅ 成績已送出，老師看得到囉！'
+          : '⚠️ 成績送出失敗，請截圖給老師';
+      })
+      .catch(function () {
+        $('saved-note').textContent = '⚠️ 成績送出失敗，請截圖給老師';
+      });
+  }
+
+  // ---------- 啟動 ----------
+  loadQuestions()
+    .then(function () {
+      state.student = loadStudent();
+      if (state.student) goStart();
+      else show('s-id');
+    })
+    .catch(function (e) {
+      $('id-sub').textContent = '題目載入失敗，請重新整理頁面 🙏';
+      console.error(e);
+    });
+})();
+</script>
+</body>
+</html>
