@@ -91,13 +91,54 @@
   .opt.locked { pointer-events: none; }
   .opt.dim { opacity: .45; }
 
-  .toast {
-    margin-top: 16px; padding: 13px 16px; border-radius: 12px;
-    font-size: 14px; display: none;
+  /* --- 答題回饋（教學區）--- */
+  .fb { margin-top: 16px; border-radius: 14px; padding: 15px 16px; display: none; }
+  .fb.on { display: block; animation: fade .25s ease; }
+  .fb.good { background: #eaf5ee; border: 1px solid #cfe6d7; }
+  .fb.bad  { background: #fdeeee; border: 1px solid #f5d5d5; }
+  .fb .verdict { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .fb.good .verdict { color: var(--green); }
+  .fb.bad  .verdict { color: var(--red); }
+  .fb .idiom {
+    font-size: 15px; font-weight: 700; color: var(--teal);
+    padding-bottom: 8px; margin-bottom: 8px;
+    border-bottom: 1px dashed rgba(13,115,119,.25);
   }
-  .toast.on { display: block; animation: fade .25s ease; }
-  .toast.good { background: #eaf5ee; color: var(--green); }
-  .toast.bad { background: #fdeeee; color: var(--red); }
+  .fb .explain { font-size: 14px; color: var(--ink); white-space: pre-wrap; }
+  .fb .example {
+    font-size: 13px; color: #4a6b6d; margin-top: 10px;
+    padding: 9px 12px; background: rgba(255,255,255,.7); border-radius: 9px;
+  }
+  .fb .example b { color: var(--teal); }
+  .next-btn {
+    margin-top: 14px; padding: 12px; font-size: 15px;
+    background: var(--teal); color: #fff; border: none;
+    border-radius: 11px; width: 100%; font-weight: 700; cursor: pointer;
+    font-family: inherit;
+  }
+
+  /* --- 排行榜 --- */
+  .lb { margin-top: 22px; }
+  .lb h3 { font-size: 16px; color: var(--teal); margin-bottom: 4px; }
+  .lb .lb-sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .row {
+    display: flex; align-items: center; gap: 11px;
+    padding: 10px 12px; border-radius: 11px; margin-bottom: 6px;
+    background: var(--bg); font-size: 14px;
+  }
+  .row.me { background: var(--teal-light); font-weight: 700; }
+  .row .rk {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
+    display: grid; place-items: center; font-size: 13px; font-weight: 700;
+    background: #fff; color: var(--muted);
+  }
+  .row.top1 .rk { background: #f5d97a; color: #7a5c00; }
+  .row.top2 .rk { background: #dcdfe3; color: #55606b; }
+  .row.top3 .rk { background: #e8c39a; color: #7a4f1d; }
+  .row .nm { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .sc { flex-shrink: 0; color: var(--teal); font-weight: 700; }
+  .row .tm { flex-shrink: 0; color: var(--muted); font-size: 12px; width: 44px; text-align: right; }
+  .lb-empty { text-align: center; color: var(--muted); font-size: 13px; padding: 16px; }
 
   /* --- 結果 --- */
   .score-ring { text-align: center; margin: 8px 0 20px; }
@@ -155,7 +196,13 @@
       <div class="timer" id="timerWrap"><i id="timer" style="width:100%"></i></div>
       <div class="qtext" id="qtext"></div>
       <div class="opts" id="opts"></div>
-      <div class="toast" id="toast"></div>
+      <div class="fb" id="fb">
+        <div class="verdict" id="fb-verdict"></div>
+        <div class="idiom" id="fb-idiom"></div>
+        <div class="explain" id="fb-explain"></div>
+        <div class="example" id="fb-example"></div>
+        <button class="next-btn" id="btn-next">下一題 →</button>
+      </div>
     </div>
   </section>
 
@@ -175,6 +222,12 @@
       </div>
       <button id="btn-again">再挑戰一次 🔄</button>
       <p class="saved" id="saved-note">成績記錄中…</p>
+
+      <div class="lb" id="lb">
+        <h3>🏆 本期排行榜 TOP 10</h3>
+        <div class="lb-sub" id="lb-sub">載入中…</div>
+        <div id="lb-rows"></div>
+      </div>
     </div>
   </section>
 
@@ -318,7 +371,7 @@
     $('streak').textContent = state.streak >= 2 ? '🔥 連對 ' + state.streak : '';
     $('bar').style.width = (state.idx / total * 100) + '%';
     $('qtext').textContent = q.question;
-    $('toast').className = 'toast';
+    $('fb').className = 'fb';
 
     var box = $('opts');
     box.innerHTML = '';
@@ -365,29 +418,58 @@
       else opts[i].classList.add('dim');
     }
 
-    var toast = $('toast');
+    // 教學回饋：答錯（或逾時）時說明錯在哪，答對時補充用法
+    var verdict, explain;
     if (right) {
       state.score++;
       state.streak++;
       if (state.streak > state.bestStreak) state.bestStreak = state.streak;
       sfx.correct();
-      toast.className = 'toast on good';
-      toast.textContent = '✅ 答對了！' + (state.streak >= 3 ? ' 連對 ' + state.streak + ' 題，太強了 🔥' : '');
+      verdict = '✅ 答對了！' + (state.streak >= 3 ? ' 連對 ' + state.streak + ' 題 🔥' : '');
+      explain = q.explains[q.answer] || '';
     } else {
       state.streak = 0;
       sfx.wrong();
-      toast.className = 'toast on bad';
-      toast.textContent = picked === -1
-        ? '⏰ 時間到！正確答案是 ' + KEYS[q.answer]
-        : '❌ 正確答案是 ' + KEYS[q.answer];
+      var correctText = q.options[q.answer];
+      if (picked === -1) {
+        verdict = '⏰ 時間到！正確答案是「' + correctText + '」';
+        explain = q.explains[q.answer] || '';
+      } else {
+        verdict = '❌ 正確答案是「' + correctText + '」';
+        // 先講為什麼你選的不對，再講正解為什麼對
+        var why = q.explains[picked] || '';
+        var right2 = q.explains[q.answer] || '';
+        explain = why && right2 && why !== right2 ? why + '\n\n✅ ' + right2 : (why || right2);
+      }
     }
 
-    setTimeout(function () {
-      state.idx++;
-      if (state.idx >= state.questions.length) finish();
-      else renderQuestion();
-    }, right ? 900 : 1700);
+    $('fb').className = 'fb on ' + (right ? 'good' : 'bad');
+    $('fb-verdict').textContent = verdict;
+    $('fb-idiom').textContent = q.idiom || '';
+    $('fb-idiom').style.display = q.idiom ? '' : 'none';
+    $('fb-explain').textContent = explain;
+    $('fb-explain').style.display = explain ? '' : 'none';
+
+    var ex = $('fb-example');
+    if (q.example) {
+      ex.innerHTML = '<b>例句：</b>';
+      ex.appendChild(document.createTextNode(q.example));
+      ex.style.display = '';
+    } else {
+      ex.style.display = 'none';
+    }
+
+    var last = state.idx >= state.questions.length - 1;
+    $('btn-next').textContent = last ? '看結果 🏁' : '下一題 →';
+    $('fb').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  // 學生看完解釋才前進（答錯也是學習）
+  $('btn-next').addEventListener('click', function () {
+    state.idx++;
+    if (state.idx >= state.questions.length) finish();
+    else renderQuestion();
+  });
 
   function finish() {
     var total = state.questions.length;
@@ -412,6 +494,56 @@
     submitScore(seconds, total);
   }
 
+  function loadLeaderboard() {
+    var sub = $('lb-sub');
+    var rows = $('lb-rows');
+    sub.textContent = '載入中…';
+    rows.innerHTML = '';
+
+    fetch('/api/leaderboard?g=' + encodeURIComponent(gameId))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d.ok || !d.top || !d.top.length) {
+          sub.textContent = '';
+          rows.innerHTML = '<div class="lb-empty">還沒有人上榜，你是第一個！🎉</div>';
+          return;
+        }
+        sub.textContent = '共 ' + d.players + ' 人挑戰過（同分比速度）';
+        d.top.forEach(function (p, i) {
+          var el = document.createElement('div');
+          var cls = 'row';
+          if (i === 0) cls += ' top1';
+          else if (i === 1) cls += ' top2';
+          else if (i === 2) cls += ' top3';
+          if (p.studentId === state.student.studentId) cls += ' me';
+          el.className = cls;
+
+          var rk = document.createElement('span');
+          rk.className = 'rk';
+          rk.textContent = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
+
+          var nm = document.createElement('span');
+          nm.className = 'nm';
+          nm.textContent = p.name + (p.studentId === state.student.studentId ? '（你）' : '');
+
+          var sc = document.createElement('span');
+          sc.className = 'sc';
+          sc.textContent = p.score + '/' + p.total;
+
+          var tm = document.createElement('span');
+          tm.className = 'tm';
+          tm.textContent = p.seconds + 's';
+
+          el.appendChild(rk); el.appendChild(nm); el.appendChild(sc); el.appendChild(tm);
+          rows.appendChild(el);
+        });
+      })
+      .catch(function () {
+        sub.textContent = '';
+        rows.innerHTML = '<div class="lb-empty">排行榜載入失敗 🙏</div>';
+      });
+  }
+
   function submitScore(seconds, total) {
     $('saved-note').textContent = '成績記錄中…';
     fetch('/api/score', {
@@ -431,9 +563,11 @@
         $('saved-note').textContent = d.ok
           ? '✅ 成績已送出，老師看得到囉！'
           : '⚠️ 成績送出失敗，請截圖給老師';
+        loadLeaderboard();
       })
       .catch(function () {
         $('saved-note').textContent = '⚠️ 成績送出失敗，請截圖給老師';
+        loadLeaderboard();
       });
   }
 

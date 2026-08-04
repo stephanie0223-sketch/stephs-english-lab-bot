@@ -89,7 +89,7 @@ function handleGame() {
 
   return [{
     type: 'text',
-    text: `🎮 本期複習遊戲：${info.label}\n📚 範圍：${info.themes}\n\n共 10 題，每題 20 秒，挑戰你的反應力！\n完成後成績會自動送到老師那邊 📊\n\n👉 ${url}\n\n第一次玩要先輸入學號和姓名喔 ☺️`,
+    text: `🎮 本期複習遊戲：${info.label}\n📚 範圍：${info.themes}\n\n共 10 題，每題 20 秒 ⏱️\n答錯會告訴你錯在哪，答對也有補充說明——測驗也是學習 📖\n完成後可以看 🏆 全班排行榜 TOP 10！\n\n👉 ${url}\n\n第一次玩要先輸入學號和姓名喔 ☺️`,
   }];
 }
 

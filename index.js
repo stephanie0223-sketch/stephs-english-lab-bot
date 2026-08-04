@@ -204,7 +204,7 @@ cron.schedule('0 20 * * 0', async () => {
     await client.broadcast({
       messages: [{
         type: 'text',
-        text: `🎮 ${info.label} 複習遊戲上線了！\n\n📚 範圍：${info.themes}\n⏱️ 10 題，每題 20 秒\n\n看看你這兩週記住多少 👇\n${url}\n\n完成後成績會送到老師那邊，記得認真做喔 ☺️`,
+        text: `🎮 ${info.label} 複習遊戲上線了！\n\n📚 範圍：${info.themes}\n⏱️ 10 題，每題 20 秒\n📖 答錯會告訴你錯在哪，測驗也是學習\n🏆 完成後看看你排全班第幾名\n\n看看你這兩週記住多少 👇\n${url}\n\n這次的成績老師看得到，加油 ☺️`,
       }],
     });
     console.log(`[${today}] 複習遊戲推播成功！`);
@@ -234,6 +234,12 @@ cron.schedule('*/14 * * * *', () => {
 app.get('/api/quiz', (req, res) => {
   const game = buildGame(req.query.g || getCurrentGame());
   res.json(game);
+});
+
+app.get('/api/leaderboard', async (req, res) => {
+  const gameId = req.query.g || getCurrentGame();
+  const result = await sheet.leaderboard(gameId, 10);
+  res.json(result);
 });
 
 app.post('/api/score', express.json(), async (req, res) => {

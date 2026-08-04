@@ -14,6 +14,38 @@ const weekThemes = {
 };
 
 /**
+ * 從 quiz-data 的回饋文字拆出教學內容
+ * 原始格式：
+ *   ❌ 不對喔！正確答案是 C      ← 丟掉（選項打亂後字母會不對）
+ *   👉 work out = 運動、健身      ← idiom
+ *   （空行）
+ *   hit the gym 是「去健身房」…   ← 針對這個選項的解釋
+ *   （空行）
+ *   例句：I work out at home…     ← example
+ *   👏 繼續下一題！               ← 丟掉
+ */
+function parseReply(text) {
+  if (!text) return { idiom: '', explain: '', example: '' };
+
+  const lines = String(text).split('\n');
+  let idiom = '';
+  let example = '';
+  const body = [];
+
+  lines.forEach(line => {
+    const t = line.trim();
+    if (!t) return;
+    if (/^[✅❌]/.test(t)) return;              // 判定行，遊戲自己算
+    if (/^👏/.test(t)) return;                  // 收尾鼓勵語
+    if (/^👉/.test(t)) { idiom = t.replace(/^👉\s*/, ''); return; }
+    if (/^例句[：:]/.test(t)) { example = t.replace(/^例句[：:]\s*/, ''); return; }
+    body.push(t);
+  });
+
+  return { idiom, explain: body.join('\n'), example };
+}
+
+/**
  * 解析一則 quizText，取出題目與四個選項
  * 格式：'Q21. 題目...\n\nA. xxx\nB. xxx\nC. xxx\nD. xxx\n\n回覆 21A / ...'
  */
@@ -42,16 +74,24 @@ function parseQuizText(raw) {
     options.push(m ? m[1].trim() : '');
   });
 
-  // 從 quiz-data 找出正解
+  // 從 quiz-data 找出正解，並取出每個選項的教學回饋
   let answer = -1;
+  const explains = [];
+  let idiom = '';
+  let example = '';
+
   KEYS.forEach((k, i) => {
     const entry = quizReplies[`${qNum}${k}`];
     if (entry && entry.correct) answer = i;
+    const parsed = parseReply(entry && entry.reply);
+    explains.push(parsed.explain);
+    if (parsed.idiom && !idiom) idiom = parsed.idiom;
+    if (parsed.example && !example) example = parsed.example;
   });
 
   if (answer === -1 || options.some(o => !o)) return null;
 
-  return { qNum, question, options, answer };
+  return { qNum, question, options, answer, explains, idiom, example };
 }
 
 /**
@@ -89,14 +129,19 @@ function buildGame(gameId) {
   const questions = getQuestions(weeks);
   if (!questions.length) return { ok: false, error: 'no questions found' };
 
-  // 選項順序打亂（答案索引跟著移動）
+  // 選項順序打亂（答案索引與對應的解釋一起移動）
   questions.forEach(q => {
-    const paired = q.options.map((text, i) => ({ text, correct: i === q.answer }));
+    const paired = q.options.map((text, i) => ({
+      text,
+      explain: q.explains[i] || '',
+      correct: i === q.answer,
+    }));
     for (let i = paired.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [paired[i], paired[j]] = [paired[j], paired[i]];
     }
     q.options = paired.map(p => p.text);
+    q.explains = paired.map(p => p.explain);
     q.answer = paired.findIndex(p => p.correct);
   });
 

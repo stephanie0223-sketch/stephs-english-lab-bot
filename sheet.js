@@ -32,6 +32,7 @@ const sheet = {
   checkin:  (userId, day, idiom)      => callSheet({ action: 'checkin', userId, day, idiom }),
   progress: (userId)                  => callSheet({ action: 'progress', userId }),
   score:    (data)                    => callSheet(Object.assign({ action: 'score' }, data)),
+  leaderboard: (gameId, limit = 10)   => callSheet({ action: 'leaderboard', gameId, limit }),
   enabled:  () => Boolean(SHEET_URL),
 };
 
