@@ -513,6 +513,134 @@ const quizReplies = {
   '80B': { correct: true,  reply: '✅ 答對了！\n👉 blank out = 腦袋一片空白\n\n字面是「變空白」，常用在考試、上台緊張時——突然什麼都想不起來。類似的有 brain fart！\n\n例句：I blanked out during the presentation.\n\n🎉 Week 16 測驗完成！恭喜你完成 80 天的英文片語挑戰！你超棒！💪' },
   '80C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 blank out = 腦袋一片空白\n\n明明會的答案，被叫到時「腦袋空白」想不起來！\n\n例句：I blanked out during the presentation.\n\n💡 cram 是「臨時抱佛腳」（事前），題目情境是當下想不起來喔！' },
   '80D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 blank out = 腦袋一片空白\n\n明明會的答案，被叫到時「腦袋空白」想不起來！\n\n例句：I blanked out during the presentation.\n\n💡 hit the books 是「開始用功讀書」的意思喔！' },
+
+  // ===== Week 17: Environment & Sustainability =====
+
+  // Q81 - 正確答案: B (carbon footprint)
+  '81A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 carbon footprint = 碳足跡\n\n改搭捷運不開車，就是在減少自己的「碳足跡」。\n\n例句：Taking the MRT cuts your carbon footprint.\n\n💡 throwaway culture 是「用完即丟的文化」的意思喔！' },
+  '81B': { correct: true,  reply: '✅ 答對了！\n👉 carbon footprint = 碳足跡\n\nfootprint 是「腳印」，你的活動排放多少碳，就留下多大的腳印。\n\n例句：Taking the MRT cuts your carbon footprint.\n\n👏 繼續下一題！' },
+  '81C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 carbon footprint = 碳足跡\n\n改搭捷運不開車，就是在減少自己的「碳足跡」。\n\n例句：Taking the MRT cuts your carbon footprint.\n\n💡 greenwashing 是「漂綠、假環保」的意思喔！' },
+  '81D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 carbon footprint = 碳足跡\n\n改搭捷運不開車，就是在減少自己的「碳足跡」。\n\n例句：Taking the MRT cuts your carbon footprint.\n\n💡 a drop in the ocean 是「杯水車薪」的意思喔！' },
+
+  // Q82 - 正確答案: C (throwaway culture)
+  '82A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throwaway culture = 用完即丟的文化\n\n每個月換手機殼、舊的就丟，正是這種文化的寫照。\n\n例句：Fast fashion is a perfect example of throwaway culture.\n\n💡 go green 是「走向環保」，跟題目意思剛好相反喔！' },
+  '82B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throwaway culture = 用完即丟的文化\n\n每個月換手機殼、舊的就丟，正是這種文化的寫照。\n\n例句：Fast fashion is a perfect example of throwaway culture.\n\n💡 eco-friendly 是「環保的」，跟題目意思剛好相反喔！' },
+  '82C': { correct: true,  reply: '✅ 答對了！\n👉 throwaway culture = 用完即丟的文化\n\nthrow away 是「丟掉」，合起來當形容詞用。快時尚就是最典型的例子！\n\n例句：Fast fashion is a perfect example of throwaway culture.\n\n👏 繼續下一題！' },
+  '82D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throwaway culture = 用完即丟的文化\n\n每個月換手機殼、舊的就丟，正是這種文化的寫照。\n\n例句：Fast fashion is a perfect example of throwaway culture.\n\n💡 every little helps 是「積少成多」的意思喔！' },
+
+  // Q83 - 正確答案: A (single-use)
+  '83A': { correct: true,  reply: '✅ 答對了！\n👉 single-use = 一次性的、用一次就丟的\n\n形容詞，後面一定要接名詞：single-use cups / straws / bags。\n\n例句：I\'m trying to avoid single-use plastic.\n\n👏 繼續下一題！' },
+  '83B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 single-use = 一次性的、用一次就丟的\n\n自備杯子就是為了避開「用一次就丟」的杯子。\n\n例句：I\'m trying to avoid single-use plastic.\n\n💡 eco-friendly 是「環保的」，環保杯不需要避開喔！' },
+  '83C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 single-use = 一次性的、用一次就丟的\n\n自備杯子就是為了避開「用一次就丟」的杯子。\n\n例句：I\'m trying to avoid single-use plastic.\n\n💡 cutting-edge 是「最尖端的」，跟環保無關喔！' },
+  '83D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 single-use = 一次性的、用一次就丟的\n\n自備杯子就是為了避開「用一次就丟」的杯子。\n\n例句：I\'m trying to avoid single-use plastic.\n\n💡 reusable 是「可重複使用的」，剛好相反喔！' },
+
+  // Q84 - 正確答案: B (a drop in the ocean)
+  '84A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a drop in the ocean = 杯水車薪、微不足道\n\n一個人分類垃圾看起來很渺小，但全校一起做就有用了。\n\n例句：One person recycling is a drop in the ocean.\n\n💡 greenwashing 是「漂綠、假環保」的意思喔！' },
+  '84B': { correct: true,  reply: '✅ 答對了！\n👉 a drop in the ocean = 杯水車薪、微不足道\n\n海裡的一滴水——小到看不見。常和 but every little helps 一起用，超適合寫作文！\n\n例句：One person recycling is a drop in the ocean.\n\n👏 繼續下一題！' },
+  '84C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a drop in the ocean = 杯水車薪、微不足道\n\n一個人分類垃圾看起來很渺小，但全校一起做就有用了。\n\n例句：One person recycling is a drop in the ocean.\n\n💡 go green 是「走向環保」（動作），題目要的是「很渺小」的形容喔！' },
+  '84D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a drop in the ocean = 杯水車薪、微不足道\n\n一個人分類垃圾看起來很渺小，但全校一起做就有用了。\n\n例句：One person recycling is a drop in the ocean.\n\n💡 a game changer 是「改變局勢的關鍵」，影響超大，剛好相反喔！' },
+
+  // Q85 - 正確答案: C (greenwashing)
+  '85A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 greenwashing = 漂綠、假環保\n\n標籤寫「純天然」卻什麼都沒改，就是在「漂綠」。\n\n例句：They call it a green product, but it\'s just greenwashing.\n\n💡 go green 是「真的走向環保」，這家公司只是說說而已喔！' },
+  '85B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 greenwashing = 漂綠、假環保\n\n標籤寫「純天然」卻什麼都沒改，就是在「漂綠」。\n\n例句：They call it a green product, but it\'s just greenwashing.\n\n💡 eco-friendly 是「真的對環境友善」，題目說什麼都沒改喔！' },
+  '85C': { correct: true,  reply: '✅ 答對了！\n👉 greenwashing = 漂綠、假環保\n\ngreen + whitewash（粉飾）合成的新字，就是「假裝很環保」。看國際新聞常出現！\n\n例句：They call it a green product, but it\'s just greenwashing.\n\n🎉 Week 17 測驗完成！環保英文你掌握了 🌱' },
+  '85D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 greenwashing = 漂綠、假環保\n\n標籤寫「純天然」卻什麼都沒改，就是在「漂綠」。\n\n例句：They call it a green product, but it\'s just greenwashing.\n\n💡 carbon footprint 是「碳足跡」的意思喔！' },
+
+  // ===== Week 18: Technology & AI =====
+
+  // Q86 - 正確答案: B (state-of-the-art)
+  '86A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 state-of-the-art = 頂尖的、最高規格的\n\n設備等級最高的錄音室，就用 state-of-the-art 形容。\n\n例句：The library has a state-of-the-art sound system.\n\n💡 tech-savvy 是形容「人」很懂科技，不能拿來形容設備喔！' },
+  '86B': { correct: true,  reply: '✅ 答對了！\n👉 state-of-the-art = 頂尖的、最高規格的\n\n最常拿來形容硬體設備。放名詞前面記得加連字號！\n\n例句：The library has a state-of-the-art sound system.\n\n👏 繼續下一題！' },
+  '86C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 state-of-the-art = 頂尖的、最高規格的\n\n設備等級最高的錄音室，就用 state-of-the-art 形容。\n\n例句：The library has a state-of-the-art sound system.\n\n💡 behind-the-scenes 是「幕後的」，跟設備等級無關喔！' },
+  '86D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 state-of-the-art = 頂尖的、最高規格的\n\n設備等級最高的錄音室，就用 state-of-the-art 形容。\n\n例句：The library has a state-of-the-art sound system.\n\n💡 digital native 是「數位原生世代」，是形容人喔！' },
+
+  // Q87 - 正確答案: C (a game changer)
+  '87A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a game changer = 改變局勢的關鍵\n\n半夜也能問 AI 問題，徹底改變了複習方式，這就是 game changer！\n\n例句：Online learning was a game changer for students.\n\n💡 the tip of the iceberg 是「冰山一角」的意思喔！' },
+  '87B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a game changer = 改變局勢的關鍵\n\n半夜也能問 AI 問題，徹底改變了複習方式，這就是 game changer！\n\n例句：Online learning was a game changer for students.\n\n💡 behind the scenes 是「幕後」的意思喔！' },
+  '87C': { correct: true,  reply: '✅ 答對了！\n👉 a game changer = 改變局勢的關鍵、顛覆一切的東西\n\n來自運動——一球就改變整場比賽的走向。\n\n例句：Online learning was a game changer for students.\n\n👏 繼續下一題！' },
+  '87D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a game changer = 改變局勢的關鍵\n\n半夜也能問 AI 問題，徹底改變了複習方式，這就是 game changer！\n\n例句：Online learning was a game changer for students.\n\n💡 fall behind the curve 是「跟不上趨勢」（負面），題目是正面的喔！' },
+
+  // Q88 - 正確答案: A (tech-savvy)
+  '88A': { correct: true,  reply: '✅ 答對了！\n👉 tech-savvy = 很懂科技的、3C 高手\n\nsavvy 是「懂門道」，還可以組合成 street-savvy、money-savvy。\n\n例句：Ask Kevin — he\'s the most tech-savvy one here.\n\n👏 繼續下一題！' },
+  '88B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 tech-savvy = 很懂科技的\n\n投影機壞掉大家都找 Amy，因為她最懂 3C。\n\n例句：She\'s the most tech-savvy person in class.\n\n💡 cutting-edge 是形容「技術很前沿」，不是形容人喔！' },
+  '88C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 tech-savvy = 很懂科技的\n\n投影機壞掉大家都找 Amy，因為她最懂 3C。\n\n例句：She\'s the most tech-savvy person in class.\n\n💡 state-of-the-art 是形容「設備頂級」，不是形容人喔！' },
+  '88D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 tech-savvy = 很懂科技的\n\n投影機壞掉大家都找 Amy，因為她最懂 3C。\n\n例句：She\'s the most tech-savvy person in class.\n\n💡 behind the scenes 是「在幕後」的意思喔！' },
+
+  // Q89 - 正確答案: C (the tip of the iceberg)
+  '89A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 the tip of the iceberg = 冰山一角\n\n假照片只是看得到的那一小塊，底下的問題大得多。\n\n例句：Those fake photos are just the tip of the iceberg.\n\n💡 behind the scenes 是「在幕後進行」，題目強調的是「問題只露出一小角」喔！' },
+  '89B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 the tip of the iceberg = 冰山一角\n\n假照片只是看得到的那一小塊，底下的問題大得多。\n\n例句：Those fake photos are just the tip of the iceberg.\n\n💡 a game changer 是「改變局勢的關鍵」，通常偏正面喔！' },
+  '89C': { correct: true,  reply: '✅ 答對了！\n👉 the tip of the iceberg = 冰山一角\n\n冰山有九成藏在水面下，所以幾乎都用在「問題比看到的嚴重」。\n\n例句：Those fake photos are just the tip of the iceberg.\n\n👏 繼續下一題！' },
+  '89D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 the tip of the iceberg = 冰山一角\n\n假照片只是看得到的那一小塊，底下的問題大得多。\n\n例句：Those fake photos are just the tip of the iceberg.\n\n💡 a digital native 是「數位原生世代」，是形容人喔！' },
+
+  // Q90 - 正確答案: B (fall behind the curve)
+  '90A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 fall behind the curve = 落後於潮流、跟不上趨勢\n\n不接受行動支付的店家會慢慢「被時代拋在後面」。\n\n例句：Companies that ignore AI will fall behind the curve.\n\n💡 keep up with the times 是「跟上時代」，剛好相反喔！' },
+  '90B': { correct: true,  reply: '✅ 答對了！\n👉 fall behind the curve = 落後於潮流、跟不上趨勢\n\ncurve 是趨勢曲線。走在前面就是 ahead of the curve（領先群倫），面試講超加分！\n\n例句：Companies that ignore AI will fall behind the curve.\n\n🎉 Week 18 測驗完成！科技英文 unlocked 🤖' },
+  '90C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 fall behind the curve = 落後於潮流、跟不上趨勢\n\n不接受行動支付的店家會慢慢「被時代拋在後面」。\n\n例句：Companies that ignore AI will fall behind the curve.\n\n💡 take it to the next level 是「更上一層樓」，是正面的喔！' },
+  '90D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 fall behind the curve = 落後於潮流、跟不上趨勢\n\n不接受行動支付的店家會慢慢「被時代拋在後面」。\n\n例句：Companies that ignore AI will fall behind the curve.\n\n💡 behind the scenes 是「在幕後」，不是「落後」喔！' },
+
+  // ===== Week 19: Health & Sleep =====
+
+  // Q91 - 正確答案: B (burning the midnight oil)
+  '91A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 burn the midnight oil = 熬夜苦讀、挑燈夜戰\n\n整週每晚都在趕科展作品，就是在「挑燈夜戰」。\n\n例句：She\'s been burning the midnight oil all week.\n\n💡 hit the hay 是「去睡覺」，剛好相反喔！' },
+  '91B': { correct: true,  reply: '✅ 答對了！\n👉 burn the midnight oil = 熬夜苦讀、挑燈夜戰\n\n以前的燈要燒油，讀到半夜還在燒油——畫面超傳神！\n\n例句：She\'s been burning the midnight oil all week.\n\n👏 繼續下一題！' },
+  '91C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 burn the midnight oil = 熬夜苦讀、挑燈夜戰\n\n整週每晚都在趕科展作品，就是在「挑燈夜戰」。\n\n例句：She\'s been burning the midnight oil all week.\n\n💡 catch some Z\'s 是「補個眠」，剛好相反喔！' },
+  '91D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 burn the midnight oil = 熬夜苦讀、挑燈夜戰\n\n整週每晚都在趕科展作品，就是在「挑燈夜戰」。\n\n例句：She\'s been burning the midnight oil all week.\n\n💡 take a breather 是「喘口氣休息」的意思喔！' },
+
+  // Q92 - 正確答案: C (hit the hay)
+  '92A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the hay = 去睡覺\n\n已經凌晨一點、七點還要上課，當然是趕快去睡！\n\n例句：It\'s almost 1 a.m. — I\'m going to hit the hay.\n\n💡 burn the midnight oil 是「繼續熬夜」，跟題目情境相反喔！' },
+  '92B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the hay = 去睡覺\n\n已經凌晨一點、七點還要上課，當然是趕快去睡！\n\n例句：It\'s almost 1 a.m. — I\'m going to hit the hay.\n\n💡 come down with a cold 是「快感冒了」的意思喔！' },
+  '92C': { correct: true,  reply: '✅ 答對了！\n👉 hit the hay = 去睡覺、上床睡了\n\nhay 是稻草，古人的床墊就是稻草鋪的。同義的還有 hit the sack！\n\n例句：It\'s almost 1 a.m. — I\'m going to hit the hay.\n\n👏 繼續下一題！' },
+  '92D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 hit the hay = 去睡覺\n\n已經凌晨一點、七點還要上課，當然是趕快去睡！\n\n例句：It\'s almost 1 a.m. — I\'m going to hit the hay.\n\n💡 speak one\'s mind 是「有話直說」，跟睡覺沒關係喔！' },
+
+  // Q93 - 正確答案: A (slept like a log)
+  '93A': { correct: true,  reply: '✅ 答對了！\n👉 sleep like a log = 睡得超熟、一覺到天亮\n\nlog 是木頭，躺著一動也不動。中文說「睡得像豬」，英文說「睡得像木頭」！\n\n例句：I slept like a log for eleven hours.\n\n👏 繼續下一題！' },
+  '93B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 sleep like a log = 睡得超熟\n\n校外教學兩天回來，一路睡到中午——這是「睡超熟」！\n\n例句：I slept like a log for eleven hours.\n\n💡 take a breather 是「短暫休息一下」，不是睡整夜喔！' },
+  '93C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 sleep like a log = 睡得超熟\n\n校外教學兩天回來，一路睡到中午——這是「睡超熟」！\n\n例句：I slept like a log for eleven hours.\n\n💡 burn the midnight oil 是「熬夜」，剛好相反喔！' },
+  '93D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 sleep like a log = 睡得超熟\n\n校外教學兩天回來，一路睡到中午——這是「睡超熟」！\n\n例句：I slept like a log for eleven hours.\n\n💡 fit as a fiddle 是「身體超健康」，跟睡得熟不熟無關喔！' },
+
+  // Q94 - 正確答案: B (coming down with)
+  '94A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 come down with + 病名 = 染上、快生病了\n\n喉嚨痛又覺得冷，就是「快得流感了」。\n\n例句：I think I\'m coming down with the flu.\n\n💡 run-down 是形容詞（身心俱疲），不能說 running down the flu 喔！' },
+  '94B': { correct: true,  reply: '✅ 答對了！\n👉 come down with something = 染上（感冒等）\n\n後面一定要接病名：come down with a cold / a fever / the flu。\n\n例句：I think I\'m coming down with the flu.\n\n👏 繼續下一題！' },
+  '94C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 come down with + 病名 = 染上、快生病了\n\n喉嚨痛又覺得冷，就是「快得流感了」。\n\n例句：I think I\'m coming down with the flu.\n\n💡 catch some Z\'s 是「補個眠」的意思喔！' },
+  '94D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 come down with + 病名 = 染上、快生病了\n\n喉嚨痛又覺得冷，就是「快得流感了」。\n\n例句：I think I\'m coming down with the flu.\n\n💡 recharge one\'s batteries 是「充電恢復精力」的意思喔！' },
+
+  // Q95 - 正確答案: C (take a breather)
+  '95A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take a breather = 喘口氣、休息一下\n\n只休息十分鐘，用 take a breather 剛剛好。\n\n例句：Let\'s take a breather for ten minutes.\n\n💡 hit the hay 是「去睡覺」，不是十分鐘的休息喔！' },
+  '95B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take a breather = 喘口氣、休息一下\n\n只休息十分鐘，用 take a breather 剛剛好。\n\n例句：Let\'s take a breather for ten minutes.\n\n💡 sleep like a log 是「睡得超熟」，十分鐘可睡不了那麼熟喔！' },
+  '95C': { correct: true,  reply: '✅ 答對了！\n👉 take a breather = 喘口氣、休息一下\n\n短短幾分鐘的喘息。想講長假級的休息，就用 recharge one\'s batteries！\n\n例句：Let\'s take a breather for ten minutes.\n\n🎉 Week 19 測驗完成！記得好好照顧身體 😴' },
+  '95D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take a breather = 喘口氣、休息一下\n\n只休息十分鐘，用 take a breather 剛剛好。\n\n例句：Let\'s take a breather for ten minutes.\n\n💡 burn the midnight oil 是「熬夜苦讀」，剛好相反喔！' },
+
+  // ===== Week 20: Conflict & Communication =====
+
+  // Q96 - 正確答案: B (agree to disagree)
+  '96A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 agree to disagree = 保留各自意見、不吵了\n\n吵一小時還是沒共識，就各自保留意見吧！\n\n例句：Let\'s just agree to disagree.\n\n💡 bury the hatchet 是「和解」，用在真的鬧翻之後喔！' },
+  '96B': { correct: true,  reply: '✅ 答對了！\n👉 agree to disagree = 同意彼此不同意、保留各自意見\n\n不是妥協，而是「我們不會有共識，但不吵了」。\n\n例句：Let\'s just agree to disagree.\n\n👏 繼續下一題！' },
+  '96C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 agree to disagree = 保留各自意見、不吵了\n\n吵一小時還是沒共識，就各自保留意見吧！\n\n例句：Let\'s just agree to disagree.\n\n💡 walk on eggshells 是「小心翼翼不敢惹人」的意思喔！' },
+  '96D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 agree to disagree = 保留各自意見、不吵了\n\n吵一小時還是沒共識，就各自保留意見吧！\n\n例句：Let\'s just agree to disagree.\n\n💡 call someone out 是「當面點出對方的不對」，反而會吵更兇喔！' },
+
+  // Q97 - 正確答案: C (meet halfway)
+  '97A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 meet halfway = 各退一步、折衷\n\n你要黑、他要白，最後選灰色——這就是折衷！\n\n例句：Let\'s meet halfway and get gray.\n\n💡 tiptoe around 是「避重就輕、繞著問題打轉」的意思喔！' },
+  '97B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 meet halfway = 各退一步、折衷\n\n你要黑、他要白，最後選灰色——這就是折衷！\n\n例句：Let\'s meet halfway and get gray.\n\n💡 turn the other cheek 是「以德報怨」，用在被欺負的時候喔！' },
+  '97C': { correct: true,  reply: '✅ 答對了！\n👉 meet halfway = 各退一步、折衷\n\n兩邊都往中間走一半。後面可以加人：meet me halfway on this.\n\n例句：Let\'s meet halfway and get gray.\n\n👏 繼續下一題！' },
+  '97D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 meet halfway = 各退一步、折衷\n\n你要黑、他要白，最後選灰色——這就是折衷！\n\n例句：Let\'s meet halfway and get gray.\n\n💡 walk on eggshells 是「小心翼翼不敢惹人」的意思喔！' },
+
+  // Q98 - 正確答案: A (buried the hatchet)
+  '98A': { correct: true,  reply: '✅ 答對了！\n👉 bury the hatchet = 和解、一笑泯恩仇\n\nhatchet 是小斧頭，據說源自北美原住民簽和約時把斧頭埋起來——武器收了就是和平。\n\n例句：They finally buried the hatchet at graduation.\n\n👏 繼續下一題！' },
+  '98B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 bury the hatchet = 和解、一笑泯恩仇\n\n整學期不講話，畢業典禮終於「和好」了。\n\n例句：They finally buried the hatchet at graduation.\n\n💡 walk on eggshells 是「小心翼翼」，不是和好喔！' },
+  '98C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 bury the hatchet = 和解、一笑泯恩仇\n\n整學期不講話，畢業典禮終於「和好」了。\n\n例句：They finally buried the hatchet at graduation.\n\n💡 tiptoe around 是「繞著問題打轉」，問題還沒解決喔！' },
+  '98D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 bury the hatchet = 和解、一笑泯恩仇\n\n整學期不講話，畢業典禮終於「和好」了。\n\n例句：They finally buried the hatchet at graduation.\n\n💡 call someone out 是「當面指責」，跟和好相反喔！' },
+
+  // Q99 - 正確答案: D (walking on eggshells)
+  '99A': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 walk on eggshells = 如履薄冰、小心翼翼不敢惹人\n\n大家都怕惹 Ben 生氣，講話小心到不行。\n\n例句：I\'ve been walking on eggshells around my sister.\n\n💡 clear the air 是「把話說開」，題目是還不敢說喔！' },
+  '99B': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 walk on eggshells = 如履薄冰、小心翼翼不敢惹人\n\n大家都怕惹 Ben 生氣，講話小心到不行。\n\n例句：I\'ve been walking on eggshells around my sister.\n\n💡 meet halfway 是「各退一步」，題目沒有在協商喔！' },
+  '99C': { correct: false, reply: '❌ 不對喔！正確答案是 D\n👉 walk on eggshells = 如履薄冰、小心翼翼不敢惹人\n\n大家都怕惹 Ben 生氣，講話小心到不行。\n\n例句：I\'ve been walking on eggshells around my sister.\n\n💡 speak one\'s mind 是「有話直說」，剛好相反喔！' },
+  '99D': { correct: true,  reply: '✅ 答對了！\n👉 walk on eggshells = 如履薄冰、小心翼翼不敢惹人\n\n踩在蛋殼上——輕一點就好，重一點就破，畫面超好記！\n\n例句：I\'ve been walking on eggshells around my sister.\n\n👏 繼續最後一題！' },
+
+  // Q100 - 正確答案: B (let bygones be bygones)
+  '100A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\n三年前的爭執就別再提了，重新當朋友吧！\n\n例句：Let\'s let bygones be bygones.\n\n💡 call someone out 是「當面指責」，跟想和好剛好相反喔！' },
+  '100B': { correct: true,  reply: '✅ 答對了！\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\nbygone 是「過去的事」，整句照抄不用改字。\n\n例句：Let\'s let bygones be bygones.\n\n🎉 Week 20 測驗完成——而且你走完了整整 100 天！從第一句 speak volumes 到今天的 let bygones be bygones，你真的好棒 👏 English for Connection，我們下一段旅程見 💚' },
+  '100C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\n三年前的爭執就別再提了，重新當朋友吧！\n\n例句：Let\'s let bygones be bygones.\n\n💡 tiptoe around it 是「繞著問題不敢談」，題目是想直接翻篇喔！' },
+  '100D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\n三年前的爭執就別再提了，重新當朋友吧！\n\n例句：Let\'s let bygones be bygones.\n\n💡 speak one\'s mind 是「有話直說」，題目重點是「翻篇」喔！' },
 };
 
 // 其他關鍵字回覆

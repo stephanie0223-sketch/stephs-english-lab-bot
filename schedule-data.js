@@ -222,6 +222,62 @@ const schedule = [
     { q: 'Q79. "Finals are next week — I really need to stop watching Netflix and ______."\n\nA. pull an all-nighter\nB. blank out\nC. hit the books\nD. flunk\n\n回覆 79A / 79B / 79C / 79D' },
     { q: 'Q80. "I knew the answer perfectly, but when the teacher called on me, I totally ______."\n\nA. aced it\nB. blanked out\nC. crammed\nD. hit the books\n\n回覆 80A / 80B / 80C / 80D' },
   ]},
+
+  // ===== Week 17：Environment & Sustainability 🌱 =====
+  { date: '2026-07-27', day: 'Mon', type: 'card', image: 'Day81_Carbon_footprint_and_Go_green.png',              week: 17, dayNum: 81 },
+  { date: '2026-07-28', day: 'Tue', type: 'card', image: 'Day82_Throwaway_culture_and_Single_use.png',           week: 17, dayNum: 82 },
+  { date: '2026-07-29', day: 'Wed', type: 'card', image: 'Day83_Eco_friendly_and_Reduce_reuse_recycle.png',      week: 17, dayNum: 83 },
+  { date: '2026-07-30', day: 'Thu', type: 'card', image: 'Day84_A_drop_in_the_ocean_and_Every_little_helps.png', week: 17, dayNum: 84 },
+  { date: '2026-07-31', day: 'Fri', type: 'card', image: 'Day85_Greenwashing_and_Jump_on_the_bandwagon.png',     week: 17, dayNum: 85 },
+  { date: '2026-08-01', day: 'Sat', type: 'quiz', week: 17, quizTexts: [
+    { q: 'Q81. "I started taking the MRT to school instead of getting a ride — it really cuts my ______."\n\nA. throwaway culture\nB. carbon footprint\nC. greenwashing\nD. drop in the ocean\n\n回覆 81A / 81B / 81C / 81D' },
+    { q: 'Q82. Buying a new phone case every month and tossing the old one is a classic example of ______.\n\nA. going green\nB. eco-friendly design\nC. throwaway culture\nD. every little helps\n\n回覆 82A / 82B / 82C / 82D' },
+    { q: 'Q83. "Please bring your own cup to the class party — we\'re avoiding ______ cups."\n\nA. single-use\nB. eco-friendly\nC. cutting-edge\nD. reusable\n\n回覆 83A / 83B / 83C / 83D' },
+    { q: 'Q84. "I know one student sorting trash is ______, but if the whole school does it, it adds up."\n\nA. greenwashing\nB. a drop in the ocean\nC. going green\nD. a game changer\n\n回覆 84A / 84B / 84C / 84D' },
+    { q: 'Q85. The company printed "100% natural" on the label, but nothing actually changed. That\'s ______.\n\nA. going green\nB. eco-friendly\nC. greenwashing\nD. a carbon footprint\n\n回覆 85A / 85B / 85C / 85D' },
+  ]},
+
+  // ===== Week 18：Technology & AI 🤖 =====
+  { date: '2026-08-03', day: 'Mon', type: 'card', image: 'Day86_Cutting_edge_and_State_of_the_art.png',              week: 18, dayNum: 86 },
+  { date: '2026-08-04', day: 'Tue', type: 'card', image: 'Day87_A_game_changer_and_Take_it_to_the_next_level.png',   week: 18, dayNum: 87 },
+  { date: '2026-08-05', day: 'Wed', type: 'card', image: 'Day88_Tech_savvy_and_Digital_native.png',                  week: 18, dayNum: 88 },
+  { date: '2026-08-06', day: 'Thu', type: 'card', image: 'Day89_The_tip_of_the_iceberg_and_Behind_the_scenes.png',   week: 18, dayNum: 89 },
+  { date: '2026-08-07', day: 'Fri', type: 'card', image: 'Day90_Keep_up_with_the_times_and_Fall_behind_the_curve.png', week: 18, dayNum: 90 },
+  { date: '2026-08-08', day: 'Sat', type: 'quiz', week: 18, quizTexts: [
+    { q: 'Q86. Our school just got a ______ recording studio for the broadcasting club — the equipment is top of the line.\n\nA. tech-savvy\nB. state-of-the-art\nC. behind-the-scenes\nD. digital native\n\n回覆 86A / 86B / 86C / 86D' },
+    { q: 'Q87. "Being able to ask AI questions at midnight has been ______ for how I review for tests."\n\nA. the tip of the iceberg\nB. behind the scenes\nC. a game changer\nD. falling behind the curve\n\n回覆 87A / 87B / 87C / 87D' },
+    { q: 'Q88. Whenever the projector breaks, everyone calls Amy because she\'s the most ______ person in class.\n\nA. tech-savvy\nB. cutting-edge\nC. state-of-the-art\nD. behind the scenes\n\n回覆 88A / 88B / 88C / 88D' },
+    { q: 'Q89. "Those AI-made photos are just ______ — it can fake voices and videos too."\n\nA. behind the scenes\nB. a game changer\nC. the tip of the iceberg\nD. a digital native\n\n回覆 89A / 89B / 89C / 89D' },
+    { q: 'Q90. Shops that still refuse mobile payment will slowly ______ as everyone stops carrying cash.\n\nA. keep up with the times\nB. fall behind the curve\nC. take it to the next level\nD. go behind the scenes\n\n回覆 90A / 90B / 90C / 90D' },
+  ]},
+
+  // ===== Week 19：Health & Sleep 😴 =====
+  { date: '2026-08-10', day: 'Mon', type: 'card', image: 'Day91_Burn_the_midnight_oil_and_Hit_the_hay.png',        week: 19, dayNum: 91 },
+  { date: '2026-08-11', day: 'Tue', type: 'card', image: 'Day92_Catch_some_Zs_and_Sleep_like_a_log.png',           week: 19, dayNum: 92 },
+  { date: '2026-08-12', day: 'Wed', type: 'card', image: 'Day93_Come_down_with_something_and_Run_down.png',        week: 19, dayNum: 93 },
+  { date: '2026-08-13', day: 'Thu', type: 'card', image: 'Day94_Recharge_ones_batteries_and_Take_a_breather.png',  week: 19, dayNum: 94 },
+  { date: '2026-08-14', day: 'Fri', type: 'card', image: 'Day95_You_are_what_you_eat_and_Fit_as_a_fiddle.png',     week: 19, dayNum: 95 },
+  { date: '2026-08-15', day: 'Sat', type: 'quiz', week: 19, quizTexts: [
+    { q: 'Q91. She\'s been ______ every night this week to finish her science fair project.\n\nA. hitting the hay\nB. burning the midnight oil\nC. catching some Z\'s\nD. taking a breather\n\n回覆 91A / 91B / 91C / 91D' },
+    { q: 'Q92. "It\'s already 1 a.m. and I have class at 7 — I\'m going to ______."\n\nA. burn the midnight oil\nB. come down with a cold\nC. hit the hay\nD. speak my mind\n\n回覆 92A / 92B / 92C / 92D' },
+    { q: 'Q93. After the two-day school trip, he ______ and didn\'t wake up until noon.\n\nA. slept like a log\nB. took a breather\nC. burned the midnight oil\nD. was fit as a fiddle\n\n回覆 93A / 93B / 93C / 93D' },
+    { q: 'Q94. "My throat hurts and I feel cold. I think I\'m ______ the flu."\n\nA. running down\nB. coming down with\nC. catching some Z\'s\nD. recharging\n\n回覆 94A / 94B / 94C / 94D' },
+    { q: 'Q95. "We\'ve been reviewing for two hours straight — let\'s ______ for ten minutes."\n\nA. hit the hay\nB. sleep like a log\nC. take a breather\nD. burn the midnight oil\n\n回覆 95A / 95B / 95C / 95D' },
+  ]},
+
+  // ===== Week 20：Conflict & Communication 🕊️ =====
+  { date: '2026-08-17', day: 'Mon', type: 'card', image: 'Day96_Agree_to_disagree_and_Meet_halfway.png',              week: 20, dayNum: 96 },
+  { date: '2026-08-18', day: 'Tue', type: 'card', image: 'Day97_Bury_the_hatchet_and_Clear_the_air.png',              week: 20, dayNum: 97 },
+  { date: '2026-08-19', day: 'Wed', type: 'card', image: 'Day98_Walk_on_eggshells_and_Tiptoe_around.png',             week: 20, dayNum: 98 },
+  { date: '2026-08-20', day: 'Thu', type: 'card', image: 'Day99_Speak_ones_mind_and_Call_someone_out.png',            week: 20, dayNum: 99 },
+  { date: '2026-08-21', day: 'Fri', type: 'card', image: 'Day100_Let_bygones_be_bygones_and_Turn_the_other_cheek.png', week: 20, dayNum: 100 },
+  { date: '2026-08-22', day: 'Sat', type: 'quiz', week: 20, quizTexts: [
+    { q: 'Q96. "We\'ve argued about this song for an hour. Let\'s just ______ and move on."\n\nA. bury the hatchet\nB. agree to disagree\nC. walk on eggshells\nD. call each other out\n\n回覆 96A / 96B / 96C / 96D' },
+    { q: 'Q97. You want the class T-shirt in black, your partner wants white — so you ______ and pick gray.\n\nA. tiptoe around\nB. turn the other cheek\nC. meet halfway\nD. walk on eggshells\n\n回覆 97A / 97B / 97C / 97D' },
+    { q: 'Q98. After not speaking for a whole semester, the two friends finally ______ on graduation day.\n\nA. buried the hatchet\nB. walked on eggshells\nC. tiptoed around\nD. called each other out\n\n回覆 98A / 98B / 98C / 98D' },
+    { q: 'Q99. Ever since the argument, everyone in the group has been ______ around Ben, afraid to upset him.\n\nA. clearing the air\nB. meeting halfway\nC. speaking their minds\nD. walking on eggshells\n\n回覆 99A / 99B / 99C / 99D' },
+    { q: 'Q100. "That fight was three years ago. Can we just ______ and be friends again?"\n\nA. call each other out\nB. let bygones be bygones\nC. tiptoe around it\nD. speak our minds\n\n回覆 100A / 100B / 100C / 100D' },
+  ]},
 ];
 
 // 補看用的圖卡列表
@@ -242,6 +298,10 @@ const weekCards = {
   14: ['Day66_Tight_budget_and_Pinch_pennies.png', 'Day67_Splurge_and_Break_the_bank.png', 'Day68_A_steal_and_Rip_off.png', 'Day69_Save_up_and_Put_aside.png', 'Day70_Live_paycheck_to_paycheck.png'],
   15: ['Day71_Set_the_bar_high_and_Aim_high.png', 'Day72_Hit_the_ground_running.png', 'Day73_Drop_the_ball_and_Fall_behind.png', 'Day74_Bite_off_more_than_one_can_chew.png', 'Day75_On_track_and_Behind_schedule.png'],
   16: ['Day76_Cram_and_Pull_an_all_nighter.png', 'Day77_Ace_a_test_and_Pass_with_flying_colors.png', 'Day78_Flunk_and_Barely_scrape_by.png', 'Day79_Hit_the_books_and_Bookworm.png', 'Day80_Brain_fart_and_Blank_out.png'],
+  17: ['Day81_Carbon_footprint_and_Go_green.png', 'Day82_Throwaway_culture_and_Single_use.png', 'Day83_Eco_friendly_and_Reduce_reuse_recycle.png', 'Day84_A_drop_in_the_ocean_and_Every_little_helps.png', 'Day85_Greenwashing_and_Jump_on_the_bandwagon.png'],
+  18: ['Day86_Cutting_edge_and_State_of_the_art.png', 'Day87_A_game_changer_and_Take_it_to_the_next_level.png', 'Day88_Tech_savvy_and_Digital_native.png', 'Day89_The_tip_of_the_iceberg_and_Behind_the_scenes.png', 'Day90_Keep_up_with_the_times_and_Fall_behind_the_curve.png'],
+  19: ['Day91_Burn_the_midnight_oil_and_Hit_the_hay.png', 'Day92_Catch_some_Zs_and_Sleep_like_a_log.png', 'Day93_Come_down_with_something_and_Run_down.png', 'Day94_Recharge_ones_batteries_and_Take_a_breather.png', 'Day95_You_are_what_you_eat_and_Fit_as_a_fiddle.png'],
+  20: ['Day96_Agree_to_disagree_and_Meet_halfway.png', 'Day97_Bury_the_hatchet_and_Clear_the_air.png', 'Day98_Walk_on_eggshells_and_Tiptoe_around.png', 'Day99_Speak_ones_mind_and_Call_someone_out.png', 'Day100_Let_bygones_be_bygones_and_Turn_the_other_cheek.png'],
 };
 
 module.exports = { schedule, weekCards };

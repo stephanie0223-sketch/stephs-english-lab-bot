@@ -1,10 +1,15 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const cron = require('node-cron');
 const { messagingApi, middleware } = require('@line/bot-sdk');
-const { MessagingApiClient } = messagingApi;
+const { MessagingApiClient, MessagingApiBlobClient } = messagingApi;
 const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
+const { buildGame, gameLabel } = require('./game-data');
+const { richMenuConfig } = require('./richmenu');
+const { handleMenu, setCurrentGame, getCurrentGame } = require('./menu-handlers');
+const { sheet } = require('./sheet');
 
 // 每天的片語（index 0 = Day 1），用於造句練習提示和 AI 批改參考
 const dailyIdioms = [
@@ -104,6 +109,30 @@ const dailyIdioms = [
   'flunk / barely scrape by',                 // Day 78
   'hit the books / bookworm',                 // Day 79
   'brain fart / blank out',                   // Day 80
+  // Week 17: Environment & Sustainability (Day 81-85)
+  'carbon footprint / go green',              // Day 81
+  'throwaway culture / single-use',           // Day 82
+  'eco-friendly / reduce, reuse, recycle',    // Day 83
+  'a drop in the ocean / every little helps', // Day 84
+  'greenwashing / jump on the bandwagon',     // Day 85
+  // Week 18: Technology & AI (Day 86-90)
+  'cutting-edge / state-of-the-art',          // Day 86
+  'a game changer / take it to the next level', // Day 87
+  'tech-savvy / digital native',              // Day 88
+  'the tip of the iceberg / behind the scenes', // Day 89
+  'keep up with the times / fall behind the curve', // Day 90
+  // Week 19: Health & Sleep (Day 91-95)
+  'burn the midnight oil / hit the hay',      // Day 91
+  'catch some Z\'s / sleep like a log',       // Day 92
+  'come down with something / run-down',      // Day 93
+  'recharge one\'s batteries / take a breather', // Day 94
+  'you are what you eat / as fit as a fiddle', // Day 95
+  // Week 20: Conflict & Communication (Day 96-100)
+  'agree to disagree / meet halfway',         // Day 96
+  'bury the hatchet / clear the air',         // Day 97
+  'walk on eggshells / tiptoe around',        // Day 98
+  'speak one\'s mind / call someone out',     // Day 99
+  'let bygones be bygones / turn the other cheek', // Day 100
 ];
 
 // LINE Messaging API 設定
@@ -113,10 +142,12 @@ const config = {
 };
 
 const client = new MessagingApiClient({ channelAccessToken: config.channelAccessToken });
+const blobClient = new MessagingApiBlobClient({ channelAccessToken: config.channelAccessToken });
 const app = express();
 
-// 提供圖片靜態檔案（圖卡和測驗卡）
+// 提供靜態檔案（圖卡、遊戲頁、選單圖）
 app.use('/cards', express.static(path.join(__dirname, 'public', 'cards')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 取得圖片的完整 URL
 function getImageUrl(filename) {
@@ -125,65 +156,60 @@ function getImageUrl(filename) {
 }
 
 // ==========================================
-// 排程推播：每日圖卡 + 週六測驗
+// 推播策略（省訊息額度）
+// ------------------------------------------
+// LINE 免費方案每月 200 則，且只有「主動推播」計費，
+// 「回覆訊息」完全免費。因此：
+//   ❌ 不再每日推播圖卡（改由圖文選單「今日片語」拉取）
+//   ❌ 不再每週推播測驗（改為每兩週一次的複習遊戲）
+//   ✅ 只在每兩週的週日晚上推一則遊戲通知
 // ==========================================
 
-cron.schedule('30 7 * * 1-5', async () => {
+// 產生遊戲推播排程：每偶數週的測驗日隔天（週日）晚上 20:00
+function buildGameSchedule() {
+  const out = [];
+  const quizWeeks = schedule
+    .filter(s => s.type === 'quiz')
+    .map(s => s.week)
+    .sort((a, b) => a - b);
+
+  quizWeeks.forEach(w => {
+    if (w % 2 !== 0) return; // 只在雙週結束後推
+    const quiz = schedule.find(s => s.type === 'quiz' && s.week === w);
+    if (!quiz) return;
+    const d = new Date(quiz.date + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + 1); // 測驗日（週六）+ 1 = 週日
+    out.push({ date: d.toISOString().slice(0, 10), gameId: `${w - 1}-${w}` });
+  });
+  return out;
+}
+
+const gameSchedule = buildGameSchedule();
+
+// 每週日 20:00 檢查是否有排定的複習遊戲
+cron.schedule('0 20 * * 0', async () => {
   const today = getToday();
-  const entry = schedule.find(s => s.date === today && s.type === 'card');
+  const entry = gameSchedule.find(g => g.date === today);
   if (!entry) {
-    console.log(`[${today}] 今天沒有排定的圖卡推播`);
+    console.log(`[${today}] 今天沒有排定的複習遊戲推播`);
     return;
   }
 
-  const todayIdiom = dailyIdioms[entry.dayNum - 1] || '';
-  console.log(`[${today}] 推播 Day ${entry.dayNum}: ${entry.image}`);
+  setCurrentGame(entry.gameId);
+  const info = gameLabel(entry.gameId);
+  const url = `${process.env.BASE_URL || `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`}/game.html?g=${entry.gameId}`;
+
+  console.log(`[${today}] 推播複習遊戲 ${entry.gameId}`);
   try {
     await client.broadcast({
-      messages: [
-        {
-          type: 'image',
-          originalContentUrl: getImageUrl(entry.image),
-          previewImageUrl: getImageUrl(entry.image),
-        },
-        {
-          type: 'text',
-          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n直接貼上句子就會收到 idiom 用法、文法、native 說法的完整回饋 💡`,
-        },
-      ],
-    });
-    console.log(`[${today}] 推播成功！`);
-  } catch (err) {
-    console.error(`[${today}] 推播失敗:`, err.message);
-  }
-}, { timezone: 'Asia/Taipei' });
-
-cron.schedule('0 10 * * 6', async () => {
-  const today = getToday();
-  const entry = schedule.find(s => s.date === today && s.type === 'quiz');
-  if (!entry) {
-    console.log(`[${today}] 今天沒有排定的測驗推播`);
-    return;
-  }
-
-  const quizCount = entry.quizTexts ? entry.quizTexts.length : 0;
-  const firstQ = (entry.week - 1) * 5 + 1;
-  console.log(`[${today}] 推播 Week ${entry.week} 測驗（${quizCount} 題）`);
-  try {
-    // 只推播公告 + 第一題，後續題目在學生回答後自動出現
-    const messages = [
-      {
+      messages: [{
         type: 'text',
-        text: `📝 Week ${entry.week} Quiz Time!\n\n共 ${quizCount} 題，測試你這週學的內容！\n回覆答案（如 ${firstQ}A），答對答錯都會自動出下一題 ☺️`,
-      },
-    ];
-    if (entry.quizTexts && entry.quizTexts.length > 0) {
-      messages.push({ type: 'text', text: entry.quizTexts[0].q });
-    }
-    await client.broadcast({ messages });
-    console.log(`[${today}] 測驗推播成功（公告 + 第 1 題）！`);
+        text: `🎮 ${info.label} 複習遊戲上線了！\n\n📚 範圍：${info.themes}\n⏱️ 10 題，每題 20 秒\n\n看看你這兩週記住多少 👇\n${url}\n\n完成後成績會送到老師那邊，記得認真做喔 ☺️`,
+      }],
+    });
+    console.log(`[${today}] 複習遊戲推播成功！`);
   } catch (err) {
-    console.error(`[${today}] 測驗推播失敗:`, err.message);
+    console.error(`[${today}] 複習遊戲推播失敗:`, err.message);
   }
 }, { timezone: 'Asia/Taipei' });
 
@@ -200,6 +226,59 @@ cron.schedule('*/14 * * * *', () => {
       console.error('[keep-alive] ping failed:', err.message);
     });
   }
+});
+
+// ==========================================
+// 遊戲 API（給 game.html 用，同源不需 CORS）
+// ==========================================
+app.get('/api/quiz', (req, res) => {
+  const game = buildGame(req.query.g || getCurrentGame());
+  res.json(game);
+});
+
+app.post('/api/score', express.json(), async (req, res) => {
+  const { studentId, name, gameId, score, total, seconds } = req.body || {};
+  if (!studentId || !name) return res.json({ ok: false, error: 'missing student' });
+
+  const result = await sheet.score({ studentId, name, gameId, score, total, seconds });
+  console.log(`[score] ${studentId} ${name} ${gameId} ${score}/${total} ${seconds}s → ${result.ok ? 'ok' : result.error}`);
+  res.json(result);
+});
+
+// ==========================================
+// 圖文選單設定（部署後打開一次即可）
+// ==========================================
+app.get('/setup-richmenu', async (req, res) => {
+  try {
+    // 先刪掉舊的選單，避免累積
+    const existing = await client.getRichMenuList();
+    for (const menu of existing.richmenus || []) {
+      await client.deleteRichMenu(menu.richMenuId);
+      console.log(`[richmenu] deleted ${menu.richMenuId}`);
+    }
+
+    const created = await client.createRichMenu(richMenuConfig);
+    const richMenuId = created.richMenuId;
+
+    const imgPath = path.join(__dirname, 'public', 'richmenu.png');
+    const buffer = fs.readFileSync(imgPath);
+    await blobClient.setRichMenuImage(richMenuId, new Blob([buffer], { type: 'image/png' }));
+
+    await client.setDefaultRichMenu(richMenuId);
+
+    console.log(`[richmenu] created and set as default: ${richMenuId}`);
+    res.send(`✅ 圖文選單設定完成！\nrichMenuId: ${richMenuId}\n\n打開 LINE 聊天室就會看到選單（可能要重開 App）。`);
+  } catch (err) {
+    console.error('[richmenu] setup failed:', err);
+    res.status(500).send(`❌ 設定失敗：${err.message}\n\n${JSON.stringify(err.originalError?.response?.data || {}, null, 2)}`);
+  }
+});
+
+// 手動切換目前開放的複習遊戲，例如 /set-game/5-6
+app.get('/set-game/:id', (req, res) => {
+  setCurrentGame(req.params.id);
+  const info = gameLabel(req.params.id);
+  res.send(`✅ 目前遊戲已切換為 ${req.params.id}（${info.themes || '?'}）`);
 });
 
 // ==========================================
@@ -281,9 +360,18 @@ async function handleEvent(event) {
       replyToken: event.replyToken,
       messages: [{
         type: 'text',
-        text: `嗨！歡迎加入 Steph's English Lab 🌿\n\n我是 Stephanie，一位相信「英文是通往世界的橋樑」的高中英文老師。\n\n在這裡，你會收到：\n📍 週一到週五｜每日一組實用英文片語 + 情境例句\n📍 週六｜每週小測驗，測試你這週學了多少\n\n不用死背，不用壓力——\n每天花 30 秒看一張圖卡，慢慢累積就好。\n\n📖 中途加入也沒關係！輸入 W1、W2... 就能補看之前的圖卡\n\n一起用英文拓展視野吧！\nEnglish for Connection ✨`,
+        text: `嗨！歡迎加入 Steph's English Lab 🌿\n\n我是 Stephanie，一位相信「英文是通往世界的橋樑」的高中英文老師。\n\n看到下面的選單了嗎？六個功能都在那裡 👇\n\n📖 今日片語｜每天點一下，收今天的圖卡\n🎮 複習遊戲｜每兩週一次的計時挑戰\n📚 補看圖卡｜輸入 W1、W2... 隨時回顧\n✏️ 造句批改｜AI 幫你改英文句子\n📊 我的進度｜看自己累積了多少\n🌿 關於老師｜認識我\n\n不用死背，不用壓力——\n每天花 30 秒，慢慢累積就好。\n\n先點「📖 今日片語」開始吧！\nEnglish for Connection ✨`,
       }],
     });
+  }
+
+  // 圖文選單（postback）
+  if (event.type === 'postback') {
+    const params = new URLSearchParams(event.postback.data || '');
+    const action = params.get('menu');
+    const messages = await handleMenu(action, event.source.userId, dailyIdioms);
+    if (!messages) return null;
+    return client.replyMessage({ replyToken: event.replyToken, messages });
   }
 
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -316,7 +404,7 @@ async function handleEvent(event) {
     });
   }
 
-  const weekMatch = lowerText.match(/^(?:w|week\s?)(\d)$/);
+  const weekMatch = lowerText.match(/^(?:w|week\s?)(\d{1,2})$/);
   if (weekMatch) {
     const weekNum = parseInt(weekMatch[1]);
     if (weekCards[weekNum]) {
