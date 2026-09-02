@@ -342,7 +342,7 @@ app.get('/trigger-card/:day', async (req, res) => {
         },
         {
           type: 'text',
-          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\n${writeUrl()}\n\nChatGPT、Claude、Gemini 都可以用，指令會自動幫你帶好 💡`,
+          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\n${writeUrl()}\n\n打開就已經幫你填好指令，直接按送出 💡`,
         },
       ],
     });

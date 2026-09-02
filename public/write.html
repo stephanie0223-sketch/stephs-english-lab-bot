@@ -49,6 +49,14 @@
     transition:all .15s;
   }
   .ai:active { transform:scale(.99); }
+  .ai.primary {
+    background:var(--green); border-color:var(--green); color:#fff;
+    padding:17px 16px; box-shadow:0 3px 12px rgba(74,124,89,.25);
+  }
+  .ai.primary .ico { background:rgba(255,255,255,.22); }
+  .ai.primary .txt b { font-size:16px; }
+  .ai.primary .txt span { color:rgba(255,255,255,.8); }
+  .ai.primary .go { color:#fff; }
   .ai .ico {
     flex-shrink:0; width:34px; height:34px; border-radius:10px;
     display:grid; place-items:center; font-size:17px; font-weight:800;
@@ -92,35 +100,23 @@
   <div class="card">
     <div class="brand">STEPH'S ENGLISH LAB</div>
     <h1>✏️ 造句小助教</h1>
-    <p class="sub">寫下你的英文句子，選一個 AI 幫你批改</p>
+    <p class="sub">寫下你的英文句子，ChatGPT 幫你批改</p>
 
     <label for="sent">你的英文句子</label>
     <textarea id="sent" placeholder="例：I get butterflies in my stomach whenever I see my crush."></textarea>
     <p class="hint">💡 用今天學的 idiom 造句，寫錯也沒關係，改過就學會了</p>
 
     <div class="pick">
-      <div class="pick-title">選一個 AI 幫你批改 👇</div>
+      <div class="pick-title">送出去批改 👇</div>
 
-      <button class="ai" id="btn-gpt">
+      <button class="ai primary" id="btn-gpt">
         <span class="ico">G</span>
-        <span class="txt"><b>ChatGPT</b><span>自動帶入，直接按送出</span></span>
-        <span class="go">→</span>
-      </button>
-
-      <button class="ai" id="btn-claude">
-        <span class="ico">C</span>
-        <span class="txt"><b>Claude</b><span>自動帶入，直接按送出</span></span>
-        <span class="go">→</span>
-      </button>
-
-      <button class="ai" id="btn-gemini">
-        <span class="ico">✦</span>
-        <span class="txt"><b>Gemini</b><span>先複製，貼上就好</span></span>
+        <span class="txt"><b>用 ChatGPT 批改</b><span>指令會自動帶好，開啟後直接按送出</span></span>
         <span class="go">→</span>
       </button>
 
       <div class="copybar">
-        <button class="copybtn" id="btn-copy">📋 只複製批改指令（貼到任何 AI）</button>
+        <button class="copybtn" id="btn-copy">📋 複製指令（沒自動帶入時用這個）</button>
       </div>
     </div>
 
@@ -203,36 +199,18 @@
     });
   }
 
-  // ChatGPT 與 Claude 支援用網址參數帶入問題
+  // ChatGPT 支援用網址參數帶入問題，開啟後已填好
   $('btn-gpt').addEventListener('click', function () {
     var s = getSentence();
     if (!s) return;
     window.open('https://chatgpt.com/?q=' + encodeURIComponent(fullPrompt(s)), '_blank');
   });
 
-  $('btn-claude').addEventListener('click', function () {
-    var s = getSentence();
-    if (!s) return;
-    window.open('https://claude.ai/new?q=' + encodeURIComponent(fullPrompt(s)), '_blank');
-  });
-
-  // Gemini 不支援帶入，改成複製後開啟
-  $('btn-gemini').addEventListener('click', function () {
-    var s = getSentence();
-    if (!s) return;
-    copyText(fullPrompt(s)).then(function () {
-      toast('已複製！貼上就可以了');
-      setTimeout(function () { window.open('https://gemini.google.com/app', '_blank'); }, 700);
-    }).catch(function () {
-      toast('複製失敗，請手動選取複製 🙏');
-    });
-  });
-
   $('btn-copy').addEventListener('click', function () {
     var s = getSentence();
     if (!s) return;
     copyText(fullPrompt(s)).then(function () {
-      toast('已複製，貼到任何 AI 都可以 ✅');
+      toast('已複製，貼到 ChatGPT 就可以了 ✅');
     }).catch(function () {
       toast('複製失敗，請手動選取複製 🙏');
     });

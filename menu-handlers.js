@@ -160,14 +160,14 @@ function handleFeedback() {
     type: 'text',
     text: `✏️ 造句小助教
 
-把你寫的英文句子貼進去，選一個 AI，馬上得到：
+把你寫的英文句子貼進去，馬上得到：
 ✅ idiom 用得對不對
 📝 文法和用字批改
 ✨ Native speaker 會怎麼說
 
 👉 ${writeUrl()}
 
-ChatGPT、Claude、Gemini 都可以用，指令會自動幫你帶好 💡`,
+打開就已經幫你填好指令，直接按送出 💡`,
   }];
 }
 
