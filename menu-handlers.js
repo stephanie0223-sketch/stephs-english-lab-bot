@@ -35,6 +35,44 @@ function imageUrl(filename) {
   return `${baseUrl()}/cards/${encodeURIComponent(filename)}`;
 }
 
+// 課程全部上完後的循環複習：每天輪播一張舊圖卡，讓每日習慣不中斷
+function reviewCard(userId, dailyIdioms) {
+  const cards = schedule.filter(s => s.type === 'card');
+  if (!cards.length) {
+    return [{ type: 'text', text: '目前沒有可複習的圖卡 🌿' }];
+  }
+
+  const lastDate = cards[cards.length - 1].date;
+  const daysSince = Math.round(
+    (Date.parse(getToday() + 'T00:00:00Z') - Date.parse(lastDate + 'T00:00:00Z')) / 86400000
+  );
+  const n = cards.length;
+  const idx = (((daysSince - 1) % n) + n) % n;
+  const pick = cards[idx];
+  const idiom = dailyIdioms[pick.dayNum - 1] || '';
+
+  if (sheet.enabled()) {
+    sheet.checkin(userId, pick.dayNum, idiom).catch(() => {});
+  }
+
+  return [
+    {
+      type: 'image',
+      originalContentUrl: imageUrl(pick.image),
+      previewImageUrl: imageUrl(pick.image),
+    },
+    {
+      type: 'text',
+      text: `🔄 複習日｜Day ${pick.dayNum}：「${idiom}」
+
+第一輪 ${n} 天已經全部跑完了，現在進入複習循環——每天一張，重新溫習一次 🌿
+
+還記得怎麼用嗎？造個句子丟給小助教 👇
+${GEM_URL}`,
+    },
+  ];
+}
+
 // ==========================================
 // 📖 今日片語
 // ==========================================
@@ -51,12 +89,17 @@ async function handleToday(userId, dailyIdioms) {
       }];
     }
     const nextCard = schedule.find(s => s.type === 'card' && s.date > today);
-    return [{
-      type: 'text',
-      text: nextCard
-        ? `今天休息，好好充電 🌿\n\n下一張圖卡會在 ${nextCard.date} 出現。\n想複習的話，點下方「📚 補看圖卡」隨時都能看 ☺️`
-        : `這一輪課程已經全部結束了 🎉\n\n點下方「📚 補看圖卡」可以隨時回顧，新的主題敬請期待 🌿`,
-    }];
+    if (nextCard) {
+      return [{
+        type: 'text',
+        text: `今天休息，好好充電 🌿
+
+下一張圖卡會在 ${nextCard.date} 出現。
+想複習的話，點下方「📚 補看圖卡」隨時都能看 ☺️`,
+      }];
+    }
+    // 整輪課程已上完 → 進入循環複習模式
+    return reviewCard(userId, dailyIdioms);
   }
 
   const idiom = dailyIdioms[entry.dayNum - 1] || '';
