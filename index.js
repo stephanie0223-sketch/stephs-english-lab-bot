@@ -201,22 +201,17 @@ function getImageUrl(filename) {
 //   ✅ 只在每兩週的週日晚上推一則遊戲通知
 // ==========================================
 
-// 產生遊戲推播排程：每偶數週的測驗日隔天（週日）晚上 20:00
+// 遊戲推播日：每偶數週的測驗日隔天（週日）晚上 20:00
+// 遊戲內容本身每週滾動更新，推播只是每兩週提醒一次
 function buildGameSchedule() {
   const out = [];
-  const quizWeeks = schedule
-    .filter(s => s.type === 'quiz')
-    .map(s => s.week)
-    .sort((a, b) => a - b);
-
-  quizWeeks.forEach(w => {
-    if (w % 2 !== 0) return; // 只在雙週結束後推
-    const quiz = schedule.find(s => s.type === 'quiz' && s.week === w);
-    if (!quiz) return;
-    const d = new Date(quiz.date + 'T00:00:00Z');
-    d.setUTCDate(d.getUTCDate() + 1); // 測驗日（週六）+ 1 = 週日
-    out.push({ date: d.toISOString().slice(0, 10), gameId: `${w - 1}-${w}` });
-  });
+  schedule
+    .filter(s => s.type === 'quiz' && s.week % 2 === 0)
+    .forEach(quiz => {
+      const d = new Date(quiz.date + 'T00:00:00Z');
+      d.setUTCDate(d.getUTCDate() + 1); // 測驗日（週六）+ 1 = 週日
+      out.push({ date: d.toISOString().slice(0, 10) });
+    });
   return out;
 }
 
@@ -231,11 +226,11 @@ cron.schedule('0 20 * * 0', async () => {
     return;
   }
 
-  setCurrentGame(entry.gameId);
-  const info = gameLabel(entry.gameId);
-  const url = `${process.env.BASE_URL || `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`}/game.html?g=${entry.gameId}`;
+  const gameId = getCurrentGame();
+  const info = gameLabel(gameId);
+  const url = `${process.env.BASE_URL || `https://${process.env.RENDER_EXTERNAL_HOSTNAME}`}/game.html?g=${gameId}`;
 
-  console.log(`[${today}] 推播複習遊戲 ${entry.gameId}`);
+  console.log(`[${today}] 推播複習遊戲 ${gameId}`);
   try {
     await client.broadcast({
       messages: [{

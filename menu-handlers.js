@@ -12,22 +12,23 @@ function getToday() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Taipei' });
 }
 
-// 依今天日期算出「最近一組已上完的雙週」，例如今天在 W18 → 回傳 "15-16"
+// 滾動式週更：每週測驗結束後，遊戲範圍前進一週（本週 + 上週，共 10 題）
+// 例：W22 測驗結束 → "21-22"；下週 W23 結束 → "22-23"
 function inferCurrentGame() {
   const today = getToday();
   const done = schedule
-    .filter(s => s.type === 'quiz' && s.date <= today && s.week % 2 === 0)
+    .filter(s => s.type === 'quiz' && s.date <= today)
     .map(s => s.week)
     .sort((a, b) => b - a);
-  const w = done[0] || 2;
-  return `${w - 1}-${w}`;
+  const w = done[0] || 1;
+  return w <= 1 ? '1' : `${w - 1}-${w}`;
 }
 
 // 目前開放的複習遊戲（格式 "5-6"）
 // 優先序：手動設定 > 環境變數 > 依日期自動推算
 let manualGame = process.env.CURRENT_GAME || null;
 
-function setCurrentGame(id) { manualGame = id; }
+function setCurrentGame(id) { manualGame = (id === 'auto' ? null : id); }
 function getCurrentGame() { return manualGame || inferCurrentGame(); }
 
 function baseUrl() {
@@ -88,7 +89,7 @@ async function handleToday(userId, dailyIdioms) {
     if (quiz) {
       return [{
         type: 'text',
-        text: `今天是週六，沒有新片語 ☺️\n\n是複習日！點下方「🎮 複習遊戲」測驗一下這兩週學的內容吧 💪`,
+        text: `今天是週六，沒有新片語 ☺️\n\n是複習日！本週的新遊戲已經更新，點下方「🎮 複習遊戲」挑戰看看 💪`,
       }];
     }
     const nextCard = schedule.find(s => s.type === 'card' && s.date > today);
@@ -221,7 +222,7 @@ async function handleProgress(userId) {
 function handleAbout() {
   return [{
     type: 'text',
-    text: `🌿 Steph's English Lab\n\n嗨，我是 Stephanie，一位相信「英文是通往世界的橋樑」的高中英文老師。\n\n這裡不教死背，只想陪你每天累積一點點——\n📖 週一到週五｜每天一組實用片語\n🎮 每兩週｜複習遊戲挑戰\n✏️ 隨時｜AI 造句批改\n\n學英文不是為了考試，\n是為了有一天你能用它，跟世界對話。\n\nEnglish for Connection.\nDriven by Purpose. Mastered by Perseverance. ✨\n\n🔗 教材與課程：\nhttps://www.stephanies-english-lab.com/`,
+    text: `🌿 Steph's English Lab\n\n嗨，我是 Stephanie，一位相信「英文是通往世界的橋樑」的高中英文老師。\n\n這裡不教死背，只想陪你每天累積一點點——\n📖 週一到週五｜每天一組實用片語\n🎮 每週六｜複習遊戲更新\n✏️ 隨時｜AI 造句批改\n\n學英文不是為了考試，\n是為了有一天你能用它，跟世界對話。\n\nEnglish for Connection.\nDriven by Purpose. Mastered by Perseverance. ✨\n\n🔗 教材與課程：\nhttps://www.stephanies-english-lab.com/`,
   }];
 }
 
