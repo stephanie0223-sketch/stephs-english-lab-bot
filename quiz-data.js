@@ -641,6 +641,198 @@ const quizReplies = {
   '100B': { correct: true,  reply: '✅ 答對了！\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\nbygone 是「過去的事」，整句照抄不用改字。\n\n例句：Let\'s let bygones be bygones.\n\n🎉 Week 20 測驗完成——而且你走完了整整 100 天！從第一句 speak volumes 到今天的 let bygones be bygones，你真的好棒 👏 English for Connection，我們下一段旅程見 💚' },
   '100C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\n三年前的爭執就別再提了，重新當朋友吧！\n\n例句：Let\'s let bygones be bygones.\n\n💡 tiptoe around it 是「繞著問題不敢談」，題目是想直接翻篇喔！' },
   '100D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 let bygones be bygones = 既往不咎、過去的就讓它過去\n\n三年前的爭執就別再提了，重新當朋友吧！\n\n例句：Let\'s let bygones be bygones.\n\n💡 speak one\'s mind 是「有話直說」，題目重點是「翻篇」喔！' },
+
+  // ===== Week 21: Music & Entertainment 🎵 =====
+
+  // Q101 - 正確答案: B (binge-watched)
+  '101A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 binge-watch = 一口氣追完（劇集）\n\nbinge-watch 才是「一集接一集追完」。on repeat 是同一首歌或影片一直重播，重點在「重複同一個」，不是「一直看下一集」。\n\n例句：I binge-watched the whole season in one weekend.' },
+  '101B': { correct: true,  reply: '✅ 答對了！\n👉 binge-watch = 一口氣追完（劇集）\n\nbinge 原意是「無節制地大吃」，加上 watch 就是「無節制地追劇」，一晚看完整季正是這個字。\n\n例句：I binge-watched the whole season in one weekend.\n\n👏 繼續下一題！' },
+  '101C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 binge-watch = 一口氣追完（劇集）\n\nbinge-watch 才是「一口氣追完」。steal the show 是「搶盡全場風頭」，用在表演場合喔。\n\n例句：I binge-watched the whole season in one weekend.' },
+  '101D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 binge-watch = 一口氣追完（劇集）\n\nbinge-watch 才是「一口氣追完」。give away the ending 是「爆雷、把結局說出來」，題目沒有人在暴雷。\n\n例句：I binge-watched the whole season in one weekend.' },
+
+  // Q102 - 正確答案: A (on repeat)
+  '102A': { correct: true,  reply: '✅ 答對了！\n👉 on repeat = 單曲循環、一直重播\n\n同一首歌一直重播，就是 on repeat；也可以形容腦中一直重播的畫面。\n\n例句：That new song has been on repeat on my phone all week.\n\n👏 繼續下一題！' },
+  '102B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 on repeat = 單曲循環、一直重播\n\non repeat 才對。a must-watch 是「必看之作」，用來推薦影片，不是描述重複播放。\n\n例句：That new song has been on repeat on my phone all week.' },
+  '102C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 on repeat = 單曲循環、一直重播\n\non repeat 才對。a tear-jerker 是「催淚片」，重點在讓人哭，不是重複播放。\n\n例句：That new song has been on repeat on my phone all week.' },
+  '102D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 on repeat = 單曲循環、一直重播\n\non repeat 才對。behind the scenes 是「幕後」，跟一直重播沒有關係。\n\n例句：That new song has been on repeat on my phone all week.' },
+
+  // Q103 - 正確答案: B (stole the show)
+  '103A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 steal the show = 搶盡風頭、成為全場焦點\n\nbring the house down 是「博得滿堂彩」，強調觀眾的掌聲有多熱烈；題目強調的是「本來不是主角卻搶走了焦點」，要用 steal the show。\n\n例句：The freshman singer totally stole the show at the talent night.' },
+  '103B': { correct: true,  reply: '✅ 答對了！\n👉 steal the show = 搶盡風頭、成為全場焦點\n\nsteal 在這裡不是偷東西，而是把全場注意力搶過來，通常帶著讚美。\n\n例句：The freshman singer totally stole the show at the talent night.\n\n👏 繼續下一題！' },
+  '103C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 steal the show = 搶盡風頭、成為全場焦點\n\nsteal the show 才對。play it by ear 是「見機行事」，跟搶風頭無關。\n\n例句：The freshman singer totally stole the show at the talent night.' },
+  '103D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 steal the show = 搶盡風頭、成為全場焦點\n\nsteal the show 才對。binge-watch 是「一口氣追完劇」，不能用來形容表演。\n\n例句：The freshman singer totally stole the show at the talent night.' },
+
+  // Q104 - 正確答案: B (give away the ending)
+  '104A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 give away the ending = 爆雷、把結局說出來\n\ngive away the ending 才是「爆雷」。bring the house down 是「博得滿堂彩」，是表演成功的意思。\n\n例句：Please do not give away the ending; I am only on episode three.' },
+  '104B': { correct: true,  reply: '✅ 答對了！\n👉 give away the ending = 爆雷、把結局說出來\n\ngive away 在這裡是「不小心洩漏」，跟「送人」的 give away 不同。要提醒別人前先講 Spoiler alert!\n\n例句：Please do not give away the ending; I am only on episode three.\n\n👏 繼續下一題！' },
+  '104C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 give away the ending = 爆雷、把結局說出來\n\ngive away the ending 才是「爆雷」。put it on repeat 是「一直重播」，跟劇透無關。\n\n例句：Please do not give away the ending; I am only on episode three.' },
+  '104D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 give away the ending = 爆雷、把結局說出來\n\ngive away the ending 才是「爆雷」。take the plunge 是「下定決心去做」，用在猶豫很久之後。\n\n例句：Please do not give away the ending; I am only on episode three.' },
+
+  // Q105 - 正確答案: C (a tear-jerker)
+  '105A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a tear-jerker = 催淚片、賺人熱淚的作品\n\na must-watch 是「必看之作」，說的是「值得看」，沒有指出會讓人哭；題目重點是全班都哭了。\n\n例句：Bring tissues — the finale is a real tear-jerker.' },
+  '105B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a tear-jerker = 催淚片、賺人熱淚的作品\n\na tear-jerker 才對。a go-getter 是「積極主動的行動派」，形容人的個性。\n\n例句：Bring tissues — the finale is a real tear-jerker.' },
+  '105C': { correct: true,  reply: '✅ 答對了！\n👉 a tear-jerker = 催淚片、賺人熱淚的作品\n\ntear-jerker 字面是「把眼淚扯出來的東西」，jerk 是「猛拉」，畫面很好記。\n\n例句：Bring tissues — the finale is a real tear-jerker.\n\n👏 Week 21 測驗完成！這禮拜的片語很適合拿來聊追劇 🎵' },
+  '105D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 a tear-jerker = 催淚片、賺人熱淚的作品\n\na tear-jerker 才對。a good sport 是「輸得起、有風度的人」，用在比賽場合。\n\n例句：Bring tissues — the finale is a real tear-jerker.' },
+
+  // ===== Week 22: Sports & Competition 🏀 =====
+
+  // Q106 - 正確答案: A (game plan)
+  '106A': { correct: true,  reply: '✅ 答對了！\n👉 a game plan = 作戰計畫、策略\n\ngame plan 就是事先想好的作戰計畫，讀書、比賽、專題都能用：What is your game plan for finals?\n\n例句：Before the tournament, the coach walked us through the game plan.\n\n👏 繼續下一題！' },
+  '106B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a game plan = 作戰計畫、策略\n\ngame plan 才對。the home stretch 是「最後衝刺階段」，指快到終點的那一段時間。\n\n例句：Before the tournament, the coach walked us through the game plan.' },
+  '106C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a game plan = 作戰計畫、策略\n\ngame plan 才對。a level playing field 是「公平的競爭環境」，強調大家機會一樣。\n\n例句：Before the tournament, the coach walked us through the game plan.' },
+  '106D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a game plan = 作戰計畫、策略\n\ngame plan 才對。a good sport 是「輸得起的人」，形容態度不是計畫。\n\n例句：Before the tournament, the coach walked us through the game plan.' },
+
+  // Q107 - 正確答案: B (neck and neck)
+  '107A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 neck and neck = 不分軒輊、並駕齊驅\n\nneck and neck 才對。in the spotlight 是「成為眾人焦點」，沒有「兩邊實力相當」的意思。\n\n例句：The two classes were neck and neck until the last runner.' },
+  '107B': { correct: true,  reply: '✅ 答對了！\n👉 neck and neck = 不分軒輊、並駕齊驅\n\nneck and neck 來自賽馬——兩匹馬的脖子齊頭並進，用來形容比數咬得極緊。\n\n例句：The two classes were neck and neck until the last runner.\n\n👏 繼續下一題！' },
+  '107C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 neck and neck = 不分軒輊、並駕齊驅\n\nneck and neck 才對。out of the blue 是「突然、毫無預警」，題目是持續拉鋸，不是突發。\n\n例句：The two classes were neck and neck until the last runner.' },
+  '107D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 neck and neck = 不分軒輊、並駕齊驅\n\nneck and neck 才對。down-to-earth 是「腳踏實地、不擺架子」，形容個性。\n\n例句：The two classes were neck and neck until the last runner.' },
+
+  // Q108 - 正確答案: C (threw in the towel)
+  '108A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throw in the towel = 認輸、放棄\n\nhang in there 是「撐住、別放棄」，跟題目的「想放棄」剛好相反。\n\n例句：After failing twice, he almost threw in the towel on the violin.' },
+  '108B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throw in the towel = 認輸、放棄\n\ngive it your all 是「全力以赴」，也跟「想放棄」相反。\n\n例句：After failing twice, he almost threw in the towel on the violin.' },
+  '108C': { correct: true,  reply: '✅ 答對了！\n👉 throw in the towel = 認輸、放棄\n\nthrow in the towel 來自拳擊——教練把毛巾丟進場中就是替選手認輸。\n\n例句：After failing twice, he almost threw in the towel on the violin.\n\n👏 繼續下一題！' },
+  '108D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 throw in the towel = 認輸、放棄\n\ncall it a draw 是「算平手吧」，用在雙方僵持不下，題目沒有對手。\n\n例句：After failing twice, he almost threw in the towel on the violin.' },
+
+  // Q109 - 正確答案: A (the underdog)
+  '109A': { correct: true,  reply: '✅ 答對了！\n👉 the underdog = 不被看好的一方、黑馬\n\nunderdog 是「處於下風的狗」，帶著同情與期待，常說 root for the underdog。\n\n例句：Everyone loves cheering for the underdog in the final.\n\n👏 繼續下一題！' },
+  '109B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 the underdog = 不被看好的一方、黑馬\n\nthe underdog 才對。the home stretch 是「最後衝刺階段」，講的是時間不是隊伍。\n\n例句：Everyone loves cheering for the underdog in the final.' },
+  '109C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 the underdog = 不被看好的一方、黑馬\n\nthe underdog 才對。a people person 是「很會跟人相處的人」，形容個性。\n\n例句：Everyone loves cheering for the underdog in the final.' },
+  '109D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 the underdog = 不被看好的一方、黑馬\n\nthe underdog 才對。a hot topic 是「熱門話題」，跟比賽強弱無關。\n\n例句：Everyone loves cheering for the underdog in the final.' },
+
+  // Q110 - 正確答案: B (a good sport)
+  '110A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a good sport = 輸得起的人、有風度的人\n\na good sport 才對。a tough nut to crack 是「難搞的人或難題」，題目在稱讚她的風度。\n\n例句：She lost the final but shook everyone\'s hand — what a good sport.' },
+  '110B': { correct: true,  reply: '✅ 答對了！\n👉 a good sport = 輸得起的人、有風度的人\n\na good sport 講的是態度不是球技；反過來是 a sore loser（輸不起的人）。\n\n例句：She lost the final but shook everyone\'s hand — what a good sport.\n\n👏 Week 22 測驗完成！下次比賽就用得上這些說法 🏀' },
+  '110C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a good sport = 輸得起的人、有風度的人\n\na good sport 才對。an open book 是「毫無心機、一看就懂的人」，重點在心思透明。\n\n例句：She lost the final but shook everyone\'s hand — what a good sport.' },
+  '110D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 a good sport = 輸得起的人、有風度的人\n\na good sport 才對。a global citizen 是「世界公民」，用在關心國際議題的人。\n\n例句：She lost the final but shook everyone\'s hand — what a good sport.' },
+
+  // ===== Week 23: Creativity & Expression 🎨 =====
+
+  // Q111 - 正確答案: B (from scratch)
+  '111A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 from scratch = 從零開始、從頭做起\n\nfrom scratch 才對。out of the blue 是「突然發生」，強調沒有預兆，不是「從零做起」。\n\n例句：We built the class website from scratch over the summer.' },
+  '111B': { correct: true,  reply: '✅ 答對了！\n👉 from scratch = 從零開始、從頭做起\n\nscratch 原指起跑線上劃的那一道，from scratch 就是從起跑線開始，煮飯、寫程式都能用。\n\n例句：We built the class website from scratch over the summer.\n\n👏 繼續下一題！' },
+  '111C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 from scratch = 從零開始、從頭做起\n\nfrom scratch 才對。on a whim 是「一時興起」，強調沒計畫就去做。\n\n例句：We built the class website from scratch over the summer.' },
+  '111D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 from scratch = 從零開始、從頭做起\n\nfrom scratch 才對。behind the scenes 是「幕後」，跟從零開始無關。\n\n例句：We built the class website from scratch over the summer.' },
+
+  // Q112 - 正確答案: A (back to the drawing board)
+  '112A': { correct: true,  reply: '✅ 答對了！\n👉 back to the drawing board = 重新規劃、從頭想過\n\nback to the drawing board 是「回到設計圖前面重畫」，正是設計被退回後要做的事。\n\n例句：The judges hated our design, so it is back to the drawing board.\n\n👏 繼續下一題！' },
+  '112B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 back to the drawing board = 重新規劃、從頭想過\n\nback to the drawing board 才對。a stroke of genius 是「神來一筆」，指想到超棒的點子。\n\n例句：The judges hated our design, so it is back to the drawing board.' },
+  '112C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 back to the drawing board = 重新規劃、從頭想過\n\nback to the drawing board 才對。food for thought 是「值得深思的東西」，不是重新規劃。\n\n例句：The judges hated our design, so it is back to the drawing board.' },
+  '112D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 back to the drawing board = 重新規劃、從頭想過\n\nback to the drawing board 才對。a leap of faith 是「冒險一試」，題目是被退回重做。\n\n例句：The judges hated our design, so it is back to the drawing board.' },
+
+  // Q113 - 正確答案: B (out of the blue)
+  '113A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 out of the blue = 突然地、毫無預警地\n\non a whim 是「一時興起」，主角是「做決定的人」；題目的重點是「這件事對你來說毫無預兆」，要用 out of the blue。\n\n例句：My elementary school friend messaged me out of the blue last night.' },
+  '113B': { correct: true,  reply: '✅ 答對了！\n👉 out of the blue = 突然地、毫無預警地\n\nthe blue 指晴朗藍天——晴天霹靂，所以是毫無預兆地發生。\n\n例句：My elementary school friend messaged me out of the blue last night.\n\n👏 繼續下一題！' },
+  '113C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 out of the blue = 突然地、毫無預警地\n\nout of the blue 才對。one step at a time 是「一步一步來」，形容慢慢推進。\n\n例句：My elementary school friend messaged me out of the blue last night.' },
+  '113D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 out of the blue = 突然地、毫無預警地\n\nout of the blue 才對。in the home stretch 是「進入最後衝刺」，跟突發事件無關。\n\n例句：My elementary school friend messaged me out of the blue last night.' },
+
+  // Q114 - 正確答案: A (food for thought)
+  '114A': { correct: true,  reply: '✅ 答對了！\n👉 food for thought = 值得深思的東西\n\nfood for thought 是不可數名詞，前面用 some / a lot of，不能說 a food for thought。\n\n例句：That TED talk gave me a lot of food for thought.\n\n👏 繼續下一題！' },
+  '114B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 food for thought = 值得深思的東西\n\nfood for thought 才對。creative juices 是「靈感」，常搭配 get ... flowing，不是「值得深思」。\n\n例句：That TED talk gave me a lot of food for thought.' },
+  '114C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 food for thought = 值得深思的東西\n\nfood for thought 才對。a hot topic 是「熱門話題」，指很多人在討論，不是引人深思。\n\n例句：That TED talk gave me a lot of food for thought.' },
+  '114D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 food for thought = 值得深思的東西\n\nfood for thought 才對。put a spin on something 才是完整片語，意思是「換個角度詮釋」。\n\n例句：That TED talk gave me a lot of food for thought.' },
+
+  // Q115 - 正確答案: B (thought on her feet)
+  '115A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 think on one\'s feet = 臨場反應快、隨機應變\n\npaint a picture 是「描述得很生動、讓人有畫面」，題目重點是臨場應變的速度。\n\n例句：The projector died, but she thought on her feet and used the whiteboard.' },
+  '115B': { correct: true,  reply: '✅ 答對了！\n👉 think on one\'s feet = 臨場反應快、隨機應變\n\nthink on one\'s feet 是「站著就能想」——不用坐下慢慢規劃，臨場立刻反應。\n\n例句：The projector died, but she thought on her feet and used the whiteboard.\n\n👏 Week 23 測驗完成！創意這種事，練習就會長出來 🎨' },
+  '115C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 think on one\'s feet = 臨場反應快、隨機應變\n\nthink on one\'s feet 才對。keep one\'s options open 是「保留多種可能」，用在做選擇時。\n\n例句：The projector died, but she thought on her feet and used the whiteboard.' },
+  '115D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 think on one\'s feet = 臨場反應快、隨機應變\n\nthink on one\'s feet 才對。take a stand 是「表明立場」，用在議題討論上。\n\n例句：The projector died, but she thought on her feet and used the whiteboard.' },
+
+  // ===== Week 24: Personality & Character 🧠 =====
+
+  // Q116 - 正確答案: C (down-to-earth)
+  '116A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 down-to-earth = 腳踏實地的、不擺架子的\n\ndown-to-earth 才對。two-faced 是「雙面人、表裡不一」，是很重的批評。\n\n例句：She won three medals but stays completely down-to-earth.' },
+  '116B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 down-to-earth = 腳踏實地的、不擺架子的\n\ndown-to-earth 才對。hard to read 是「讓人猜不透」，題目是稱讚她不擺架子。\n\n例句：She won three medals but stays completely down-to-earth.' },
+  '116C': { correct: true,  reply: '✅ 答對了！\n👉 down-to-earth = 腳踏實地的、不擺架子的\n\ndown-to-earth 就是「腳踏實地、不因為成就而自抬身價」。當形容詞放名詞前面要加連字號。\n\n例句：She won three medals but stays completely down-to-earth.\n\n👏 繼續下一題！' },
+  '116D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 down-to-earth = 腳踏實地的、不擺架子的\n\ndown-to-earth 才對。in the spotlight 是「成為眾人焦點」，講的是受關注，不是個性。\n\n例句：She won three medals but stays completely down-to-earth.' },
+
+  // Q117 - 正確答案: A (a go-getter)
+  '117A': { correct: true,  reply: '✅ 答對了！\n👉 a go-getter = 積極主動的行動派\n\ngo-getter 是「去把東西拿到手的人」，有連字號，帶著讚美，不是嫌人現實。\n\n例句：Our club president is a go-getter — she planned the whole event in a week.\n\n👏 繼續下一題！' },
+  '117B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a go-getter = 積極主動的行動派\n\na go-getter 才對。an open book 是「毫無心機、一看就懂的人」，講的是心思透明。\n\n例句：Our club president is a go-getter — she planned the whole event in a week.' },
+  '117C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a go-getter = 積極主動的行動派\n\na go-getter 才對。a tear-jerker 是「催淚片」，用在影片或作品上。\n\n例句：Our club president is a go-getter — she planned the whole event in a week.' },
+  '117D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a go-getter = 積極主動的行動派\n\na go-getter 才對。a tough nut to crack 是「難搞的人或難題」，不是形容積極。\n\n例句：Our club president is a go-getter — she planned the whole event in a week.' },
+
+  // Q118 - 正確答案: B (two-faced)
+  '118A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 two-faced = 雙面人的、表裡不一的\n\ntwo-faced 才對。easygoing 是「隨和、好相處」，是正面的形容詞。\n\n例句：I stopped trusting him after I realized he was two-faced.' },
+  '118B': { correct: true,  reply: '✅ 答對了！\n👉 two-faced = 雙面人的、表裡不一的\n\ntwo-faced 就是「當面一套、背後一套」。這是很重的批評，用之前先想清楚場合。\n\n例句：I stopped trusting him after I realized he was two-faced.\n\n👏 繼續下一題！' },
+  '118C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 two-faced = 雙面人的、表裡不一的\n\ntwo-faced 才對。a people person 是「很會跟人相處的人」，是稱讚。\n\n例句：I stopped trusting him after I realized he was two-faced.' },
+  '118D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 two-faced = 雙面人的、表裡不一的\n\ntwo-faced 才對。a global citizen 是「世界公民」，跟人品兩面完全無關。\n\n例句：I stopped trusting him after I realized he was two-faced.' },
+
+  // Q119 - 正確答案: B (hard to read)
+  '119A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 hard to read = 讓人猜不透的\n\nan open book 剛好相反，是「心思一看就懂的人」；題目是猜不透他，要用 hard to read。\n\n例句：He is hard to read — I never know if he likes the idea.' },
+  '119B': { correct: true,  reply: '✅ 答對了！\n👉 hard to read = 讓人猜不透的\n\nhard to read 是把人當成一本書：讀不出他的表情。\n\n例句：He is hard to read — I never know if he likes the idea.\n\n👏 繼續下一題！' },
+  '119C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 hard to read = 讓人猜不透的\n\nhard to read 才對。down-to-earth 是「腳踏實地、不擺架子」，講的是不自大。\n\n例句：He is hard to read — I never know if he likes the idea.' },
+  '119D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 hard to read = 讓人猜不透的\n\nhard to read 才對。neck and neck 是「不分軒輊」，用在比賽比數。\n\n例句：He is hard to read — I never know if he likes the idea.' },
+
+  // Q120 - 正確答案: A (wears her heart on her sleeve)
+  '120A': { correct: true,  reply: '✅ 答對了！\n👉 wear one\'s heart on one\'s sleeve = 把情緒都寫在臉上\n\n據說中世紀騎士會把心上人的絲帶綁在袖子上，情感全公開。兩個 one\'s 都要跟主詞變。\n\n例句：She wears her heart on her sleeve, so you always know how she feels.\n\n👏 Week 24 測驗完成！形容人的字彙又多了一組 🧠' },
+  '120B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 wear one\'s heart on one\'s sleeve = 把情緒都寫在臉上\n\nwear one\'s heart on one\'s sleeve 才對。talk behind someone\'s back 是「在背後說人閒話」。\n\n例句：She wears her heart on her sleeve, so you always know how she feels.' },
+  '120C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 wear one\'s heart on one\'s sleeve = 把情緒都寫在臉上\n\nwear one\'s heart on one\'s sleeve 才對。play it by ear 是「見機行事」，用在計畫上。\n\n例句：She wears her heart on her sleeve, so you always know how she feels.' },
+  '120D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 wear one\'s heart on one\'s sleeve = 把情緒都寫在臉上\n\nwear one\'s heart on one\'s sleeve 才對。call it a draw 是「算平手吧」，用在僵持不下時。\n\n例句：She wears her heart on her sleeve, so you always know how she feels.' },
+
+  // ===== Week 25: Global Views & News 🌏 =====
+
+  // Q121 - 正確答案: B (made headlines)
+  '121A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 make headlines = 登上頭條、引起關注\n\nmake headlines 才對。spark a debate 是「引發辯論」，強調大家吵起來，題目只是被大量報導。\n\n例句：A Taiwanese student\'s invention made headlines around the world.' },
+  '121B': { correct: true,  reply: '✅ 答對了！\n👉 make headlines = 登上頭條、引起關注\n\nheadline 是新聞標題，make headlines 就是「成為新聞頭條」，通常不加 the。\n\n例句：A Taiwanese student\'s invention made headlines around the world.\n\n👏 繼續下一題！' },
+  '121C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 make headlines = 登上頭條、引起關注\n\nmake headlines 才對。take a stand 是「表明立場」，主詞要是人。\n\n例句：A Taiwanese student\'s invention made headlines around the world.' },
+  '121D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 make headlines = 登上頭條、引起關注\n\nmake headlines 才對。raise awareness 是「提高大眾意識」，強調讓人開始關心某議題。\n\n例句：A Taiwanese student\'s invention made headlines around the world.' },
+
+  // Q122 - 正確答案: C (sparked a debate)
+  '122A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 spark a debate = 引發辯論\n\nspark a debate 才對。make headlines 是「登上新聞頭條」，題目只是校內在吵，沒有上新聞。\n\n例句：The new uniform policy sparked a debate in every class.' },
+  '122B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 spark a debate = 引發辯論\n\nspark a debate 才對。keep an open mind 是「保持開放心態」，主詞要是人。\n\n例句：The new uniform policy sparked a debate in every class.' },
+  '122C': { correct: true,  reply: '✅ 答對了！\n👉 spark a debate = 引發辯論\n\nspark 當名詞是「火花」，當動詞就是「點燃」，除了 debate 也能接 spark interest。\n\n例句：The new uniform policy sparked a debate in every class.\n\n👏 繼續下一題！' },
+  '122D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 spark a debate = 引發辯論\n\nspark a debate 才對。chart one\'s own course 是「走出自己的路」，用在人生方向。\n\n例句：The new uniform policy sparked a debate in every class.' },
+
+  // Q123 - 正確答案: A (a double-edged sword)
+  '123A': { correct: true,  reply: '✅ 答對了！\n👉 a double-edged sword = 雙面刃、有利也有弊\n\ndouble-edged sword 是兩邊都開鋒的劍，揮出去也會傷到自己，寫議論文超好用。\n\n例句：Social media is a double-edged sword for teenagers.\n\n👏 繼續下一題！' },
+  '123B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a double-edged sword = 雙面刃、有利也有弊\n\na double-edged sword 才對。a hot topic 只是「很多人在討論的話題」，沒有「有利也有弊」的意思。\n\n例句：Social media is a double-edged sword for teenagers.' },
+  '123C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a double-edged sword = 雙面刃、有利也有弊\n\na double-edged sword 才對。a leap of faith 是「冒險一試」，用在做決定。\n\n例句：Social media is a double-edged sword for teenagers.' },
+  '123D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 a double-edged sword = 雙面刃、有利也有弊\n\na double-edged sword 才對。a level playing field 是「公平的競爭環境」，強調機會平等。\n\n例句：Social media is a double-edged sword for teenagers.' },
+
+  // Q124 - 正確答案: B (raise awareness)
+  '124A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 raise awareness = 提高大眾意識\n\nraise awareness 才對。play it by ear 是「見機行事」，跟推廣議題無關。\n\n例句：The club made short videos to raise awareness of ocean waste.' },
+  '124B': { correct: true,  reply: '✅ 答對了！\n👉 raise awareness = 提高大眾意識\n\nraise awareness 後面接 of 或 about，awareness 是不可數名詞，不加 s。\n\n例句：The club made short videos to raise awareness of ocean waste.\n\n👏 繼續下一題！' },
+  '124C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 raise awareness = 提高大眾意識\n\nraise awareness 才對。steal the show 是「搶盡風頭」，用在表演場合。\n\n例句：The club made short videos to raise awareness of ocean waste.' },
+  '124D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 raise awareness = 提高大眾意識\n\nraise awareness 才對。weigh one\'s options 是「衡量各種選擇」，用在做決定時。\n\n例句：The club made short videos to raise awareness of ocean waste.' },
+
+  // Q125 - 正確答案: C (keep an open mind)
+  '125A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 keep an open mind = 保持開放的心態\n\nkeep an open mind 才對。take a stand 是「表明立場」，反而是先站好邊，跟題目相反。\n\n例句：Before you judge the exchange student\'s habits, keep an open mind.' },
+  '125B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 keep an open mind = 保持開放的心態\n\nkeep an open mind 才對。make headlines 是「登上新聞頭條」。\n\n例句：Before you judge the exchange student\'s habits, keep an open mind.' },
+  '125C': { correct: true,  reply: '✅ 答對了！\n👉 keep an open mind = 保持開放的心態\n\nkeep an open mind 的 mind 是單數、要加 an；後面接 about：keep an open mind about it.\n\n例句：Before you judge the exchange student\'s habits, keep an open mind.\n\n👏 Week 25 測驗完成！議論題的素材庫再加一層 🌏' },
+  '125D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 keep an open mind = 保持開放的心態\n\nkeep an open mind 才對。give it your all 是「全力以赴」，用在努力做事上。\n\n例句：Before you judge the exchange student\'s habits, keep an open mind.' },
+
+  // ===== Week 26: Future & Choices 🎓 =====
+
+  // Q126 - 正確答案: A (at a crossroads)
+  '126A': { correct: true,  reply: '✅ 答對了！\n👉 at a crossroads = 面臨抉擇的十字路口\n\ncrossroads 永遠有 s，即使只有一個路口也一樣：at a crossroads。\n\n例句：After the exam results came out, I felt at a crossroads.\n\n👏 繼續下一題！' },
+  '126B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 at a crossroads = 面臨抉擇的十字路口\n\nat a crossroads 才對。in the spotlight 是「成為眾人焦點」，跟做選擇無關。\n\n例句：After the exam results came out, I felt at a crossroads.' },
+  '126C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 at a crossroads = 面臨抉擇的十字路口\n\nat a crossroads 才對。on a whim 是「一時興起」，強調沒想就做，題目是想很久做不了決定。\n\n例句：After the exam results came out, I felt at a crossroads.' },
+  '126D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 at a crossroads = 面臨抉擇的十字路口\n\nat a crossroads 才對。neck and neck 是「不分軒輊」，用在比賽比數。\n\n例句：After the exam results came out, I felt at a crossroads.' },
+
+  // Q127 - 正確答案: B (play it by ear)
+  '127A': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 play it by ear = 見機行事、到時候再說\n\nplay it by ear 才對。take the plunge 是「下定決心去做」，題目是還不決定。\n\n例句：We do not know the weather yet, so let us play it by ear.' },
+  '127B': { correct: true,  reply: '✅ 答對了！\n👉 play it by ear = 見機行事、到時候再說\n\nplay it by ear 來自不看譜、憑耳朵彈琴，it 固定不變，不能說 play them by ear。\n\n例句：We do not know the weather yet, so let us play it by ear.\n\n👏 繼續下一題！' },
+  '127C': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 play it by ear = 見機行事、到時候再說\n\nplay it by ear 才對。follow one\'s heart 是「順從自己的心意」，用在人生選擇。\n\n例句：We do not know the weather yet, so let us play it by ear.' },
+  '127D': { correct: false, reply: '❌ 不對喔！正確答案是 B\n👉 play it by ear = 見機行事、到時候再說\n\nplay it by ear 才對。throw in the towel 是「認輸放棄」，題目沒有要放棄。\n\n例句：We do not know the weather yet, so let us play it by ear.' },
+
+  // Q128 - 正確答案: C (took the plunge)
+  '128A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take the plunge = 下定決心去做\n\ntake the plunge 才對。keep one\'s options open 是「先不決定、保留可能」，題目是終於決定了。\n\n例句：She finally took the plunge and joined the debate team.' },
+  '128B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take the plunge = 下定決心去做\n\ntake the plunge 才對。call it a draw 是「算平手吧」，用在雙方僵持時。\n\n例句：She finally took the plunge and joined the debate team.' },
+  '128C': { correct: true,  reply: '✅ 答對了！\n👉 take the plunge = 下定決心去做\n\nplunge 是「一頭栽進水裡」，take the plunge 前面固定用 the，強調猶豫很久終於跳下去。\n\n例句：She finally took the plunge and joined the debate team.\n\n👏 繼續下一題！' },
+  '128D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 take the plunge = 下定決心去做\n\ntake the plunge 才對。back to the drawing board 是「重新規劃」，題目是終於行動。\n\n例句：She finally took the plunge and joined the debate team.' },
+
+  // Q129 - 正確答案: A (follow his heart)
+  '129A': { correct: true,  reply: '✅ 答對了！\n👉 follow one\'s heart = 順從自己的心意\n\nfollow one\'s heart 就是「做自己真正想做的，而不是別人期待的」。one\'s 記得跟主詞變。\n\n例句：My parents wanted medicine, but I decided to follow my heart.\n\n👏 繼續下一題！' },
+  '129B': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 follow one\'s heart = 順從自己的心意\n\nfollow one\'s heart 才對。weigh one\'s options 是「衡量各種選擇」，是決定「之前」的動作，題目已經決定了。\n\n例句：My parents wanted medicine, but I decided to follow my heart.' },
+  '129C': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 follow one\'s heart = 順從自己的心意\n\nfollow one\'s heart 才對。hang in there 是「撐住別放棄」，用在低潮時。\n\n例句：My parents wanted medicine, but I decided to follow my heart.' },
+  '129D': { correct: false, reply: '❌ 不對喔！正確答案是 A\n👉 follow one\'s heart = 順從自己的心意\n\nfollow one\'s heart 才對。raise awareness 是「提高大眾意識」，用在推廣議題。\n\n例句：My parents wanted medicine, but I decided to follow my heart.' },
+
+  // Q130 - 正確答案: C (one step at a time)
+  '130A': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 one step at a time = 一步一步來\n\none step at a time 才對。out of the blue 是「突然、毫無預警」，跟慢慢推進無關。\n\n例句：You do not need the whole plan today — just take it one step at a time.' },
+  '130B': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 one step at a time = 一步一步來\n\none step at a time 才對。from scratch 是「從零開始做」，強調沒有現成的東西可用。\n\n例句：You do not need the whole plan today — just take it one step at a time.' },
+  '130C': { correct: true,  reply: '✅ 答對了！\n👉 one step at a time = 一步一步來\n\none step at a time 常搭配 take it。這 130 天你讀的每一張圖卡，就是一步。\n\n例句：You do not need the whole plan today — just take it one step at a time.\n\n👏 Week 26 測驗完成——你走完了整整 130 天！從 Day 1 的 speak volumes 到今天的 one step at a time，一步都沒有白走。English for Connection. Driven by Purpose. Mastered by Perseverance. 謝謝你陪我走到這裡 💚' },
+  '130D': { correct: false, reply: '❌ 不對喔！正確答案是 C\n👉 one step at a time = 一步一步來\n\none step at a time 才對。behind the scenes 是「幕後」，跟一步步前進無關。\n\n例句：You do not need the whole plan today — just take it one step at a time.' },
 };
 
 // 其他關鍵字回覆

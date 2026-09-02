@@ -278,6 +278,90 @@ const schedule = [
     { q: 'Q99. Ever since the argument, everyone in the group has been ______ around Ben, afraid to upset him.\n\nA. clearing the air\nB. meeting halfway\nC. speaking their minds\nD. walking on eggshells\n\n回覆 99A / 99B / 99C / 99D' },
     { q: 'Q100. "That fight was three years ago. Can we just ______ and be friends again?"\n\nA. call each other out\nB. let bygones be bygones\nC. tiptoe around it\nD. speak our minds\n\n回覆 100A / 100B / 100C / 100D' },
   ]},
+
+  // ===== Week 21：Music & Entertainment 🎵 =====
+  { date: '2026-09-07', day: 'Mon', type: 'card', image: 'Day101_Binge_watch_and_On_repeat.png',               week: 21, dayNum: 101 },
+  { date: '2026-09-08', day: 'Tue', type: 'card', image: 'Day102_Catchy_and_Stuck_in_ones_head.png',           week: 21, dayNum: 102 },
+  { date: '2026-09-09', day: 'Wed', type: 'card', image: 'Day103_Steal_the_show_and_Bring_the_house_down.png', week: 21, dayNum: 103 },
+  { date: '2026-09-10', day: 'Thu', type: 'card', image: 'Day104_Spoiler_alert_and_Give_away_the_ending.png',  week: 21, dayNum: 104 },
+  { date: '2026-09-11', day: 'Fri', type: 'card', image: 'Day105_A_must_watch_and_A_tear_jerker.png',          week: 21, dayNum: 105 },
+  { date: '2026-09-12', day: 'Sat', type: 'quiz', week: 21, quizTexts: [
+    { q: 'Q101. 期末考結束那晚，Ivy 從晚上八點看到凌晨三點，把整季影集看完了。She ______ the whole season.\n\nA. put on repeat\nB. binge-watched\nC. stole the show\nD. gave away the ending\n\n回覆 101A / 101B / 101C / 101D' },
+    { q: 'Q102. 「這首歌的副歌太洗腦了，我這禮拜都把它 ______，通勤時一直聽。」\n\nA. on repeat\nB. a must-watch\nC. a tear-jerker\nD. behind the scenes\n\n回覆 102A / 102B / 102C / 102D' },
+    { q: 'Q103. 校慶才藝表演，大家本來都在等三年級的樂團，結果一位高一學弟一開口全場都看他。He totally ______.\n\nA. brought the house down\nB. stole the show\nC. played it by ear\nD. binge-watched\n\n回覆 103A / 103B / 103C / 103D' },
+    { q: 'Q104. 你昨天才看到第三集，班級群組卻有人直接打出結局。You told him not to ______.\n\nA. bring the house down\nB. give away the ending\nC. put it on repeat\nD. take the plunge\n\n回覆 104A / 104B / 104C / 104D' },
+    { q: 'Q105. 「那部片的最後二十分鐘全班都在擦眼淚——它真的是 ______。」\n\nA. a must-watch\nB. a go-getter\nC. a tear-jerker\nD. a good sport\n\n回覆 105A / 105B / 105C / 105D' },
+  ]},
+
+  // ===== Week 22：Sports & Competition 🏀 =====
+  { date: '2026-09-14', day: 'Mon', type: 'card', image: 'Day106_Game_plan_and_Give_it_your_all.png',         week: 22, dayNum: 106 },
+  { date: '2026-09-15', day: 'Tue', type: 'card', image: 'Day107_Neck_and_neck_and_Home_stretch.png',         week: 22, dayNum: 107 },
+  { date: '2026-09-16', day: 'Wed', type: 'card', image: 'Day108_Throw_in_the_towel_and_Hang_in_there.png',   week: 22, dayNum: 108 },
+  { date: '2026-09-17', day: 'Thu', type: 'card', image: 'Day109_The_underdog_and_A_level_playing_field.png', week: 22, dayNum: 109 },
+  { date: '2026-09-18', day: 'Fri', type: 'card', image: 'Day110_Call_it_a_draw_and_A_good_sport.png',        week: 22, dayNum: 110 },
+  { date: '2026-09-19', day: 'Sat', type: 'quiz', week: 22, quizTexts: [
+    { q: 'Q106. 大隊接力前，體育股長把每個人的棒次和跑法都畫在白板上。That was the class\'s ______.\n\nA. game plan\nB. home stretch\nC. level playing field\nD. good sport\n\n回覆 106A / 106B / 106C / 106D' },
+    { q: 'Q107. 大隊接力跑到最後一棒，兩班的分數只差 0.1 秒。The two classes were ______.\n\nA. in the spotlight\nB. neck and neck\nC. out of the blue\nD. down-to-earth\n\n回覆 107A / 107B / 107C / 107D' },
+    { q: 'Q108. 他小提琴檢定連考兩次沒過，一度想直接放棄不學了。He almost ______.\n\nA. hung in there\nB. gave it his all\nC. threw in the towel\nD. called it a draw\n\n回覆 108A / 108B / 108C / 108D' },
+    { q: 'Q109. 籃球決賽對上三連霸的強隊，全校反而拚命替不被看好的我們加油。Everyone loves cheering for ______.\n\nA. the underdog\nB. the home stretch\nC. a people person\nD. a hot topic\n\n回覆 109A / 109B / 109C / 109D' },
+    { q: 'Q110. 她決賽輸了，卻主動去跟對手每個人握手、恭喜他們。What ______ she is!\n\nA. a tough nut to crack\nB. a good sport\nC. an open book\nD. a global citizen\n\n回覆 110A / 110B / 110C / 110D' },
+  ]},
+
+  // ===== Week 23：Creativity & Expression 🎨 =====
+  { date: '2026-09-21', day: 'Mon', type: 'card', image: 'Day111_From_scratch_and_A_stroke_of_genius.png',            week: 23, dayNum: 111 },
+  { date: '2026-09-22', day: 'Tue', type: 'card', image: 'Day112_Back_to_the_drawing_board_and_Put_a_spin_on_it.png', week: 23, dayNum: 112 },
+  { date: '2026-09-23', day: 'Wed', type: 'card', image: 'Day113_Out_of_the_blue_and_On_a_whim.png',                  week: 23, dayNum: 113 },
+  { date: '2026-09-24', day: 'Thu', type: 'card', image: 'Day114_Paint_a_picture_and_Food_for_thought.png',           week: 23, dayNum: 114 },
+  { date: '2026-09-25', day: 'Fri', type: 'card', image: 'Day115_Think_on_ones_feet_and_Creative_juices_flowing.png', week: 23, dayNum: 115 },
+  { date: '2026-09-26', day: 'Sat', type: 'quiz', week: 23, quizTexts: [
+    { q: 'Q111. 班網沒有現成模板可以套，他們整個暑假一行一行自己寫出來。They built it ______.\n\nA. out of the blue\nB. from scratch\nC. on a whim\nD. behind the scenes\n\n回覆 111A / 111B / 111C / 111D' },
+    { q: 'Q112. 科展評審把他們的設計全部退回，組員只好把構想整個重想一次。It was ______.\n\nA. back to the drawing board\nB. a stroke of genius\nC. food for thought\nD. a leap of faith\n\n回覆 112A / 112B / 112C / 112D' },
+    { q: 'Q113. 國小同學失聯六年，昨晚突然傳訊息給你。He messaged me ______.\n\nA. on a whim\nB. out of the blue\nC. one step at a time\nD. in the home stretch\n\n回覆 113A / 113B / 113C / 113D' },
+    { q: 'Q114. 那場關於 AI 與工作的演講讓全班回家後還在想。It gave us a lot of ______.\n\nA. food for thought\nB. creative juices\nC. a hot topic\nD. a spin\n\n回覆 114A / 114B / 114C / 114D' },
+    { q: 'Q115. 報告到一半投影機突然壞掉，她立刻改用白板把重點畫出來。She really ______.\n\nA. painted a picture\nB. thought on her feet\nC. kept her options open\nD. took a stand\n\n回覆 115A / 115B / 115C / 115D' },
+  ]},
+
+  // ===== Week 24：Personality & Character 🧠 =====
+  { date: '2026-09-28', day: 'Mon', type: 'card', image: 'Day116_Down_to_earth_and_Easygoing.png',                     week: 24, dayNum: 116 },
+  { date: '2026-09-29', day: 'Tue', type: 'card', image: 'Day117_A_people_person_and_A_go_getter.png',                 week: 24, dayNum: 117 },
+  { date: '2026-09-30', day: 'Wed', type: 'card', image: 'Day118_Two_faced_and_Talk_behind_someones_back.png',         week: 24, dayNum: 118 },
+  { date: '2026-10-01', day: 'Thu', type: 'card', image: 'Day119_A_tough_nut_to_crack_and_Hard_to_read.png',           week: 24, dayNum: 119 },
+  { date: '2026-10-02', day: 'Fri', type: 'card', image: 'Day120_Wear_ones_heart_on_ones_sleeve_and_An_open_book.png', week: 24, dayNum: 120 },
+  { date: '2026-10-03', day: 'Sat', type: 'quiz', week: 24, quizTexts: [
+    { q: 'Q116. 她拿了三面全國賽獎牌，卻還是自己搬器材、跟學弟妹一起掃地。She stays completely ______.\n\nA. two-faced\nB. hard to read\nC. down-to-earth\nD. in the spotlight\n\n回覆 116A / 116B / 116C / 116D' },
+    { q: 'Q117. 社長一個禮拜就把場地、贊助、宣傳全部搞定，完全不用別人催。She is such ______.\n\nA. a go-getter\nB. an open book\nC. a tear-jerker\nD. a tough nut to crack\n\n回覆 117A / 117B / 117C / 117D' },
+    { q: 'Q118. 他當著你的面說最喜歡跟你同組，轉頭卻跟別人抱怨你。He is so ______.\n\nA. easygoing\nB. two-faced\nC. a people person\nD. a global citizen\n\n回覆 118A / 118B / 118C / 118D' },
+    { q: 'Q119. 你提了新的班遊提案，他從頭到尾表情都沒變，你完全猜不出他喜不喜歡。He is ______.\n\nA. an open book\nB. hard to read\nC. down-to-earth\nD. neck and neck\n\n回覆 119A / 119B / 119C / 119D' },
+    { q: 'Q120. 她開心、難過、緊張全部寫在臉上，一秒都藏不住。She ______.\n\nA. wears her heart on her sleeve\nB. talks behind people\'s backs\nC. plays it by ear\nD. calls it a draw\n\n回覆 120A / 120B / 120C / 120D' },
+  ]},
+
+  // ===== Week 25：Global Views & News 🌏 =====
+  { date: '2026-10-05', day: 'Mon', type: 'card', image: 'Day121_Make_headlines_and_In_the_spotlight.png',                 week: 25, dayNum: 121 },
+  { date: '2026-10-06', day: 'Tue', type: 'card', image: 'Day122_A_hot_topic_and_Spark_a_debate.png',                      week: 25, dayNum: 122 },
+  { date: '2026-10-07', day: 'Wed', type: 'card', image: 'Day123_A_double_edged_sword_and_The_other_side_of_the_coin.png', week: 25, dayNum: 123 },
+  { date: '2026-10-08', day: 'Thu', type: 'card', image: 'Day124_Take_a_stand_and_Raise_awareness.png',                    week: 25, dayNum: 124 },
+  { date: '2026-10-09', day: 'Fri', type: 'card', image: 'Day125_A_global_citizen_and_Keep_an_open_mind.png',              week: 25, dayNum: 125 },
+  { date: '2026-10-10', day: 'Sat', type: 'quiz', week: 25, quizTexts: [
+    { q: 'Q121. 一位台灣高中生的發明被 BBC、CNN 都報導了。Her invention ______ around the world.\n\nA. sparked a debate\nB. made headlines\nC. took a stand\nD. raised awareness\n\n回覆 121A / 121B / 121C / 121D' },
+    { q: 'Q122. 學校公布新的制服規定後，每個班都吵成一團，正反意見都有。The new policy ______.\n\nA. made headlines\nB. kept an open mind\nC. sparked a debate\nD. charted its own course\n\n回覆 122A / 122B / 122C / 122D' },
+    { q: 'Q123. 社群媒體讓你跟世界連結，也讓你更容易焦慮。For teenagers, it is ______.\n\nA. a double-edged sword\nB. a hot topic\nC. a leap of faith\nD. a level playing field\n\n回覆 123A / 123B / 123C / 123D' },
+    { q: 'Q124. 環保社拍了一系列短片，希望讓更多同學開始關心海洋廢棄物。They wanted to ______.\n\nA. play it by ear\nB. raise awareness\nC. steal the show\nD. weigh their options\n\n回覆 124A / 124B / 124C / 124D' },
+    { q: 'Q125. 交換學生的生活習慣跟你很不一樣，老師提醒你先別急著下判斷。She told us to ______.\n\nA. take a stand\nB. make headlines\nC. keep an open mind\nD. give it our all\n\n回覆 125A / 125B / 125C / 125D' },
+  ]},
+
+  // ===== Week 26：Future & Choices 🎓 =====
+  { date: '2026-10-12', day: 'Mon', type: 'card', image: 'Day126_At_a_crossroads_and_Weigh_ones_options.png',       week: 26, dayNum: 126 },
+  { date: '2026-10-13', day: 'Tue', type: 'card', image: 'Day127_Keep_ones_options_open_and_Play_it_by_ear.png',    week: 26, dayNum: 127 },
+  { date: '2026-10-14', day: 'Wed', type: 'card', image: 'Day128_A_leap_of_faith_and_Take_the_plunge.png',          week: 26, dayNum: 128 },
+  { date: '2026-10-15', day: 'Thu', type: 'card', image: 'Day129_Follow_ones_heart_and_The_skys_the_limit.png',     week: 26, dayNum: 129 },
+  { date: '2026-10-16', day: 'Fri', type: 'card', image: 'Day130_Chart_ones_own_course_and_One_step_at_a_time.png', week: 26, dayNum: 130 },
+  { date: '2026-10-17', day: 'Sat', type: 'quiz', week: 26, quizTexts: [
+    { q: 'Q126. 學測成績出來，要選喜歡的科系還是分數穩的科系，他一時之間不知道怎麼決定。He felt ______.\n\nA. at a crossroads\nB. in the spotlight\nC. on a whim\nD. neck and neck\n\n回覆 126A / 126B / 126C / 126D' },
+    { q: 'Q127. 「明天到底會不會下雨還不知道，要不要去海邊我們 ______ 吧。」\n\nA. take the plunge\nB. play it by ear\nC. follow our heart\nD. throw in the towel\n\n回覆 127A / 127B / 127C / 127D' },
+    { q: 'Q128. 她想加入辯論社想了整整一年，這學期終於報名了。She finally ______.\n\nA. kept her options open\nB. called it a draw\nC. took the plunge\nD. went back to the drawing board\n\n回覆 128A / 128B / 128C / 128D' },
+    { q: 'Q129. 家人希望他念醫學系，但他最後選了自己真正想讀的設計。He decided to ______.\n\nA. follow his heart\nB. weigh his options\nC. hang in there\nD. raise awareness\n\n回覆 129A / 129B / 129C / 129D' },
+    { q: 'Q130. 未來的路還很長，不用今天就把整張地圖畫完。Just take it ______.\n\nA. out of the blue\nB. from scratch\nC. one step at a time\nD. behind the scenes\n\n回覆 130A / 130B / 130C / 130D' },
+  ]},
 ];
 
 // 補看用的圖卡列表
@@ -302,6 +386,12 @@ const weekCards = {
   18: ['Day86_Cutting_edge_and_State_of_the_art.png', 'Day87_A_game_changer_and_Take_it_to_the_next_level.png', 'Day88_Tech_savvy_and_Digital_native.png', 'Day89_The_tip_of_the_iceberg_and_Behind_the_scenes.png', 'Day90_Keep_up_with_the_times_and_Fall_behind_the_curve.png'],
   19: ['Day91_Burn_the_midnight_oil_and_Hit_the_hay.png', 'Day92_Catch_some_Zs_and_Sleep_like_a_log.png', 'Day93_Come_down_with_something_and_Run_down.png', 'Day94_Recharge_ones_batteries_and_Take_a_breather.png', 'Day95_You_are_what_you_eat_and_Fit_as_a_fiddle.png'],
   20: ['Day96_Agree_to_disagree_and_Meet_halfway.png', 'Day97_Bury_the_hatchet_and_Clear_the_air.png', 'Day98_Walk_on_eggshells_and_Tiptoe_around.png', 'Day99_Speak_ones_mind_and_Call_someone_out.png', 'Day100_Let_bygones_be_bygones_and_Turn_the_other_cheek.png'],
+  21: ['Day101_Binge_watch_and_On_repeat.png', 'Day102_Catchy_and_Stuck_in_ones_head.png', 'Day103_Steal_the_show_and_Bring_the_house_down.png', 'Day104_Spoiler_alert_and_Give_away_the_ending.png', 'Day105_A_must_watch_and_A_tear_jerker.png'],
+  22: ['Day106_Game_plan_and_Give_it_your_all.png', 'Day107_Neck_and_neck_and_Home_stretch.png', 'Day108_Throw_in_the_towel_and_Hang_in_there.png', 'Day109_The_underdog_and_A_level_playing_field.png', 'Day110_Call_it_a_draw_and_A_good_sport.png'],
+  23: ['Day111_From_scratch_and_A_stroke_of_genius.png', 'Day112_Back_to_the_drawing_board_and_Put_a_spin_on_it.png', 'Day113_Out_of_the_blue_and_On_a_whim.png', 'Day114_Paint_a_picture_and_Food_for_thought.png', 'Day115_Think_on_ones_feet_and_Creative_juices_flowing.png'],
+  24: ['Day116_Down_to_earth_and_Easygoing.png', 'Day117_A_people_person_and_A_go_getter.png', 'Day118_Two_faced_and_Talk_behind_someones_back.png', 'Day119_A_tough_nut_to_crack_and_Hard_to_read.png', 'Day120_Wear_ones_heart_on_ones_sleeve_and_An_open_book.png'],
+  25: ['Day121_Make_headlines_and_In_the_spotlight.png', 'Day122_A_hot_topic_and_Spark_a_debate.png', 'Day123_A_double_edged_sword_and_The_other_side_of_the_coin.png', 'Day124_Take_a_stand_and_Raise_awareness.png', 'Day125_A_global_citizen_and_Keep_an_open_mind.png'],
+  26: ['Day126_At_a_crossroads_and_Weigh_ones_options.png', 'Day127_Keep_ones_options_open_and_Play_it_by_ear.png', 'Day128_A_leap_of_faith_and_Take_the_plunge.png', 'Day129_Follow_ones_heart_and_The_skys_the_limit.png', 'Day130_Chart_ones_own_course_and_One_step_at_a_time.png'],
 };
 
 module.exports = { schedule, weekCards };

@@ -133,6 +133,42 @@ const dailyIdioms = [
   'walk on eggshells / tiptoe around',        // Day 98
   'speak one\'s mind / call someone out',     // Day 99
   'let bygones be bygones / turn the other cheek', // Day 100
+  // Week 21: Music & Entertainment (Day 101-105)
+  'binge-watch / on repeat',                  // Day 101
+  'catchy / stuck in one\'s head',            // Day 102
+  'steal the show / bring the house down',    // Day 103
+  'spoiler alert / give away the ending',     // Day 104
+  'a must-watch / a tear-jerker',             // Day 105
+  // Week 22: Sports & Competition (Day 106-110)
+  'a game plan / give it your all',           // Day 106
+  'neck and neck / the home stretch',         // Day 107
+  'throw in the towel / hang in there',       // Day 108
+  'the underdog / a level playing field',     // Day 109
+  'call it a draw / a good sport',            // Day 110
+  // Week 23: Creativity & Expression (Day 111-115)
+  'from scratch / a stroke of genius',        // Day 111
+  'back to the drawing board / put a spin on something', // Day 112
+  'out of the blue / on a whim',              // Day 113
+  'paint a picture / food for thought',       // Day 114
+  'think on one\'s feet / get one\'s creative juices flowing', // Day 115
+  // Week 24: Personality & Character (Day 116-120)
+  'down-to-earth / easygoing',                // Day 116
+  'a people person / a go-getter',            // Day 117
+  'two-faced / talk behind someone\'s back',  // Day 118
+  'a tough nut to crack / hard to read',      // Day 119
+  'wear one\'s heart on one\'s sleeve / an open book', // Day 120
+  // Week 25: Global Views & News (Day 121-125)
+  'make headlines / in the spotlight',        // Day 121
+  'a hot topic / spark a debate',             // Day 122
+  'a double-edged sword / the other side of the coin', // Day 123
+  'take a stand / raise awareness',           // Day 124
+  'a global citizen / keep an open mind',     // Day 125
+  // Week 26: Future & Choices (Day 126-130)
+  'at a crossroads / weigh one\'s options',   // Day 126
+  'keep one\'s options open / play it by ear', // Day 127
+  'a leap of faith / take the plunge',        // Day 128
+  'follow one\'s heart / the sky\'s the limit', // Day 129
+  'chart one\'s own course / one step at a time', // Day 130
 ];
 
 // LINE Messaging API 設定
