@@ -8,7 +8,7 @@ const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
 const { buildGame, gameLabel } = require('./game-data');
 const { richMenuConfig } = require('./richmenu');
-const { handleMenu, setCurrentGame, getCurrentGame } = require('./menu-handlers');
+const { handleMenu, setCurrentGame, getCurrentGame, writeUrl } = require('./menu-handlers');
 const { sheet } = require('./sheet');
 
 // 每天的片語（index 0 = Day 1），用於造句練習提示和 AI 批改參考
@@ -306,7 +306,7 @@ app.get('/trigger-card/:day', async (req, res) => {
         },
         {
           type: 'text',
-          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n直接貼上句子就會收到 idiom 用法、文法、native 說法的完整回饋 💡`,
+          text: `✏️ 造句練習時間！\n\n試著用今天學的「${todayIdiom}」造一個英文句子吧！\n\n寫好後丟給「Steph's 造句小助教」幫你批改 👇\n${writeUrl()}\n\nChatGPT、Claude、Gemini 都可以用，指令會自動幫你帶好 💡`,
         },
       ],
     });
@@ -445,7 +445,7 @@ async function handleEvent(event) {
       replyToken: event.replyToken,
       messages: [{
         type: 'text',
-        text: `看起來你想練習造句 ✏️\n\n我做了一個專屬的「造句小助教 Gem」幫你批改！直接點下面連結，把你的句子貼進去就會收到完整回饋 💡\n\n🌿 Steph's 造句小助教：\nhttps://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing\n\n他會幫你檢查：\n✅ idiom 用得對不對\n📝 文法和用字\n✨ Native speaker 會怎麼說`,
+        text: `看起來你想練習造句 ✏️\n\n把句子貼到「造句小助教」，選一個 AI 就會幫你批改 💡\n\n🌿 Steph's 造句小助教：\n${writeUrl()}\n\n他會幫你檢查：\n✅ idiom 用得對不對\n📝 文法和用字\n✨ Native speaker 會怎麼說`,
       }],
     });
   }

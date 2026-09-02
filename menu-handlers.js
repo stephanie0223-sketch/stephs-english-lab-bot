@@ -3,7 +3,10 @@ const { schedule, weekCards } = require('./schedule-data');
 const { gameLabel } = require('./game-data');
 const { sheet } = require('./sheet');
 
-const GEM_URL = 'https://gemini.google.com/gem/1aF6Gq6aKgrKwxD1henOTnB_Y6N3VGgoS?usp=sharing';
+// 造句批改頁（自架在本服務上，不依賴任何第三方帳號或 Gem）
+function writeUrl() {
+  return `${baseUrl()}/write.html`;
+}
 
 function getToday() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Taipei' });
@@ -68,7 +71,7 @@ function reviewCard(userId, dailyIdioms) {
 第一輪 ${n} 天已經全部跑完了，現在進入複習循環——每天一張，重新溫習一次 🌿
 
 還記得怎麼用嗎？造個句子丟給小助教 👇
-${GEM_URL}`,
+${writeUrl()}`,
     },
   ];
 }
@@ -117,7 +120,7 @@ async function handleToday(userId, dailyIdioms) {
     },
     {
       type: 'text',
-      text: `✏️ Day ${entry.dayNum}｜今天的片語是「${idiom}」\n\n試著造一個英文句子，丟給「造句小助教」批改 👇\n${GEM_URL}\n\n（點下方「✏️ 造句批改」隨時都能找到這個連結）`,
+      text: `✏️ Day ${entry.dayNum}｜今天的片語是「${idiom}」\n\n試著造一個英文句子，丟給「造句小助教」批改 👇\n${writeUrl()}\n\n（點下方「✏️ 造句批改」隨時都能找到這個連結）`,
     },
   ];
 }
@@ -155,7 +158,16 @@ function handleArchive() {
 function handleFeedback() {
   return [{
     type: 'text',
-    text: `✏️ 造句小助教\n\n把你寫的英文句子貼進去，馬上得到：\n✅ idiom 用得對不對\n📝 文法和用字批改\n✨ Native speaker 會怎麼說\n\n👉 ${GEM_URL}\n\n不用自己打指令，貼上句子就好 💡`,
+    text: `✏️ 造句小助教
+
+把你寫的英文句子貼進去，選一個 AI，馬上得到：
+✅ idiom 用得對不對
+📝 文法和用字批改
+✨ Native speaker 會怎麼說
+
+👉 ${writeUrl()}
+
+ChatGPT、Claude、Gemini 都可以用，指令會自動幫你帶好 💡`,
   }];
 }
 
@@ -228,4 +240,4 @@ async function handleMenu(action, userId, dailyIdioms) {
   }
 }
 
-module.exports = { handleMenu, setCurrentGame, getCurrentGame, GEM_URL };
+module.exports = { handleMenu, setCurrentGame, getCurrentGame, writeUrl };
