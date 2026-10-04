@@ -8,7 +8,7 @@ const { quizReplies, otherReplies } = require('./quiz-data');
 const { schedule, weekCards } = require('./schedule-data');
 const { buildGame, gameLabel } = require('./game-data');
 const { richMenuConfig } = require('./richmenu');
-const { handleMenu, setCurrentGame, getCurrentGame, writeUrl } = require('./menu-handlers');
+const { handleMenu, setCurrentGame, getCurrentGame, writeUrl, weekStatus } = require('./menu-handlers');
 const { sheet } = require('./sheet');
 
 // 每天的片語（index 0 = Day 1），用於造句練習提示和 AI 批改參考
@@ -378,11 +378,32 @@ app.get('/trigger-quiz/:week', async (req, res) => {
 // Webhook：處理學生回覆
 // ==========================================
 
+// 事件摘要，只寫進 log 方便查問題（不記學生說了什麼）
+function describeEvent(e) {
+  if (e.type === 'postback') return `postback(${e.postback && e.postback.data})`;
+  if (e.type === 'message') return `message(${e.message && e.message.type})`;
+  return e.type;
+}
+
 app.post('/webhook', middleware(config), (req, res) => {
-  Promise.all(req.body.events.map(handleEvent))
-    .then(() => res.json({ success: true }))
+  const events = (req.body && req.body.events) || [];
+  console.log(
+    events.length
+      ? `[webhook] 收到 ${events.length} 個事件：${events.map(describeEvent).join(', ')}`
+      : '[webhook] 收到空事件（Console 的 Verify 測試會長這樣）'
+  );
+
+  Promise.all(events.map(handleEvent))
+    .then(() => {
+      console.log('[webhook] 全部處理完成');
+      res.json({ success: true });
+    })
     .catch((err) => {
-      console.error('Error:', err);
+      const status = err.statusCode || (err.originalError && err.originalError.response && err.originalError.response.status);
+      const detail = err.originalError && err.originalError.response && err.originalError.response.data;
+      console.error(`[webhook] 處理失敗${status ? `（HTTP ${status}）` : ''}：${err.message}`);
+      if (detail) console.error('[webhook] LINE 回應：', JSON.stringify(detail));
+      if (status === 401) console.error('[webhook] ⚠️ 401 = CHANNEL_ACCESS_TOKEN 失效，請到 Render 更新環境變數');
       res.status(500).end();
     });
 });
@@ -407,7 +428,11 @@ async function handleEvent(event) {
     const params = new URLSearchParams(event.postback.data || '');
     const action = params.get('menu');
     const messages = await handleMenu(action, event.source.userId, dailyIdioms);
-    if (!messages) return null;
+    if (!messages) {
+      // 這條路會「沒有任何回覆也不報錯」，是最難查的狀況，一定要留紀錄
+      console.warn(`[menu] ⚠️ 無法對應的選單動作：${action}（data=${event.postback.data}）→ 不回覆`);
+      return null;
+    }
     return client.replyMessage({ replyToken: event.replyToken, messages });
   }
 
@@ -445,6 +470,19 @@ async function handleEvent(event) {
   if (weekMatch) {
     const weekNum = parseInt(weekMatch[1]);
     if (weekCards[weekNum]) {
+      // 還沒開始的週次先擋下來，避免學生搶先看到之後的圖卡
+      const status = weekStatus(weekNum);
+      if (!status.released) {
+        console.log(`[message] W${weekNum} 尚未開始，擋下`);
+        return client.replyMessage({
+          replyToken: event.replyToken,
+          messages: [{
+            type: 'text',
+            text: `W${weekNum}「${status.theme}」還沒開始喔 🌿\n\n${status.startLabel ? status.startLabel + ' 會發第一張圖卡' : '之後才會開始'}，到時候再回來看 ☺️\n\n想複習已經上過的，輸入 W1 ～ W${status.maxReleased} 都可以。`,
+          }],
+        });
+      }
+
       const images = weekCards[weekNum].map(img => ({
         type: 'image',
         originalContentUrl: getImageUrl(img),
@@ -481,6 +519,8 @@ async function handleEvent(event) {
     });
   }
 
+  // 同樣是「不回覆也不報錯」的路徑，留下長度就好，不記內容
+  console.log(`[message] 沒有對應的回覆規則（長度 ${userText.length}）→ 不回覆`);
   return null;
 }
 

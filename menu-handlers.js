@@ -1,6 +1,6 @@
 // 圖文選單六格的處理邏輯
 const { schedule, weekCards } = require('./schedule-data');
-const { gameLabel } = require('./game-data');
+const { gameLabel, weekThemes } = require('./game-data');
 const { sheet } = require('./sheet');
 
 // 造句批改頁（自架在本服務上，不依賴任何第三方帳號或 Gem）
@@ -143,14 +143,76 @@ function handleGame() {
 // ==========================================
 // 📚 補看圖卡
 // ==========================================
-function handleArchive() {
-  const weeks = Object.keys(weekCards).map(Number).sort((a, b) => a - b);
-  const max = weeks[weeks.length - 1];
 
-  return [{
-    type: 'text',
-    text: `📚 想複習哪一週？\n\n直接輸入 W1 ～ W${max} 就會收到那週的 5 張圖卡 ☺️\n\n例如輸入「W5」→ 健身主題\n輸入「W12」→ 飲食主題\n\n（一次會傳 5 張圖，慢慢看不用急 🌿）`,
-  }];
+// 某一週第一張圖卡的日期；排程表裡沒有的早期週次回 null
+function weekStartDate(w) {
+  const first = schedule.find(s => s.type === 'card' && s.week === w);
+  return first ? first.date : null;
+}
+
+// 這一週的圖卡是否已經發過
+function weekReleased(w, today, minScheduledWeek) {
+  const start = weekStartDate(w);
+  if (start) return start <= today;
+  return w < minScheduledWeek; // W1 比排程表還早，視為已開放
+}
+
+function formatMd(date) {
+  const [, m, d] = date.split('-');
+  return `${Number(m)}/${Number(d)}`;
+}
+
+function handleArchive() {
+  const today = getToday();
+  const weeks = Object.keys(weekCards).map(Number).sort((a, b) => a - b);
+  const minScheduledWeek = Math.min(
+    ...schedule.filter(s => s.type === 'card').map(s => s.week)
+  );
+
+  const released = weeks.filter(w => weekReleased(w, today, minScheduledWeek));
+  const current = released.length ? released[released.length - 1] : weeks[0];
+
+  const lines = weeks.map(w => {
+    const theme = weekThemes[w] || `第 ${w} 週`;
+    if (!weekReleased(w, today, minScheduledWeek)) {
+      const start = weekStartDate(w);
+      return `W${w}　${theme}（${start ? formatMd(start) + ' 開始' : '尚未開始'}）`;
+    }
+    return `W${w}　${theme}${w === current ? '　👈 現在在這裡' : ''}`;
+  });
+
+  const text = [
+    '📚 補看圖卡',
+    '',
+    `現在是 W${current}，主題是「${weekThemes[current] || ''}」`,
+    '',
+    '想複習哪一週？直接輸入代號，那一週的 5 張圖卡就會傳給你 ☺️',
+    '',
+    lines.join('\n'),
+    '',
+    '例如輸入「W12」→ 飲食、「W5」→ 健身',
+    '一次會傳 5 張圖，慢慢看不用急 🌿',
+  ].join('\n');
+
+  return [{ type: 'text', text }];
+}
+
+// 給 index.js 判斷學生輸入的 W 代號能不能看
+function weekStatus(w) {
+  const today = getToday();
+  const weeks = Object.keys(weekCards).map(Number).sort((a, b) => a - b);
+  const minScheduledWeek = Math.min(
+    ...schedule.filter(s => s.type === 'card').map(s => s.week)
+  );
+  const released = weeks.filter(x => weekReleased(x, today, minScheduledWeek));
+  const start = weekStartDate(w);
+
+  return {
+    released: weekReleased(w, today, minScheduledWeek),
+    theme: weekThemes[w] || `第 ${w} 週`,
+    startLabel: start ? formatMd(start) : null,
+    maxReleased: released.length ? released[released.length - 1] : weeks[0],
+  };
 }
 
 // ==========================================
@@ -241,4 +303,4 @@ async function handleMenu(action, userId, dailyIdioms) {
   }
 }
 
-module.exports = { handleMenu, setCurrentGame, getCurrentGame, writeUrl };
+module.exports = { handleMenu, setCurrentGame, getCurrentGame, writeUrl, weekStatus };
