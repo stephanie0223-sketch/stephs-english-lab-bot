@@ -1,0 +1,39 @@
+name: keep-alive
+
+# Render 免費方案閒置 15 分鐘就會休眠，而 index.js 裡那個「每 14 分鐘 ping 自己」
+# 的 cron 跑在同一個 process 裡 —— 一旦睡著，cron 也跟著停，它永遠叫不醒自己。
+# 2026-10-04 週日 20:00 的複習遊戲推播就是這樣整個沒送出去。
+#
+# 這個工作流程從 GitHub 外部打進去，所以睡著了也能叫醒。
+#
+# 時段：台灣時間 06:00-23:00（UTC 22:00-15:00）。
+# 不跑整天是因為 Render 免費方案每月約 750 instance-hours，
+# 24 小時不間斷會用掉約 744 小時，幾乎貼著上限；
+# 只跑白天約 558 小時，留有餘裕。深夜沒人用，早上 06:00 第一次 ping 就會喚醒。
+
+on:
+  schedule:
+    # 每 5 分鐘一次（GitHub 的最小間隔）。GitHub 的排程是「盡力而為」，
+    # 尖峰時可能延遲，間隔抓短一點，漏掉幾次也還撐得住 15 分鐘的休眠門檻。
+    - cron: '*/5 0-15,22-23 * * *'
+  workflow_dispatch:        # 也可以在 Actions 分頁手動按一下
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping the bot
+        run: |
+          # 冷啟動要 50 秒以上，所以 max-time 給足，不要讓它半路斷掉
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 \
+                 https://stephs-english-lab-bot.onrender.com/)
+          echo "HTTP $code"
+          # 2xx/3xx 都算活著；其他視為失敗，Actions 會寄信通知
+          case "$code" in
+            2*|3*) exit 0 ;;
+            *) echo "::error::Bot responded with $code"; exit 1 ;;
+          esac
