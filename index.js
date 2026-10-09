@@ -169,6 +169,42 @@ const dailyIdioms = [
   'a leap of faith / take the plunge',        // Day 128
   'follow one\'s heart / the sky\'s the limit', // Day 129
   'chart one\'s own course / one step at a time', // Day 130
+  // Week 27: Body Idioms (Day 131-135)
+  'keep an eye on / give someone a hand',      // Day 131
+  'cost an arm and a leg / pay through the nose', // Day 132
+  'pull someone\'s leg / tongue in cheek',      // Day 133
+  'get cold feet / shake in one\'s boots',      // Day 134
+  'a pain in the neck / get off someone\'s back', // Day 135
+  // Week 28: Stress & Resilience (Day 136-140)
+  'bounce back / shake it off',                // Day 136
+  'keep one\'s head above water / keep one\'s chin up', // Day 137
+  'snap out of it / pull oneself together',    // Day 138
+  'weather the storm / ride it out',           // Day 139
+  'at the end of one\'s rope / stretched thin', // Day 140
+  // Week 29: Animal Idioms (Day 141-145)
+  'let the cat out of the bag / keep it under wraps', // Day 141
+  'the elephant in the room / sweep it under the rug', // Day 142
+  'hold your horses / jump the gun',           // Day 143
+  'a night owl / an early bird',               // Day 144
+  'a copycat / monkey see, monkey do',         // Day 145
+  // Week 30: Interview & Self-Presentation (Day 146-150)
+  'sell yourself / play to one\'s strengths',   // Day 146
+  'wing it / off the top of my head',          // Day 147
+  'come across as / make a good impression',   // Day 148
+  'nail it / knock it out of the park',        // Day 149
+  'put one\'s best foot forward / stand out from the crowd', // Day 150
+  // Week 31: Color Idioms (Day 151-155)
+  'green with envy / have a green thumb',      // Day 151
+  'feeling blue / once in a blue moon',        // Day 152
+  'caught red-handed / red tape',              // Day 153
+  'a grey area / in black and white',          // Day 154
+  'the black sheep / a white lie',             // Day 155
+  // Week 32: Online Culture (Day 156-160)
+  'go viral / blow up',                        // Day 156
+  'clickbait / rage bait',                     // Day 157
+  'an echo chamber / a filter bubble',         // Day 158
+  'a lurker / chronically online',             // Day 159
+  'cancel culture / pile on',                  // Day 160
 ];
 
 // LINE Messaging API 設定
