@@ -4,8 +4,10 @@ const { gameLabel, weekThemes } = require('./game-data');
 const { sheet } = require('./sheet');
 
 // 造句批改頁（自架在本服務上，不依賴任何第三方帳號或 Gem）
+// openExternalBrowser=1 讓 LINE 改用手機系統瀏覽器開啟。ChatGPT 在 LINE 的
+// 內建瀏覽器裡會卡在「驗證時發生錯誤」，必須跳出去才能用。
 function writeUrl() {
-  return `${baseUrl()}/write.html`;
+  return `${baseUrl()}/write.html?openExternalBrowser=1`;
 }
 
 function getToday() {
