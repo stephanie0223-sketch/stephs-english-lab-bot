@@ -271,7 +271,7 @@ cron.schedule('0 20 * * 0', async () => {
     await client.broadcast({
       messages: [{
         type: 'text',
-        text: `🎮 ${info.label} 複習遊戲上線了！\n\n📚 範圍：${info.themes}\n⏱️ 10 題，每題 20 秒\n📖 答錯會告訴你錯在哪，測驗也是學習\n🏆 完成後看看你排全班第幾名\n\n看看你這兩週記住多少 👇\n${url}\n\n這次的成績老師看得到，加油 ☺️`,
+        text: `🎮 ${info.label} 複習遊戲上線了！\n\n📚 範圍：${info.themes}\n⏱️ 10 題，每題 20 秒\n📖 答錯會告訴你錯在哪，測驗也是學習\n🏆 完成後看看你排第幾名\n\n看看你這兩週記住多少 👇\n${url}\n\n不計分，純粹好玩——取個暱稱就能開始 ☺️`,
       }],
     });
     console.log(`[${today}] 複習遊戲推播成功！`);

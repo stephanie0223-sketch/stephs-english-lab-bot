@@ -221,7 +221,7 @@
         <div class="stat"><b id="final-acc">0%</b><span>正確率</span></div>
       </div>
       <button id="btn-again">再挑戰一次 🔄</button>
-      <p class="saved" id="saved-note">成績記錄中…</p>
+      <p class="saved" id="saved-note">分數上傳中…</p>
 
       <div class="lb" id="lb">
         <h3>🏆 本期排行榜 TOP 10</h3>
@@ -545,7 +545,7 @@
   }
 
   function submitScore(seconds, total) {
-    $('saved-note').textContent = '成績記錄中…';
+    $('saved-note').textContent = '分數上傳中…';
     fetch('/api/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -561,12 +561,12 @@
       .then(function (r) { return r.json(); })
       .then(function (d) {
         $('saved-note').textContent = d.ok
-          ? '✅ 成績已送出，老師看得到囉！'
-          : '⚠️ 成績送出失敗，請截圖給老師';
+          ? '✅ 分數已送出，去看看排行榜吧！'
+          : '⚠️ 分數沒送出去，不影響你剛才的表現 ☺️';
         loadLeaderboard();
       })
       .catch(function () {
-        $('saved-note').textContent = '⚠️ 成績送出失敗，請截圖給老師';
+        $('saved-note').textContent = '⚠️ 分數沒送出去，不影響你剛才的表現 ☺️';
         loadLeaderboard();
       });
   }
