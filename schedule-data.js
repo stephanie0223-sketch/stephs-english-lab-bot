@@ -286,11 +286,11 @@ const schedule = [
   { date: '2026-09-10', day: 'Thu', type: 'card', image: 'Day104_Spoiler_alert_and_Give_away_the_ending.png',  week: 21, dayNum: 104 },
   { date: '2026-09-11', day: 'Fri', type: 'card', image: 'Day105_A_must_watch_and_A_tear_jerker.png',          week: 21, dayNum: 105 },
   { date: '2026-09-12', day: 'Sat', type: 'quiz', week: 21, quizTexts: [
-    { q: 'Q101. 期末考結束那晚，Ivy 從晚上八點看到凌晨三點，把整季影集看完了。She ______ the whole season.\n\nA. put on repeat\nB. binge-watched\nC. stole the show\nD. gave away the ending\n\n回覆 101A / 101B / 101C / 101D' },
-    { q: 'Q102. 「這首歌的副歌太洗腦了，我這禮拜都把它 ______，通勤時一直聽。」\n\nA. on repeat\nB. a must-watch\nC. a tear-jerker\nD. behind the scenes\n\n回覆 102A / 102B / 102C / 102D' },
-    { q: 'Q103. 校慶才藝表演，大家本來都在等三年級的樂團，結果一位高一學弟一開口全場都看他。He totally ______.\n\nA. brought the house down\nB. stole the show\nC. played it by ear\nD. binge-watched\n\n回覆 103A / 103B / 103C / 103D' },
-    { q: 'Q104. 你昨天才看到第三集，班級群組卻有人直接打出結局。You told him not to ______.\n\nA. bring the house down\nB. give away the ending\nC. put it on repeat\nD. take the plunge\n\n回覆 104A / 104B / 104C / 104D' },
-    { q: 'Q105. 「那部片的最後二十分鐘全班都在擦眼淚——它真的是 ______。」\n\nA. a must-watch\nB. a go-getter\nC. a tear-jerker\nD. a good sport\n\n回覆 105A / 105B / 105C / 105D' },
+    { q: 'Q101. The night her finals ended, Ivy started a new series at eight and did not stop until three in the morning. She ______ the whole season.\n\nA. put on repeat\nB. binge-watched\nC. stole the show\nD. gave away the ending\n\n回覆 101A / 101B / 101C / 101D' },
+    { q: 'Q102. The chorus of that song is stuck in my head and I cannot get rid of it. I have had it ______ all week on the bus.\n\nA. on repeat\nB. a must-watch\nC. a tear-jerker\nD. behind the scenes\n\n回覆 102A / 102B / 102C / 102D' },
+    { q: 'Q103. Everyone at the school talent show was waiting for the senior band. Then a first-year boy started singing and nobody could look away — he totally ______.\n\nA. brought the house down\nB. stole the show\nC. played it by ear\nD. binge-watched\n\n回覆 103A / 103B / 103C / 103D' },
+    { q: 'Q104. You are only on episode three, and someone in the class group chat just typed out how it ends. You told him not to ______.\n\nA. bring the house down\nB. give away the ending\nC. put it on repeat\nD. take the plunge\n\n回覆 104A / 104B / 104C / 104D' },
+    { q: 'Q105. The last twenty minutes had the whole class wiping their eyes. That movie is a real ______.\n\nA. a must-watch\nB. a go-getter\nC. a tear-jerker\nD. a good sport\n\n回覆 105A / 105B / 105C / 105D' },
   ]},
 
   // ===== Week 22：Sports & Competition 🏀 =====
@@ -300,11 +300,11 @@ const schedule = [
   { date: '2026-09-17', day: 'Thu', type: 'card', image: 'Day109_The_underdog_and_A_level_playing_field.png', week: 22, dayNum: 109 },
   { date: '2026-09-18', day: 'Fri', type: 'card', image: 'Day110_Call_it_a_draw_and_A_good_sport.png',        week: 22, dayNum: 110 },
   { date: '2026-09-19', day: 'Sat', type: 'quiz', week: 22, quizTexts: [
-    { q: 'Q106. 大隊接力前，體育股長把每個人的棒次和跑法都畫在白板上。That was the class\'s ______.\n\nA. game plan\nB. home stretch\nC. level playing field\nD. good sport\n\n回覆 106A / 106B / 106C / 106D' },
-    { q: 'Q107. 大隊接力跑到最後一棒，兩班的分數只差 0.1 秒。The two classes were ______.\n\nA. in the spotlight\nB. neck and neck\nC. out of the blue\nD. down-to-earth\n\n回覆 107A / 107B / 107C / 107D' },
-    { q: 'Q108. 他小提琴檢定連考兩次沒過，一度想直接放棄不學了。He almost ______.\n\nA. hung in there\nB. gave it his all\nC. threw in the towel\nD. called it a draw\n\n回覆 108A / 108B / 108C / 108D' },
-    { q: 'Q109. 籃球決賽對上三連霸的強隊，全校反而拚命替不被看好的我們加油。Everyone loves cheering for ______.\n\nA. the underdog\nB. the home stretch\nC. a people person\nD. a hot topic\n\n回覆 109A / 109B / 109C / 109D' },
-    { q: 'Q110. 她決賽輸了，卻主動去跟對手每個人握手、恭喜他們。What ______ she is!\n\nA. a tough nut to crack\nB. a good sport\nC. an open book\nD. a global citizen\n\n回覆 110A / 110B / 110C / 110D' },
+    { q: 'Q106. Before the class relay, our sports rep drew every runner\'s order and route on the whiteboard. That was the class\'s ______.\n\nA. game plan\nB. home stretch\nC. level playing field\nD. good sport\n\n回覆 106A / 106B / 106C / 106D' },
+    { q: 'Q107. It came down to the last runner in the relay, and the two classes finished 0.1 seconds apart. They were ______ the whole way.\n\nA. in the spotlight\nB. neck and neck\nC. out of the blue\nD. down-to-earth\n\n回覆 107A / 107B / 107C / 107D' },
+    { q: 'Q108. He failed his violin exam twice in a row and almost quit playing for good. He nearly ______.\n\nA. hung in there\nB. gave it his all\nC. threw in the towel\nD. called it a draw\n\n回覆 108A / 108B / 108C / 108D' },
+    { q: 'Q109. In the basketball final we were up against a team that had won three years straight. The whole school cheered for us anyway — everyone loves ______.\n\nA. the underdog\nB. the home stretch\nC. a people person\nD. a hot topic\n\n回覆 109A / 109B / 109C / 109D' },
+    { q: 'Q110. She lost the final, then walked over and shook hands with every player on the other team. What ______ she is!\n\nA. a tough nut to crack\nB. a good sport\nC. an open book\nD. a global citizen\n\n回覆 110A / 110B / 110C / 110D' },
   ]},
 
   // ===== Week 23：Creativity & Expression 🎨 =====
@@ -314,11 +314,11 @@ const schedule = [
   { date: '2026-09-24', day: 'Thu', type: 'card', image: 'Day114_Paint_a_picture_and_Food_for_thought.png',           week: 23, dayNum: 114 },
   { date: '2026-09-25', day: 'Fri', type: 'card', image: 'Day115_Think_on_ones_feet_and_Creative_juices_flowing.png', week: 23, dayNum: 115 },
   { date: '2026-09-26', day: 'Sat', type: 'quiz', week: 23, quizTexts: [
-    { q: 'Q111. 班網沒有現成模板可以套，他們整個暑假一行一行自己寫出來。They built it ______.\n\nA. out of the blue\nB. from scratch\nC. on a whim\nD. behind the scenes\n\n回覆 111A / 111B / 111C / 111D' },
-    { q: 'Q112. 科展評審把他們的設計全部退回，組員只好把構想整個重想一次。It was ______.\n\nA. back to the drawing board\nB. a stroke of genius\nC. food for thought\nD. a leap of faith\n\n回覆 112A / 112B / 112C / 112D' },
-    { q: 'Q113. 國小同學失聯六年，昨晚突然傳訊息給你。He messaged me ______.\n\nA. on a whim\nB. out of the blue\nC. one step at a time\nD. in the home stretch\n\n回覆 113A / 113B / 113C / 113D' },
-    { q: 'Q114. 那場關於 AI 與工作的演講讓全班回家後還在想。It gave us a lot of ______.\n\nA. food for thought\nB. creative juices\nC. a hot topic\nD. a spin\n\n回覆 114A / 114B / 114C / 114D' },
-    { q: 'Q115. 報告到一半投影機突然壞掉，她立刻改用白板把重點畫出來。She really ______.\n\nA. painted a picture\nB. thought on her feet\nC. kept her options open\nD. took a stand\n\n回覆 115A / 115B / 115C / 115D' },
+    { q: 'Q111. There was no template they could copy for the class website, so they wrote every line themselves over the summer. They built it ______.\n\nA. out of the blue\nB. from scratch\nC. on a whim\nD. behind the scenes\n\n回覆 111A / 111B / 111C / 111D' },
+    { q: 'Q112. The science fair judges rejected their whole design, so the team had to rethink the idea completely. It was ______.\n\nA. back to the drawing board\nB. a stroke of genius\nC. food for thought\nD. a leap of faith\n\n回覆 112A / 112B / 112C / 112D' },
+    { q: 'Q113. I had not heard from my elementary school classmate in six years. Then last night he messaged me ______.\n\nA. on a whim\nB. out of the blue\nC. one step at a time\nD. in the home stretch\n\n回覆 113A / 113B / 113C / 113D' },
+    { q: 'Q114. That talk about AI and the future of work kept the whole class thinking on the way home. It gave us a lot of ______.\n\nA. food for thought\nB. creative juices\nC. a hot topic\nD. a spin\n\n回覆 114A / 114B / 114C / 114D' },
+    { q: 'Q115. The projector died in the middle of her presentation. Without missing a beat she grabbed a marker and drew her main points on the whiteboard — she really ______.\n\nA. painted a picture\nB. thought on her feet\nC. kept her options open\nD. took a stand\n\n回覆 115A / 115B / 115C / 115D' },
   ]},
 
   // ===== Week 24：Personality & Character 🧠 =====
@@ -328,11 +328,11 @@ const schedule = [
   { date: '2026-10-01', day: 'Thu', type: 'card', image: 'Day119_A_tough_nut_to_crack_and_Hard_to_read.png',           week: 24, dayNum: 119 },
   { date: '2026-10-02', day: 'Fri', type: 'card', image: 'Day120_Wear_ones_heart_on_ones_sleeve_and_An_open_book.png', week: 24, dayNum: 120 },
   { date: '2026-10-03', day: 'Sat', type: 'quiz', week: 24, quizTexts: [
-    { q: 'Q116. 她拿了三面全國賽獎牌，卻還是自己搬器材、跟學弟妹一起掃地。She stays completely ______.\n\nA. two-faced\nB. hard to read\nC. down-to-earth\nD. in the spotlight\n\n回覆 116A / 116B / 116C / 116D' },
-    { q: 'Q117. 社長一個禮拜就把場地、贊助、宣傳全部搞定，完全不用別人催。She is such ______.\n\nA. a go-getter\nB. an open book\nC. a tear-jerker\nD. a tough nut to crack\n\n回覆 117A / 117B / 117C / 117D' },
-    { q: 'Q118. 他當著你的面說最喜歡跟你同組，轉頭卻跟別人抱怨你。He is so ______.\n\nA. easygoing\nB. two-faced\nC. a people person\nD. a global citizen\n\n回覆 118A / 118B / 118C / 118D' },
-    { q: 'Q119. 你提了新的班遊提案，他從頭到尾表情都沒變，你完全猜不出他喜不喜歡。He is ______.\n\nA. an open book\nB. hard to read\nC. down-to-earth\nD. neck and neck\n\n回覆 119A / 119B / 119C / 119D' },
-    { q: 'Q120. 她開心、難過、緊張全部寫在臉上，一秒都藏不住。She ______.\n\nA. wears her heart on her sleeve\nB. talks behind people\'s backs\nC. plays it by ear\nD. calls it a draw\n\n回覆 120A / 120B / 120C / 120D' },
+    { q: 'Q116. She has won three medals at the national competition, but she still carries the equipment herself and sweeps the floor with the first-years. She stays completely ______.\n\nA. two-faced\nB. hard to read\nC. down-to-earth\nD. in the spotlight\n\n回覆 116A / 116B / 116C / 116D' },
+    { q: 'Q117. Our club president booked the venue, found a sponsor and finished the posters in one week, and nobody had to remind her once. She is such ______.\n\nA. a go-getter\nB. an open book\nC. a tear-jerker\nD. a tough nut to crack\n\n回覆 117A / 117B / 117C / 117D' },
+    { q: 'Q118. He tells you to your face that you are his favourite partner, then complains about you to everyone else. He is so ______.\n\nA. easygoing\nB. two-faced\nC. a people person\nD. a global citizen\n\n回覆 118A / 118B / 118C / 118D' },
+    { q: 'Q119. You pitched your idea for the class trip and his expression never changed once. You still have no idea whether he liked it — he is ______.\n\nA. an open book\nB. hard to read\nC. down-to-earth\nD. neck and neck\n\n回覆 119A / 119B / 119C / 119D' },
+    { q: 'Q120. Happy, upset, nervous — whatever she feels shows on her face within a second. She ______.\n\nA. wears her heart on her sleeve\nB. talks behind people\'s backs\nC. plays it by ear\nD. calls it a draw\n\n回覆 120A / 120B / 120C / 120D' },
   ]},
 
   // ===== Week 25：Global Views & News 🌏 =====
