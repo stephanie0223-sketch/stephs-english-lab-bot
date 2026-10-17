@@ -138,7 +138,7 @@ function handleGame() {
 
   return [{
     type: 'text',
-    text: `🎮 本期複習遊戲：${info.label}\n📚 範圍：${info.themes}\n\n共 10 題，每題 20 秒 ⏱️\n答錯會告訴你錯在哪，答對也有補充說明——測驗也是學習 📖\n完成後可以看 🏆 全班排行榜 TOP 10！\n\n👉 ${url}\n\n第一次玩要先輸入學號和姓名喔 ☺️`,
+    text: `🎮 本期複習遊戲：${info.label}\n📚 範圍：${info.themes}\n\n共 10 題，每題 20 秒 ⏱️\n答錯會告訴你錯在哪，答對也有補充說明——測驗也是學習 📖\n完成後可以看 🏆 全班排行榜 TOP 10！\n\n👉 ${url}\n\n第一次玩取一個暱稱就可以開始囉 ☺️`,
   }];
 }
 
@@ -253,7 +253,7 @@ async function handleProgress(userId) {
   if (!res.bound) {
     return [{
       type: 'text',
-      text: `還沒有你的學習紀錄喔 📊\n\n先去玩一次「🎮 複習遊戲」並輸入學號姓名，之後就能看到自己的進度了 ☺️`,
+      text: `還沒有你的學習紀錄喔 📊\n\n先去玩一次「🎮 複習遊戲」並取一個暱稱，之後就能看到自己的進度了 ☺️`,
     }];
   }
 

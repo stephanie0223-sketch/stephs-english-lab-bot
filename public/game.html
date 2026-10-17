@@ -161,11 +161,10 @@
     <div class="card">
       <div class="brand">STEPH'S ENGLISH LAB</div>
       <h1>🎮 複習遊戲</h1>
-      <p class="sub" id="id-sub">第一次來？先登記一下你的身分</p>
-      <label for="sid">學號</label>
-      <input id="sid" inputmode="numeric" placeholder="例：10523" autocomplete="off">
-      <label for="sname">姓名</label>
-      <input id="sname" placeholder="例：王小明" autocomplete="off">
+      <p class="sub" id="id-sub">第一次來？取一個暱稱就可以開始</p>
+      <label for="sname">你的暱稱</label>
+      <input id="sname" placeholder="例：小米、Allen、阿哲" autocomplete="off" maxlength="12">
+      <p class="sub" style="margin-top:8px">排行榜上會顯示這個名字，之後想換隨時可以改</p>
       <button id="btn-id">開始挑戰 →</button>
     </div>
   </section>
@@ -182,7 +181,7 @@
         <div class="stat"><b id="pre-name">—</b><span>挑戰者</span></div>
       </div>
       <button id="btn-start">開始 🚀</button>
-      <button class="ghost" id="btn-switch">不是我？換人</button>
+      <button class="ghost" id="btn-switch">不是我？換暱稱</button>
     </div>
   </section>
 
@@ -301,21 +300,21 @@
   }
 
   $('btn-id').addEventListener('click', function () {
-    var sid = $('sid').value.trim();
     var name = $('sname').value.trim();
-    if (!sid || !name) {
-      alert('學號和姓名都要填喔 ☺️');
+    if (!name) {
+      alert('先取一個暱稱吧 ☺️');
       return;
     }
-    state.student = { studentId: sid, name: name };
+    // 後台仍以 studentId 當主鍵（學生名冊、成績、排行榜都靠它），
+    // 改成暱稱制之後就直接拿暱稱當 id，後台不用改。
+    state.student = { studentId: name, name: name };
     saveStudent(state.student);
     goStart();
   });
 
   $('btn-switch').addEventListener('click', function () {
-    $('sid').value = '';
     $('sname').value = '';
-    $('id-sub').textContent = '換一位同學，請重新登記';
+    $('id-sub').textContent = '換一個暱稱';
     show('s-id');
   });
 
